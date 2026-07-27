@@ -1,0 +1,79 @@
+# YOLOv7 Segmentation Hyperparameters
+
+# -------------------------------------------------------------------
+# Optimization
+# -------------------------------------------------------------------
+lr0: 0.01            # initial learning rate
+lrf: 0.1             # final OneCycleLR learning rate (lr0 * lrf)
+momentum: 0.937
+weight_decay: 0.0005
+
+# -------------------------------------------------------------------
+# Warmup
+# -------------------------------------------------------------------
+warmup_epochs: 3.0
+warmup_momentum: 0.8
+warmup_bias_lr: 0.1
+
+# -------------------------------------------------------------------
+# Loss gains
+# -------------------------------------------------------------------
+box: 0.05            # bounding box loss gain
+cls: 0.3             # classification loss gain
+obj: 0.7             # objectness loss gain
+seg: 1.0             # segmentation loss gain
+
+# -------------------------------------------------------------------
+# Class/Object weights
+# -------------------------------------------------------------------
+cls_pw: 1.0
+obj_pw: 1.0
+
+# -------------------------------------------------------------------
+# IoU / Anchors
+# -------------------------------------------------------------------
+iou_t: 0.2           # IoU training threshold
+anchor_t: 4.0        # anchor-multiple threshold
+fl_gamma: 0.0        # focal loss gamma (0 = disabled)
+
+# -------------------------------------------------------------------
+# Color Augmentation
+# -------------------------------------------------------------------
+hsv_h: 0.015         # image HSV-Hue augmentation
+hsv_s: 0.7           # image HSV-Saturation augmentation
+hsv_v: 0.4           # image HSV-Value augmentation
+
+# -------------------------------------------------------------------
+# Geometric Augmentation
+# -------------------------------------------------------------------
+degrees: 5.0         # rotation (+/- deg)
+translate: 0.1       # translation (+/- fraction)
+scale: 0.5           # scaling (+/- gain)
+shear: 2.0           # shear (+/- deg)
+perspective: 0.0005  # perspective transform
+
+flipud: 0.0          # vertical flip probability
+fliplr: 0.5          # horizontal flip probability
+
+# -------------------------------------------------------------------
+# Advanced Augmentation
+# -------------------------------------------------------------------
+mosaic: 1.0          # mosaic augmentation probability
+mixup: 0.1           # mixup augmentation probability
+copy_paste: 0.3      # copy-paste for segmentation
+
+# -------------------------------------------------------------------
+# Segmentation-specific
+# -------------------------------------------------------------------
+mask_ratio: 4        # mask downsample ratio
+overlap_mask: True   # allow overlapping masks
+
+# -------------------------------------------------------------------
+# Regularization
+# -------------------------------------------------------------------
+label_smoothing: 0.0
+
+# -------------------------------------------------------------------
+# EMA (Exponential Moving Average)
+# -------------------------------------------------------------------
+ema_decay: 0.9998

@@ -1,0 +1,24 @@
+# train: /home/saivijaay.vk/CV/SEGMENTATION/Data_merged_500_Test/train
+# val: /home/saivijaay.vk/CV/SEGMENTATION/Data_merged_500_Test/val
+train: /home/saivijaay.vk/CV/Home-Depot-Labels-Data/New_data_Mar_19/train
+val: /home/saivijaay.vk/CV/Home-Depot-Labels-Data/New_data_Mar_19/val
+names:
+  # 0: cluster_product
+  # 1: product
+  # 2: empty
+  0: label
+  1: first_line
+  2: second_line
+  3: quantity
+  4: first_line_bar
+  5: second_line_bar
+  6: quantity_bar
+
+nc: 7
+
+# # explicitly specify the label directories
+# path: new_home_dataset_copy/merged_classes
+
+# # # Override automatic label folder detection
+# # train_labels: labels/train_new
+# # val_labels: labels/val_new

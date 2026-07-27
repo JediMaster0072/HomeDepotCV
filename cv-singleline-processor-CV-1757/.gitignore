@@ -1,0 +1,25 @@
+/.idea
+venv/
+
+.vscode
+.idea
+
+__pycache__
+
+deploy-dev.bat
+deploy.bat
+run.sh
+
+.coverage
+
+.pytest_cache
+
+# Local secrets and credentials
+.env
+.env.*
+*.pem
+*credential*.json
+*credentials*.json
+*service-account*.json
+*service_account*.json
+gcloud_keys/

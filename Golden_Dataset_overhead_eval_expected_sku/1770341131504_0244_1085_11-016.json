@@ -1,0 +1,4305 @@
+{
+  "version": null,
+  "flags": {},
+  "shapes": [
+    {
+      "points": [
+        {
+          "0": 1184,
+          "1": 757
+        },
+        {
+          "0": 1162,
+          "1": 820
+        },
+        {
+          "0": 1254,
+          "1": 824
+        },
+        {
+          "0": 1277,
+          "1": 761
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1809,
+          "1": 242
+        },
+        {
+          "0": 1808,
+          "1": 298
+        },
+        {
+          "0": 1910,
+          "1": 279
+        },
+        {
+          "0": 1910,
+          "1": 222
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1964,
+          "1": 238
+        },
+        {
+          "0": 1966,
+          "1": 252
+        },
+        {
+          "0": 2073,
+          "1": 230
+        },
+        {
+          "0": 2070,
+          "1": 214
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC_SKU",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "drona_jsons"
+    },
+    {
+      "points": [
+        {
+          "0": 1958,
+          "1": 213
+        },
+        {
+          "0": 1961,
+          "1": 257
+        },
+        {
+          "0": 2078,
+          "1": 231
+        },
+        {
+          "0": 2076,
+          "1": 187
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC",
+      "line_color": "#D45F48",
+      "fill_color": "#D45F48"
+    },
+    {
+      "points": [
+        {
+          "0": 2225,
+          "1": 385
+        },
+        {
+          "0": 2223,
+          "1": 439
+        },
+        {
+          "0": 2331,
+          "1": 431
+        },
+        {
+          "0": 2333,
+          "1": 378
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2406,
+          "1": 216
+        },
+        {
+          "0": 2408,
+          "1": 234
+        },
+        {
+          "0": 2514,
+          "1": 223
+        },
+        {
+          "0": 2509,
+          "1": 208
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC_SKU",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "drona_jsons"
+    },
+    {
+      "points": [
+        {
+          "0": 2401,
+          "1": 188
+        },
+        {
+          "0": 2403,
+          "1": 239
+        },
+        {
+          "0": 2522,
+          "1": 226
+        },
+        {
+          "0": 2517,
+          "1": 183
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC",
+      "line_color": "#D45F48",
+      "fill_color": "#D45F48"
+    },
+    {
+      "points": [
+        {
+          "0": 1697,
+          "1": 836
+        },
+        {
+          "0": 1690,
+          "1": 902
+        },
+        {
+          "0": 1798,
+          "1": 888
+        },
+        {
+          "0": 1802,
+          "1": 824
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1769,
+          "1": 588
+        },
+        {
+          "0": 1770,
+          "1": 606
+        },
+        {
+          "0": 1868,
+          "1": 584
+        },
+        {
+          "0": 1865,
+          "1": 563
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC_SKU",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "drona_jsons"
+    },
+    {
+      "points": [
+        {
+          "0": 1763,
+          "1": 560
+        },
+        {
+          "0": 1766,
+          "1": 608
+        },
+        {
+          "0": 1880,
+          "1": 584
+        },
+        {
+          "0": 1881,
+          "1": 536
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC",
+      "line_color": "#D45F48",
+      "fill_color": "#D45F48"
+    },
+    {
+      "points": [
+        {
+          "0": 2329,
+          "1": 746
+        },
+        {
+          "0": 2330,
+          "1": 763
+        },
+        {
+          "0": 2456,
+          "1": 748
+        },
+        {
+          "0": 2458,
+          "1": 742
+        },
+        {
+          "0": 2456,
+          "1": 725
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC_SKU",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "drona_jsons"
+    },
+    {
+      "points": [
+        {
+          "0": 2323,
+          "1": 712
+        },
+        {
+          "0": 2327,
+          "1": 767
+        },
+        {
+          "0": 2461,
+          "1": 750
+        },
+        {
+          "0": 2464,
+          "1": 741
+        },
+        {
+          "0": 2457,
+          "1": 697
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC",
+      "line_color": "#D45F48",
+      "fill_color": "#D45F48"
+    },
+    {
+      "points": [
+        {
+          "0": 2266,
+          "1": 816
+        },
+        {
+          "0": 2255,
+          "1": 881
+        },
+        {
+          "0": 2369,
+          "1": 885
+        },
+        {
+          "0": 2383,
+          "1": 819
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 816,
+          "1": 1671
+        },
+        {
+          "0": 799,
+          "1": 1744
+        },
+        {
+          "0": 907,
+          "1": 1750
+        },
+        {
+          "0": 924,
+          "1": 1677
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1134,
+          "1": 1744
+        },
+        {
+          "0": 1140,
+          "1": 1830
+        },
+        {
+          "0": 1262,
+          "1": 1827
+        },
+        {
+          "0": 1253,
+          "1": 1744
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1165,
+          "1": 1651
+        },
+        {
+          "0": 1154,
+          "1": 1729
+        },
+        {
+          "0": 1275,
+          "1": 1743
+        },
+        {
+          "0": 1284,
+          "1": 1658
+        },
+        {
+          "0": 1170,
+          "1": 1652
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1512,
+          "1": 1676
+        },
+        {
+          "0": 1519,
+          "1": 1758
+        },
+        {
+          "0": 1643,
+          "1": 1747
+        },
+        {
+          "0": 1638,
+          "1": 1665
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1964,
+          "1": 1663
+        },
+        {
+          "0": 1959,
+          "1": 1746
+        },
+        {
+          "0": 2087,
+          "1": 1748
+        },
+        {
+          "0": 2092,
+          "1": 1668
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 638,
+          "1": 2138
+        },
+        {
+          "0": 626,
+          "1": 2237
+        },
+        {
+          "0": 741,
+          "1": 2234
+        },
+        {
+          "0": 742,
+          "1": 2141
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 629,
+          "1": 2309
+        },
+        {
+          "0": 608,
+          "1": 2388
+        },
+        {
+          "0": 723,
+          "1": 2399
+        },
+        {
+          "0": 735,
+          "1": 2320
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 748,
+          "1": 2352
+        },
+        {
+          "0": 736,
+          "1": 2434
+        },
+        {
+          "0": 850,
+          "1": 2429
+        },
+        {
+          "0": 857,
+          "1": 2350
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 895,
+          "1": 2320
+        },
+        {
+          "0": 885,
+          "1": 2401
+        },
+        {
+          "0": 996,
+          "1": 2404
+        },
+        {
+          "0": 1008,
+          "1": 2327
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1048,
+          "1": 2328
+        },
+        {
+          "0": 1038,
+          "1": 2410
+        },
+        {
+          "0": 1154,
+          "1": 2421
+        },
+        {
+          "0": 1165,
+          "1": 2335
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1078,
+          "1": 2147
+        },
+        {
+          "0": 1069,
+          "1": 2230
+        },
+        {
+          "0": 1187,
+          "1": 2229
+        },
+        {
+          "0": 1190,
+          "1": 2144
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1618,
+          "1": 2258
+        },
+        {
+          "0": 1609,
+          "1": 2337
+        },
+        {
+          "0": 1734,
+          "1": 2340
+        },
+        {
+          "0": 1738,
+          "1": 2256
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1972,
+          "1": 2387
+        },
+        {
+          "0": 1966,
+          "1": 2460
+        },
+        {
+          "0": 2103,
+          "1": 2467
+        },
+        {
+          "0": 2107,
+          "1": 2387
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1974,
+          "1": 2364
+        },
+        {
+          "0": 1972,
+          "1": 2381
+        },
+        {
+          "0": 2110,
+          "1": 2382
+        },
+        {
+          "0": 2112,
+          "1": 2354
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC_SKU",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "drona_jsons"
+    },
+    {
+      "points": [
+        {
+          "0": 1965,
+          "1": 2314
+        },
+        {
+          "0": 1965,
+          "1": 2386
+        },
+        {
+          "0": 2119,
+          "1": 2384
+        },
+        {
+          "0": 2121,
+          "1": 2314
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC",
+      "line_color": "#D45F48",
+      "fill_color": "#D45F48"
+    },
+    {
+      "points": [
+        {
+          "0": 2290,
+          "1": 2367
+        },
+        {
+          "0": 2291,
+          "1": 2393
+        },
+        {
+          "0": 2436,
+          "1": 2391
+        },
+        {
+          "0": 2433,
+          "1": 2362
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC_SKU",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "drona_jsons"
+    },
+    {
+      "points": [
+        {
+          "0": 2287,
+          "1": 2322
+        },
+        {
+          "0": 2285,
+          "1": 2395
+        },
+        {
+          "0": 2441,
+          "1": 2394
+        },
+        {
+          "0": 2441,
+          "1": 2321
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC",
+      "line_color": "#D45F48",
+      "fill_color": "#D45F48"
+    },
+    {
+      "points": [
+        {
+          "0": 2274,
+          "1": 2401
+        },
+        {
+          "0": 2270,
+          "1": 2487
+        },
+        {
+          "0": 2407,
+          "1": 2487
+        },
+        {
+          "0": 2409,
+          "1": 2399
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2541,
+          "1": 2403
+        },
+        {
+          "0": 2538,
+          "1": 2487
+        },
+        {
+          "0": 2676,
+          "1": 2487
+        },
+        {
+          "0": 2674,
+          "1": 2408
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2543,
+          "1": 2213
+        },
+        {
+          "0": 2535,
+          "1": 2299
+        },
+        {
+          "0": 2677,
+          "1": 2299
+        },
+        {
+          "0": 2676,
+          "1": 2217
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3330,
+          "1": 2547
+        },
+        {
+          "0": 3334,
+          "1": 2648
+        },
+        {
+          "0": 3481,
+          "1": 2652
+        },
+        {
+          "0": 3475,
+          "1": 2546
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3478,
+          "1": 2545
+        },
+        {
+          "0": 3482,
+          "1": 2646
+        },
+        {
+          "0": 3635,
+          "1": 2640
+        },
+        {
+          "0": 3619,
+          "1": 2562
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3481,
+          "1": 2648
+        },
+        {
+          "0": 3485,
+          "1": 2737
+        },
+        {
+          "0": 3635,
+          "1": 2731
+        },
+        {
+          "0": 3629,
+          "1": 2643
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3486,
+          "1": 2740
+        },
+        {
+          "0": 3491,
+          "1": 2832
+        },
+        {
+          "0": 3637,
+          "1": 2836
+        },
+        {
+          "0": 3629,
+          "1": 2735
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3487,
+          "1": 2837
+        },
+        {
+          "0": 3491,
+          "1": 2927
+        },
+        {
+          "0": 3638,
+          "1": 2931
+        },
+        {
+          "0": 3637,
+          "1": 2838
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3491,
+          "1": 2933
+        },
+        {
+          "0": 3495,
+          "1": 3034
+        },
+        {
+          "0": 3646,
+          "1": 3029
+        },
+        {
+          "0": 3638,
+          "1": 2937
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3333,
+          "1": 2652
+        },
+        {
+          "0": 3330,
+          "1": 2741
+        },
+        {
+          "0": 3483,
+          "1": 2744
+        },
+        {
+          "0": 3478,
+          "1": 2656
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3330,
+          "1": 2745
+        },
+        {
+          "0": 3330,
+          "1": 2831
+        },
+        {
+          "0": 3477,
+          "1": 2829
+        },
+        {
+          "0": 3477,
+          "1": 2749
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3332,
+          "1": 2836
+        },
+        {
+          "0": 3333,
+          "1": 2925
+        },
+        {
+          "0": 3484,
+          "1": 2925
+        },
+        {
+          "0": 3480,
+          "1": 2836
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3334,
+          "1": 2932
+        },
+        {
+          "0": 3341,
+          "1": 3032
+        },
+        {
+          "0": 3491,
+          "1": 3025
+        },
+        {
+          "0": 3482,
+          "1": 2930
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3009,
+          "1": 2822
+        },
+        {
+          "0": 3009,
+          "1": 2854
+        },
+        {
+          "0": 3154,
+          "1": 2877
+        },
+        {
+          "0": 3156,
+          "1": 2841
+        },
+        {
+          "0": 3013,
+          "1": 2824
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC_SKU",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "drona_jsons"
+    },
+    {
+      "points": [
+        {
+          "0": 3005,
+          "1": 2778
+        },
+        {
+          "0": 3005,
+          "1": 2863
+        },
+        {
+          "0": 3164,
+          "1": 2881
+        },
+        {
+          "0": 3165,
+          "1": 2798
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC",
+      "line_color": "#D45F48",
+      "fill_color": "#D45F48"
+    },
+    {
+      "points": [
+        {
+          "0": 2955,
+          "1": 2920
+        },
+        {
+          "0": 2944,
+          "1": 3014
+        },
+        {
+          "0": 3088,
+          "1": 3035
+        },
+        {
+          "0": 3099,
+          "1": 2942
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2891,
+          "1": 3346
+        },
+        {
+          "0": 2891,
+          "1": 3379
+        },
+        {
+          "0": 3032,
+          "1": 3392
+        },
+        {
+          "0": 3029,
+          "1": 3354
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC_SKU",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "drona_jsons"
+    },
+    {
+      "points": [
+        {
+          "0": 2890,
+          "1": 3294
+        },
+        {
+          "0": 2883,
+          "1": 3379
+        },
+        {
+          "0": 3047,
+          "1": 3401
+        },
+        {
+          "0": 3053,
+          "1": 3316
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC",
+      "line_color": "#D45F48",
+      "fill_color": "#D45F48"
+    },
+    {
+      "points": [
+        {
+          "0": 2889,
+          "1": 3425
+        },
+        {
+          "0": 2889,
+          "1": 3522
+        },
+        {
+          "0": 3035,
+          "1": 3529
+        },
+        {
+          "0": 3037,
+          "1": 3433
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3926,
+          "1": 3708
+        },
+        {
+          "0": 3924,
+          "1": 3801
+        },
+        {
+          "0": 4068,
+          "1": 3799
+        },
+        {
+          "0": 4065,
+          "1": 3707
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4095,
+          "1": 3556
+        },
+        {
+          "0": 4100,
+          "1": 3653
+        },
+        {
+          "0": 4236,
+          "1": 3655
+        },
+        {
+          "0": 4236,
+          "1": 3567
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4360,
+          "1": 3633
+        },
+        {
+          "0": 4385,
+          "1": 3744
+        },
+        {
+          "0": 4536,
+          "1": 3752
+        },
+        {
+          "0": 4514,
+          "1": 3644
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4571,
+          "1": 3669
+        },
+        {
+          "0": 4575,
+          "1": 3752
+        },
+        {
+          "0": 4690,
+          "1": 3733
+        },
+        {
+          "0": 4677,
+          "1": 3677
+        },
+        {
+          "0": 4670,
+          "1": 3637
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3780,
+          "1": 4519
+        },
+        {
+          "0": 3787,
+          "1": 4647
+        },
+        {
+          "0": 3889,
+          "1": 4646
+        },
+        {
+          "0": 3880,
+          "1": 4511
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1225,
+          "1": 769
+        },
+        {
+          "0": 1222,
+          "1": 789
+        },
+        {
+          "0": 1265,
+          "1": 790
+        },
+        {
+          "0": 1270,
+          "1": 767
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 1222,
+          "1": 790
+        },
+        {
+          "0": 1219,
+          "1": 805
+        },
+        {
+          "0": 1256,
+          "1": 810
+        },
+        {
+          "0": 1261,
+          "1": 792
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 1173,
+          "1": 792
+        },
+        {
+          "0": 1167,
+          "1": 815
+        },
+        {
+          "0": 1180,
+          "1": 817
+        },
+        {
+          "0": 1187,
+          "1": 792
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 1817,
+          "1": 247
+        },
+        {
+          "0": 1818,
+          "1": 266
+        },
+        {
+          "0": 1909,
+          "1": 249
+        },
+        {
+          "0": 1905,
+          "1": 228
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 1864,
+          "1": 259
+        },
+        {
+          "0": 1868,
+          "1": 275
+        },
+        {
+          "0": 1910,
+          "1": 266
+        },
+        {
+          "0": 1907,
+          "1": 250
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 1812,
+          "1": 270
+        },
+        {
+          "0": 1813,
+          "1": 294
+        },
+        {
+          "0": 1828,
+          "1": 291
+        },
+        {
+          "0": 1825,
+          "1": 270
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 1728,
+          "1": 842
+        },
+        {
+          "0": 1730,
+          "1": 863
+        },
+        {
+          "0": 1799,
+          "1": 853
+        },
+        {
+          "0": 1797,
+          "1": 834
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 1749,
+          "1": 862
+        },
+        {
+          "0": 1750,
+          "1": 880
+        },
+        {
+          "0": 1796,
+          "1": 872
+        },
+        {
+          "0": 1794,
+          "1": 855
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 1696,
+          "1": 870
+        },
+        {
+          "0": 1695,
+          "1": 897
+        },
+        {
+          "0": 1710,
+          "1": 891
+        },
+        {
+          "0": 1710,
+          "1": 868
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 2228,
+          "1": 389
+        },
+        {
+          "0": 2229,
+          "1": 409
+        },
+        {
+          "0": 2330,
+          "1": 401
+        },
+        {
+          "0": 2328,
+          "1": 382
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 2282,
+          "1": 406
+        },
+        {
+          "0": 2282,
+          "1": 423
+        },
+        {
+          "0": 2328,
+          "1": 421
+        },
+        {
+          "0": 2330,
+          "1": 402
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 2228,
+          "1": 413
+        },
+        {
+          "0": 2228,
+          "1": 434
+        },
+        {
+          "0": 2239,
+          "1": 433
+        },
+        {
+          "0": 2238,
+          "1": 413
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 2274,
+          "1": 822
+        },
+        {
+          "0": 2274,
+          "1": 846
+        },
+        {
+          "0": 2374,
+          "1": 848
+        },
+        {
+          "0": 2375,
+          "1": 829
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 2322,
+          "1": 849
+        },
+        {
+          "0": 2322,
+          "1": 867
+        },
+        {
+          "0": 2371,
+          "1": 871
+        },
+        {
+          "0": 2374,
+          "1": 851
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 2263,
+          "1": 850
+        },
+        {
+          "0": 2259,
+          "1": 878
+        },
+        {
+          "0": 2277,
+          "1": 879
+        },
+        {
+          "0": 2280,
+          "1": 852
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 820,
+          "1": 1675
+        },
+        {
+          "0": 815,
+          "1": 1705
+        },
+        {
+          "0": 915,
+          "1": 1708
+        },
+        {
+          "0": 920,
+          "1": 1684
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 867,
+          "1": 1709
+        },
+        {
+          "0": 864,
+          "1": 1731
+        },
+        {
+          "0": 910,
+          "1": 1734
+        },
+        {
+          "0": 915,
+          "1": 1711
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 812,
+          "1": 1710
+        },
+        {
+          "0": 806,
+          "1": 1741
+        },
+        {
+          "0": 842,
+          "1": 1744
+        },
+        {
+          "0": 846,
+          "1": 1712
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 1211,
+          "1": 1665
+        },
+        {
+          "0": 1210,
+          "1": 1694
+        },
+        {
+          "0": 1276,
+          "1": 1698
+        },
+        {
+          "0": 1282,
+          "1": 1670
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 1226,
+          "1": 1698
+        },
+        {
+          "0": 1223,
+          "1": 1718
+        },
+        {
+          "0": 1275,
+          "1": 1726
+        },
+        {
+          "0": 1278,
+          "1": 1700
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 1167,
+          "1": 1695
+        },
+        {
+          "0": 1165,
+          "1": 1727
+        },
+        {
+          "0": 1204,
+          "1": 1732
+        },
+        {
+          "0": 1206,
+          "1": 1695
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 1171,
+          "1": 1756
+        },
+        {
+          "0": 1173,
+          "1": 1783
+        },
+        {
+          "0": 1255,
+          "1": 1780
+        },
+        {
+          "0": 1252,
+          "1": 1751
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 1199,
+          "1": 1784
+        },
+        {
+          "0": 1201,
+          "1": 1809
+        },
+        {
+          "0": 1258,
+          "1": 1811
+        },
+        {
+          "0": 1254,
+          "1": 1782
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 1140,
+          "1": 1788
+        },
+        {
+          "0": 1142,
+          "1": 1827
+        },
+        {
+          "0": 1180,
+          "1": 1824
+        },
+        {
+          "0": 1177,
+          "1": 1788
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 1521,
+          "1": 1684
+        },
+        {
+          "0": 1523,
+          "1": 1714
+        },
+        {
+          "0": 1636,
+          "1": 1702
+        },
+        {
+          "0": 1632,
+          "1": 1672
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 1582,
+          "1": 1710
+        },
+        {
+          "0": 1587,
+          "1": 1736
+        },
+        {
+          "0": 1641,
+          "1": 1728
+        },
+        {
+          "0": 1638,
+          "1": 1702
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 1520,
+          "1": 1722
+        },
+        {
+          "0": 1523,
+          "1": 1755
+        },
+        {
+          "0": 1575,
+          "1": 1750
+        },
+        {
+          "0": 1572,
+          "1": 1714
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 1483,
+          "1": 1586
+        },
+        {
+          "0": 1485,
+          "1": 1621
+        },
+        {
+          "0": 1640,
+          "1": 1627
+        },
+        {
+          "0": 1638,
+          "1": 1586
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Handwritte_SKU",
+      "line_color": "#d91616",
+      "fill_color": "#d91616",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "drona_jsons"
+    },
+    {
+      "points": [
+        {
+          "0": 1480,
+          "1": 1578
+        },
+        {
+          "0": 1480,
+          "1": 1625
+        },
+        {
+          "0": 1648,
+          "1": 1631
+        },
+        {
+          "0": 1643,
+          "1": 1582
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Handwritten",
+      "line_color": "#7304AF",
+      "fill_color": "#7304AF"
+    },
+    {
+      "points": [
+        {
+          "0": 2008,
+          "1": 1679
+        },
+        {
+          "0": 2007,
+          "1": 1700
+        },
+        {
+          "0": 2089,
+          "1": 1706
+        },
+        {
+          "0": 2089,
+          "1": 1677
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 2029,
+          "1": 1704
+        },
+        {
+          "0": 2026,
+          "1": 1733
+        },
+        {
+          "0": 2085,
+          "1": 1734
+        },
+        {
+          "0": 2086,
+          "1": 1707
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 1963,
+          "1": 1706
+        },
+        {
+          "0": 1962,
+          "1": 1744
+        },
+        {
+          "0": 1987,
+          "1": 1745
+        },
+        {
+          "0": 1989,
+          "1": 1706
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 665,
+          "1": 2163
+        },
+        {
+          "0": 665,
+          "1": 2190
+        },
+        {
+          "0": 740,
+          "1": 2189
+        },
+        {
+          "0": 740,
+          "1": 2162
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 690,
+          "1": 2195
+        },
+        {
+          "0": 690,
+          "1": 2218
+        },
+        {
+          "0": 739,
+          "1": 2218
+        },
+        {
+          "0": 738,
+          "1": 2192
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 632,
+          "1": 2200
+        },
+        {
+          "0": 630,
+          "1": 2232
+        },
+        {
+          "0": 650,
+          "1": 2232
+        },
+        {
+          "0": 650,
+          "1": 2196
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 665,
+          "1": 2326
+        },
+        {
+          "0": 661,
+          "1": 2348
+        },
+        {
+          "0": 729,
+          "1": 2356
+        },
+        {
+          "0": 733,
+          "1": 2332
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 682,
+          "1": 2353
+        },
+        {
+          "0": 682,
+          "1": 2378
+        },
+        {
+          "0": 724,
+          "1": 2386
+        },
+        {
+          "0": 727,
+          "1": 2359
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 625,
+          "1": 2354
+        },
+        {
+          "0": 616,
+          "1": 2386
+        },
+        {
+          "0": 652,
+          "1": 2390
+        },
+        {
+          "0": 661,
+          "1": 2358
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 782,
+          "1": 2361
+        },
+        {
+          "0": 781,
+          "1": 2384
+        },
+        {
+          "0": 852,
+          "1": 2385
+        },
+        {
+          "0": 854,
+          "1": 2359
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 797,
+          "1": 2386
+        },
+        {
+          "0": 797,
+          "1": 2416
+        },
+        {
+          "0": 850,
+          "1": 2416
+        },
+        {
+          "0": 852,
+          "1": 2385
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 744,
+          "1": 2391
+        },
+        {
+          "0": 739,
+          "1": 2428
+        },
+        {
+          "0": 758,
+          "1": 2428
+        },
+        {
+          "0": 762,
+          "1": 2391
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 927,
+          "1": 2334
+        },
+        {
+          "0": 927,
+          "1": 2358
+        },
+        {
+          "0": 1002,
+          "1": 2363
+        },
+        {
+          "0": 1006,
+          "1": 2337
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 950,
+          "1": 2361
+        },
+        {
+          "0": 949,
+          "1": 2389
+        },
+        {
+          "0": 997,
+          "1": 2390
+        },
+        {
+          "0": 1000,
+          "1": 2365
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 891,
+          "1": 2365
+        },
+        {
+          "0": 887,
+          "1": 2399
+        },
+        {
+          "0": 908,
+          "1": 2400
+        },
+        {
+          "0": 912,
+          "1": 2364
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 1111,
+          "1": 2159
+        },
+        {
+          "0": 1111,
+          "1": 2183
+        },
+        {
+          "0": 1187,
+          "1": 2183
+        },
+        {
+          "0": 1189,
+          "1": 2155
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 1134,
+          "1": 2187
+        },
+        {
+          "0": 1134,
+          "1": 2213
+        },
+        {
+          "0": 1186,
+          "1": 2213
+        },
+        {
+          "0": 1185,
+          "1": 2185
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 1074,
+          "1": 2191
+        },
+        {
+          "0": 1072,
+          "1": 2228
+        },
+        {
+          "0": 1094,
+          "1": 2228
+        },
+        {
+          "0": 1096,
+          "1": 2184
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 1083,
+          "1": 2341
+        },
+        {
+          "0": 1079,
+          "1": 2366
+        },
+        {
+          "0": 1160,
+          "1": 2373
+        },
+        {
+          "0": 1163,
+          "1": 2347
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 1104,
+          "1": 2371
+        },
+        {
+          "0": 1101,
+          "1": 2398
+        },
+        {
+          "0": 1156,
+          "1": 2402
+        },
+        {
+          "0": 1157,
+          "1": 2375
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 1046,
+          "1": 2371
+        },
+        {
+          "0": 1043,
+          "1": 2409
+        },
+        {
+          "0": 1081,
+          "1": 2412
+        },
+        {
+          "0": 1082,
+          "1": 2370
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 1653,
+          "1": 2270
+        },
+        {
+          "0": 1651,
+          "1": 2294
+        },
+        {
+          "0": 1734,
+          "1": 2296
+        },
+        {
+          "0": 1735,
+          "1": 2267
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 1675,
+          "1": 2295
+        },
+        {
+          "0": 1673,
+          "1": 2322
+        },
+        {
+          "0": 1731,
+          "1": 2324
+        },
+        {
+          "0": 1731,
+          "1": 2296
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 1615,
+          "1": 2297
+        },
+        {
+          "0": 1612,
+          "1": 2333
+        },
+        {
+          "0": 1638,
+          "1": 2334
+        },
+        {
+          "0": 1638,
+          "1": 2298
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 2013,
+          "1": 2388
+        },
+        {
+          "0": 2011,
+          "1": 2413
+        },
+        {
+          "0": 2103,
+          "1": 2415
+        },
+        {
+          "0": 2101,
+          "1": 2390
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 2038,
+          "1": 2416
+        },
+        {
+          "0": 2037,
+          "1": 2443
+        },
+        {
+          "0": 2101,
+          "1": 2446
+        },
+        {
+          "0": 2099,
+          "1": 2418
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 1971,
+          "1": 2417
+        },
+        {
+          "0": 1968,
+          "1": 2456
+        },
+        {
+          "0": 1990,
+          "1": 2457
+        },
+        {
+          "0": 1993,
+          "1": 2417
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 2315,
+          "1": 2412
+        },
+        {
+          "0": 2314,
+          "1": 2437
+        },
+        {
+          "0": 2407,
+          "1": 2438
+        },
+        {
+          "0": 2406,
+          "1": 2410
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 2342,
+          "1": 2439
+        },
+        {
+          "0": 2341,
+          "1": 2469
+        },
+        {
+          "0": 2405,
+          "1": 2469
+        },
+        {
+          "0": 2405,
+          "1": 2441
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 2275,
+          "1": 2442
+        },
+        {
+          "0": 2274,
+          "1": 2483
+        },
+        {
+          "0": 2295,
+          "1": 2483
+        },
+        {
+          "0": 2296,
+          "1": 2443
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 2582,
+          "1": 2223
+        },
+        {
+          "0": 2579,
+          "1": 2250
+        },
+        {
+          "0": 2674,
+          "1": 2251
+        },
+        {
+          "0": 2672,
+          "1": 2223
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 2617,
+          "1": 2252
+        },
+        {
+          "0": 2617,
+          "1": 2283
+        },
+        {
+          "0": 2677,
+          "1": 2281
+        },
+        {
+          "0": 2674,
+          "1": 2253
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 2545,
+          "1": 2253
+        },
+        {
+          "0": 2543,
+          "1": 2295
+        },
+        {
+          "0": 2569,
+          "1": 2296
+        },
+        {
+          "0": 2569,
+          "1": 2250
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 2585,
+          "1": 2413
+        },
+        {
+          "0": 2584,
+          "1": 2436
+        },
+        {
+          "0": 2673,
+          "1": 2439
+        },
+        {
+          "0": 2673,
+          "1": 2411
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 2611,
+          "1": 2441
+        },
+        {
+          "0": 2610,
+          "1": 2470
+        },
+        {
+          "0": 2675,
+          "1": 2471
+        },
+        {
+          "0": 2672,
+          "1": 2441
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 2543,
+          "1": 2441
+        },
+        {
+          "0": 2541,
+          "1": 2483
+        },
+        {
+          "0": 2565,
+          "1": 2483
+        },
+        {
+          "0": 2566,
+          "1": 2442
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 3386,
+          "1": 2565
+        },
+        {
+          "0": 3387,
+          "1": 2592
+        },
+        {
+          "0": 3476,
+          "1": 2591
+        },
+        {
+          "0": 3474,
+          "1": 2560
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 3411,
+          "1": 2594
+        },
+        {
+          "0": 3412,
+          "1": 2625
+        },
+        {
+          "0": 3477,
+          "1": 2624
+        },
+        {
+          "0": 3475,
+          "1": 2594
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 3336,
+          "1": 2593
+        },
+        {
+          "0": 3340,
+          "1": 2638
+        },
+        {
+          "0": 3362,
+          "1": 2636
+        },
+        {
+          "0": 3363,
+          "1": 2593
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 3533,
+          "1": 2567
+        },
+        {
+          "0": 3534,
+          "1": 2592
+        },
+        {
+          "0": 3625,
+          "1": 2592
+        },
+        {
+          "0": 3620,
+          "1": 2567
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 3564,
+          "1": 2594
+        },
+        {
+          "0": 3566,
+          "1": 2623
+        },
+        {
+          "0": 3630,
+          "1": 2622
+        },
+        {
+          "0": 3624,
+          "1": 2593
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 3487,
+          "1": 2596
+        },
+        {
+          "0": 3491,
+          "1": 2640
+        },
+        {
+          "0": 3519,
+          "1": 2637
+        },
+        {
+          "0": 3518,
+          "1": 2598
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 3381,
+          "1": 2669
+        },
+        {
+          "0": 3381,
+          "1": 2693
+        },
+        {
+          "0": 3479,
+          "1": 2695
+        },
+        {
+          "0": 3479,
+          "1": 2668
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 3410,
+          "1": 2695
+        },
+        {
+          "0": 3410,
+          "1": 2729
+        },
+        {
+          "0": 3480,
+          "1": 2728
+        },
+        {
+          "0": 3478,
+          "1": 2697
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 3337,
+          "1": 2693
+        },
+        {
+          "0": 3335,
+          "1": 2737
+        },
+        {
+          "0": 3358,
+          "1": 2738
+        },
+        {
+          "0": 3359,
+          "1": 2696
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 3531,
+          "1": 2660
+        },
+        {
+          "0": 3533,
+          "1": 2690
+        },
+        {
+          "0": 3629,
+          "1": 2681
+        },
+        {
+          "0": 3627,
+          "1": 2653
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 3560,
+          "1": 2690
+        },
+        {
+          "0": 3564,
+          "1": 2717
+        },
+        {
+          "0": 3632,
+          "1": 2718
+        },
+        {
+          "0": 3628,
+          "1": 2684
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 3488,
+          "1": 2695
+        },
+        {
+          "0": 3488,
+          "1": 2734
+        },
+        {
+          "0": 3512,
+          "1": 2732
+        },
+        {
+          "0": 3513,
+          "1": 2694
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 3377,
+          "1": 2750
+        },
+        {
+          "0": 3379,
+          "1": 2778
+        },
+        {
+          "0": 3475,
+          "1": 2778
+        },
+        {
+          "0": 3475,
+          "1": 2752
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 3410,
+          "1": 2781
+        },
+        {
+          "0": 3411,
+          "1": 2813
+        },
+        {
+          "0": 3477,
+          "1": 2814
+        },
+        {
+          "0": 3475,
+          "1": 2781
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 3337,
+          "1": 2784
+        },
+        {
+          "0": 3338,
+          "1": 2828
+        },
+        {
+          "0": 3359,
+          "1": 2827
+        },
+        {
+          "0": 3358,
+          "1": 2781
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 3534,
+          "1": 2750
+        },
+        {
+          "0": 3538,
+          "1": 2779
+        },
+        {
+          "0": 3631,
+          "1": 2774
+        },
+        {
+          "0": 3629,
+          "1": 2744
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 3563,
+          "1": 2781
+        },
+        {
+          "0": 3565,
+          "1": 2816
+        },
+        {
+          "0": 3634,
+          "1": 2810
+        },
+        {
+          "0": 3631,
+          "1": 2777
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 3494,
+          "1": 2785
+        },
+        {
+          "0": 3497,
+          "1": 2829
+        },
+        {
+          "0": 3543,
+          "1": 2828
+        },
+        {
+          "0": 3537,
+          "1": 2783
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 3385,
+          "1": 2846
+        },
+        {
+          "0": 3385,
+          "1": 2877
+        },
+        {
+          "0": 3481,
+          "1": 2874
+        },
+        {
+          "0": 3475,
+          "1": 2843
+        },
+        {
+          "0": 3387,
+          "1": 2846
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 3413,
+          "1": 2879
+        },
+        {
+          "0": 3415,
+          "1": 2908
+        },
+        {
+          "0": 3481,
+          "1": 2910
+        },
+        {
+          "0": 3478,
+          "1": 2876
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 3339,
+          "1": 2881
+        },
+        {
+          "0": 3339,
+          "1": 2924
+        },
+        {
+          "0": 3367,
+          "1": 2923
+        },
+        {
+          "0": 3367,
+          "1": 2878
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 3536,
+          "1": 2850
+        },
+        {
+          "0": 3538,
+          "1": 2878
+        },
+        {
+          "0": 3635,
+          "1": 2878
+        },
+        {
+          "0": 3634,
+          "1": 2849
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 3563,
+          "1": 2879
+        },
+        {
+          "0": 3566,
+          "1": 2916
+        },
+        {
+          "0": 3635,
+          "1": 2915
+        },
+        {
+          "0": 3635,
+          "1": 2881
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 3493,
+          "1": 2886
+        },
+        {
+          "0": 3494,
+          "1": 2925
+        },
+        {
+          "0": 3545,
+          "1": 2925
+        },
+        {
+          "0": 3544,
+          "1": 2880
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 3345,
+          "1": 2939
+        },
+        {
+          "0": 3349,
+          "1": 2976
+        },
+        {
+          "0": 3486,
+          "1": 2970
+        },
+        {
+          "0": 3480,
+          "1": 2937
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 3416,
+          "1": 2976
+        },
+        {
+          "0": 3418,
+          "1": 3010
+        },
+        {
+          "0": 3487,
+          "1": 3008
+        },
+        {
+          "0": 3483,
+          "1": 2973
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 3343,
+          "1": 2982
+        },
+        {
+          "0": 3348,
+          "1": 3025
+        },
+        {
+          "0": 3374,
+          "1": 3024
+        },
+        {
+          "0": 3369,
+          "1": 2980
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 3540,
+          "1": 2944
+        },
+        {
+          "0": 3542,
+          "1": 2976
+        },
+        {
+          "0": 3638,
+          "1": 2974
+        },
+        {
+          "0": 3635,
+          "1": 2942
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 3570,
+          "1": 2976
+        },
+        {
+          "0": 3638,
+          "1": 2977
+        },
+        {
+          "0": 3640,
+          "1": 3007
+        },
+        {
+          "0": 3575,
+          "1": 3009
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 3495,
+          "1": 2983
+        },
+        {
+          "0": 3497,
+          "1": 3027
+        },
+        {
+          "0": 3528,
+          "1": 3026
+        },
+        {
+          "0": 3523,
+          "1": 2979
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 3000,
+          "1": 2938
+        },
+        {
+          "0": 2997,
+          "1": 2966
+        },
+        {
+          "0": 3093,
+          "1": 2983
+        },
+        {
+          "0": 3096,
+          "1": 2951
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 3026,
+          "1": 2974
+        },
+        {
+          "0": 3022,
+          "1": 3005
+        },
+        {
+          "0": 3087,
+          "1": 3017
+        },
+        {
+          "0": 3089,
+          "1": 2984
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 2956,
+          "1": 2968
+        },
+        {
+          "0": 2952,
+          "1": 3008
+        },
+        {
+          "0": 2968,
+          "1": 3011
+        },
+        {
+          "0": 2973,
+          "1": 2966
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 2936,
+          "1": 3443
+        },
+        {
+          "0": 2936,
+          "1": 3473
+        },
+        {
+          "0": 3033,
+          "1": 3477
+        },
+        {
+          "0": 3033,
+          "1": 3443
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 2967,
+          "1": 3477
+        },
+        {
+          "0": 2963,
+          "1": 3508
+        },
+        {
+          "0": 3031,
+          "1": 3511
+        },
+        {
+          "0": 3030,
+          "1": 3479
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 2896,
+          "1": 3474
+        },
+        {
+          "0": 2898,
+          "1": 3516
+        },
+        {
+          "0": 2910,
+          "1": 3517
+        },
+        {
+          "0": 2910,
+          "1": 3474
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 4138,
+          "1": 3574
+        },
+        {
+          "0": 4140,
+          "1": 3603
+        },
+        {
+          "0": 4233,
+          "1": 3603
+        },
+        {
+          "0": 4233,
+          "1": 3573
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 4168,
+          "1": 3605
+        },
+        {
+          "0": 4170,
+          "1": 3638
+        },
+        {
+          "0": 4233,
+          "1": 3639
+        },
+        {
+          "0": 4231,
+          "1": 3605
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 4099,
+          "1": 3611
+        },
+        {
+          "0": 4101,
+          "1": 3651
+        },
+        {
+          "0": 4121,
+          "1": 3651
+        },
+        {
+          "0": 4120,
+          "1": 3608
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 4417,
+          "1": 3656
+        },
+        {
+          "0": 4422,
+          "1": 3691
+        },
+        {
+          "0": 4521,
+          "1": 3696
+        },
+        {
+          "0": 4515,
+          "1": 3660
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 4452,
+          "1": 3695
+        },
+        {
+          "0": 4457,
+          "1": 3730
+        },
+        {
+          "0": 4529,
+          "1": 3733
+        },
+        {
+          "0": 4521,
+          "1": 3697
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 4379,
+          "1": 3690
+        },
+        {
+          "0": 4390,
+          "1": 3741
+        },
+        {
+          "0": 4438,
+          "1": 3742
+        },
+        {
+          "0": 4424,
+          "1": 3693
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 3969,
+          "1": 3718
+        },
+        {
+          "0": 3970,
+          "1": 3746
+        },
+        {
+          "0": 4064,
+          "1": 3743
+        },
+        {
+          "0": 4065,
+          "1": 3718
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 4000,
+          "1": 3747
+        },
+        {
+          "0": 3999,
+          "1": 3783
+        },
+        {
+          "0": 4063,
+          "1": 3780
+        },
+        {
+          "0": 4062,
+          "1": 3745
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 3926,
+          "1": 3755
+        },
+        {
+          "0": 3927,
+          "1": 3799
+        },
+        {
+          "0": 3955,
+          "1": 3797
+        },
+        {
+          "0": 3955,
+          "1": 3745
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 4604,
+          "1": 3669
+        },
+        {
+          "0": 4611,
+          "1": 3699
+        },
+        {
+          "0": 4676,
+          "1": 3681
+        },
+        {
+          "0": 4668,
+          "1": 3649
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 4626,
+          "1": 3698
+        },
+        {
+          "0": 4633,
+          "1": 3725
+        },
+        {
+          "0": 4683,
+          "1": 3717
+        },
+        {
+          "0": 4674,
+          "1": 3684
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 4574,
+          "1": 3712
+        },
+        {
+          "0": 4577,
+          "1": 3750
+        },
+        {
+          "0": 4614,
+          "1": 3743
+        },
+        {
+          "0": 4607,
+          "1": 3705
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 3842,
+          "1": 3554
+        },
+        {
+          "0": 3833,
+          "1": 3614
+        },
+        {
+          "0": 4091,
+          "1": 3645
+        },
+        {
+          "0": 4086,
+          "1": 3575
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Handwritte_SKU",
+      "line_color": "#d91616",
+      "fill_color": "#d91616",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "drona_jsons"
+    },
+    {
+      "points": [
+        {
+          "0": 3835,
+          "1": 3547
+        },
+        {
+          "0": 3824,
+          "1": 3619
+        },
+        {
+          "0": 4096,
+          "1": 3649
+        },
+        {
+          "0": 4088,
+          "1": 3568
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Handwritten",
+      "line_color": "#7304AF",
+      "fill_color": "#7304AF"
+    }
+  ],
+  "words": [],
+  "labelDoneBy": [
+    {
+      "roleId": 4,
+      "role": "Operator",
+      "name": "Sandhiya"
+    }
+  ],
+  "original_words": [],
+  "lineColor": [],
+  "fillColor": [],
+  "jobid": [
+    "4f9bb828-019d-4e7b-b3a8-491705a7b58c"
+  ],
+  "imagePath": "https://blklabelingeus2sad01.blob.core.windows.net/laptoolabelling/HD/Singleline/Golden_Dataset_overhead_eval/1770341131504_0244_1085_11-016.jpg?sv=2023-01-03&si=bkus2sad01&sr=c&sig=PcZsFBQa8M2Zme38gJVuJ4fr8setZr37ICZquBUHGpw%3D",
+  "fileName": "HD-Singleline/Golden_Dataset_overhead_eval/1770341131504_0244_1085_11-016.jpg",
+  "imageData": null,
+  "imageHeight": 4648,
+  "imageWidth": 5312,
+  "rejectionerror": []
+}

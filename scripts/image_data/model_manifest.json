@@ -1,0 +1,22 @@
+[
+  {
+    "path": "singleline-pipeline-seg-models_segmentation.pt",
+    "size": 454564422,
+    "zip_member": "HomeDepotCV/singleline-pipeline-seg-models_segmentation.pt"
+  },
+  {
+    "path": "singleline-pipeline-det-models-1.2_best.pt",
+    "size": 142379643,
+    "zip_member": "HomeDepotCV/singleline-pipeline-det-models-1.2_best.pt"
+  },
+  {
+    "path": "cv-singleline-detector-yolo7_det_dep_2/best.pt",
+    "size": 142379643,
+    "zip_member": "HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt"
+  },
+  {
+    "path": "cv-singleline-detector-yolov7-seg/segmentation.pt",
+    "size": 454564422,
+    "zip_member": "HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt"
+  }
+]

@@ -1,0 +1,55 @@
+name: Change an Environment Variable
+on: 
+  workflow_dispatch:
+    inputs:
+      key:
+        description: 'The key to deploy'
+        required: true
+        type: string
+      value:
+        description: 'The value to deploy'
+        required: true
+        type: string
+      environment:
+        type: choice
+        description: 'The environment to deploy to'
+        required: true
+        options: ['NP', 'PR']
+      cluster:
+        type: string
+        description: 'The cluster to deploy to'
+        required: true
+        default: 'sim-np-us-east1-gke-1'
+      location:
+        type: string
+        description: 'The location to deploy to'
+        required: true
+        default: 'us-east1'
+      CHG_REQUEST_NUMBER:
+        type: string
+        description: 'Change request number'
+        required: false
+
+env:
+  SNOWQL_CLIENT_ID: ${{ inputs.environment=='PR' && secrets.SNOWQL_CLIENT_ID_PR || '' }}
+  SNOWQL_CLIENT_SECRET: ${{ inputs.environment=='PR' && secrets.SNOWQL_CLIENT_SECRET_PR || '' }}
+
+jobs:
+  deploy:
+    name: Patch ConfigMap
+    uses: one-thd/cv-tools/.github/workflows/deploy-config-map-gke.yaml@main
+    with:
+      projectId: ${{ inputs.environment=='PR' && 'pr-store-sim' || 'np-store-sim' }}
+      change_request_number: ${{ inputs.CHG_REQUEST_NUMBER }}
+      config_map_name: cv-singleline-processor
+      config_map_key: ${{ inputs.key }}
+      config_map_value: ${{ inputs.value }}
+      cluster: ${{ inputs.cluster }}
+      location: ${{ inputs.location }}
+      namespace: cv
+      workload_identity_provider: projects/662388291348/locations/global/workloadIdentityPools/computer-vision-wli-pool/providers/computer-vision-wli-prvdr
+      service_account: computer-vision-wli-sa@np-store-sim.iam.gserviceaccount.com
+    secrets:
+      snowql-client-secret: ${{ github.env.SNOWQL_CLIENT_SECRET }}
+      snowql-client-id: ${{ github.env.SNOWQL_CLIENT_ID }}
+      

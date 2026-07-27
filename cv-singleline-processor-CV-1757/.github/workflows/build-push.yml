@@ -1,0 +1,41 @@
+name: Build Python cv-singleline-processor
+
+on:
+  pull_request:
+    branches: [ development, master ]
+
+permissions:
+  contents: 'read'
+  id-token: 'write'
+  issues: 'write'
+  pull-requests: 'write'
+
+jobs:
+  run-python-workflow:
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+      cancel-in-progress: true
+    name: Run Python deployment workflow
+    uses: one-thd/cv-tools/.github/workflows/python-nodejs-build-push.yaml@main
+    secrets:
+      ARTIFACTORY_USERNAME: '${{ secrets.ARTIFACTORY_USERNAME }}'
+      ARTIFACTORY_PASSWORD: '${{ secrets.ARTIFACTORY_PASSWORD  }}'
+      ARTIFACTORY_TOKEN: '${{ secrets.ARTIFACTORY_TOKEN }}'
+      SONAR_TOKEN: '${{ secrets.SONAR_TOKEN }}'
+      SHIFTLEFT_ACCESS_TOKEN: '${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}'
+      SHIFTLEFT_ORG_ID: '${{ secrets.SHIFTLEFT_ORG_ID }}'
+      DISTRIBUTOR_TOKEN: '${{ secrets.DISTRIBUTOR_TOKEN }}'
+      WIZ_ID: '${{ secrets.WIZ_ID }}'
+      WIZ_SECRET: '${{ secrets.WIZ_SECRET }}'
+    with:
+      PROJECT_ID: 'np-store-sim'
+      CLUSTER_NAME: 'sim-np-us-east1-gke-1'
+      APP_NAME: 'cv-singleline-processor'
+      SHIFTLEFT_TEAM: 'THD-SSS-SRE'
+      TEAM_NAME: 'cv'
+      WLIF_PROVIDER: 'projects/662388291348/locations/global/workloadIdentityPools/computer-vision-wli-pool/providers/computer-vision-wli-prvdr'
+      WLIF_SA: 'computer-vision-wli-sa@np-store-sim.iam.gserviceaccount.com'
+      GCP_IMAGE: 'us-docker.pkg.dev/np-store-sim/test/cv-singleline-processor'
+      REGISTRY_NAME: 'test'
+      LANGUAGE: 'python'
+      PYTHON_VERSION: '3.11'

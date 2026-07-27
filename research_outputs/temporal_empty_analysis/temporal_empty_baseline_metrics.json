@@ -1,0 +1,10 @@
+{
+  "slot_precision": 0.2051,
+  "slot_recall": 0.2105,
+  "slot_f1": 0.2078,
+  "empty_count_mae": 1.8,
+  "chronic_slot_count": 6,
+  "tp": 8,
+  "fp": 31,
+  "fn": 30
+}

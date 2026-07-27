@@ -1,0 +1,134 @@
+{
+  "version": null,
+  "flags": {},
+  "shapes": [
+    {
+      "points": [
+        {
+          "0": 4224,
+          "1": 326
+        },
+        {
+          "0": 4231,
+          "1": 480
+        },
+        {
+          "0": 4257,
+          "1": 658
+        },
+        {
+          "0": 4700,
+          "1": 693
+        },
+        {
+          "0": 4632,
+          "1": 398
+        }
+      ],
+      "labelModifiedBy": "Operator/pavithra.subramani@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 4261,
+          "1": 562
+        },
+        {
+          "0": 4271,
+          "1": 635
+        },
+        {
+          "0": 4678,
+          "1": 672
+        },
+        {
+          "0": 4665,
+          "1": 601
+        }
+      ],
+      "labelModifiedBy": "Operator/pavithra.subramani@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7"
+    },
+    {
+      "points": [
+        {
+          "0": 2399,
+          "1": 1633
+        },
+        {
+          "0": 2382,
+          "1": 1733
+        },
+        {
+          "0": 2741,
+          "1": 1736
+        },
+        {
+          "0": 2744,
+          "1": 1642
+        }
+      ],
+      "labelModifiedBy": "Operator/pavithra.subramani@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7"
+    },
+    {
+      "points": [
+        {
+          "0": 2197,
+          "1": 1510
+        },
+        {
+          "0": 2182,
+          "1": 1544
+        },
+        {
+          "0": 2176,
+          "1": 1752
+        },
+        {
+          "0": 2775,
+          "1": 1763
+        },
+        {
+          "0": 2770,
+          "1": 1539
+        }
+      ],
+      "labelModifiedBy": "Operator/pavithra.subramani@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    }
+  ],
+  "words": [],
+  "labelDoneBy": [
+    {
+      "roleId": 4,
+      "role": "Operator",
+      "name": "Priyadharshini"
+    }
+  ],
+  "original_words": [],
+  "lineColor": [],
+  "fillColor": [],
+  "jobid": [
+    "f1049499-61bb-4e13-9757-e6ab86eb8635"
+  ],
+  "imagePath": "https://blklabelingeus2sad01.blob.core.windows.net/laptoolabelling/HD/Singleline/Golden_Dataset_overhead_eval/1770339044281_0244_1309_07-004.jpg?sv=2023-01-03&si=bkus2sad01&sr=c&sig=PcZsFBQa8M2Zme38gJVuJ4fr8setZr37ICZquBUHGpw%3D",
+  "fileName": "HD-Singleline/Golden_Dataset_overhead_eval/1770339044281_0244_1309_07-004.jpg",
+  "imageData": null,
+  "imageHeight": 4648,
+  "imageWidth": 5312,
+  "rejectionerror": []
+}

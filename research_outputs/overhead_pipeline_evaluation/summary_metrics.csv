@@ -1,0 +1,32 @@
+metric,value,denominator,notes
+images_evaluated,107,,
+sku_ground_truth_regions,1410,,
+od_ground_truth_regions,1445,,
+predictions,3165,,
+empty_prediction_images,0,107,
+duplicate_det_ids,0,3165,
+segmentation_found_rate,0.8619273301737757,3165,
+ocr_found_rate,0.30300157977883097,3165,
+valid_6_or_10_digit_sku_rate,0.30300157977883097,3165,
+duplicate_overlapping_predictions,0,3165,Same-class FP overlapping an already matched GT at the IoU threshold
+detection_precision_at_iou_0.5,0.39178515007898895,,
+detection_recall_at_iou_0.5,0.8581314878892734,,
+detection_f1_at_iou_0.5,0.5379609544468547,,
+od_raw_mean_matched_iou,0.8849670668206329,,
+od_raw_mean_gt_coverage,0.9390540154662848,,
+od_raw_full_gt_coverage_rate,0.1346774193548387,,
+od_buffered_mean_matched_iou,0.6031206346839756,,
+od_buffered_mean_gt_coverage,0.9958332527083841,,
+od_buffered_full_gt_coverage_rate,0.9459677419354838,,
+interim_end_to_end_ocr_exact_accuracy,0.7782426778242678,239,Preliminary until manual annotation is complete
+interim_ocr_accuracy_ci95_low,0.7214054149580228,239,
+interim_ocr_accuracy_ci95_high,0.8262766955205773,239,
+interim_conditional_ocr_exact_accuracy,0.9441624365482234,197,Among scorable GT regions with a valid OCR prediction
+scorable_any_track_center_coverage_rate,0.9665271966527197,239,Coverage before strict one-to-one assignment
+scorable_sku_track_match_rate,0.8619246861924686,239,
+scorable_buffered_full_coverage_rate,0.970873786407767,206,
+scorable_buffered_mean_gt_coverage,0.9970976823981591,206,
+raw_segmentation_mean_iou_proxy,0.6603604916028953,1197,Region proxy; only true mask IoU if GT polygons are segmentation masks
+raw_segmentation_mean_gt_coverage,0.8298534427753295,1197,
+post_segmentation_mean_iou_proxy,0.38439287840723985,1197,Region proxy; only true mask IoU if GT polygons are segmentation masks
+post_segmentation_mean_gt_coverage,0.9430259077598518,1197,

@@ -1,0 +1,47 @@
+# Secrets / local env
+.env
+.env.*
+*.pem
+.ssh_known_hosts_gpu
+
+# Virtual envs / caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+
+# Images (restore via scripts/download_images.py)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tif
+*.tiff
+*.webp
+*.heic
+
+# Model weights (restore via scripts/extract_models_from_zip.py)
+*.pt
+*.pth
+*.onnx
+*.ckpt
+*.safetensors
+
+# Large nested archives that primarily contain images/weights
+streamlit.zip
+Archive.zip
+**/HomeDepotCV 2.zip
+
+# Editor / local
+*.code-workspace
+.idea/
+.vscode/
+
+# W&B local run binaries
+**/wandb/run-*/
+*.wandb

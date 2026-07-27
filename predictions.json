@@ -1,0 +1,470 @@
+[
+    {
+        "det_id": 0,
+        "class_id": 1,
+        "class_name": "RDC",
+        "confidence": 0.8134765625,
+        "orig_bbox": {
+            "x1": 5000,
+            "y1": 3170,
+            "x2": 5166,
+            "y2": 3290,
+            "confidence": 0.8134765625,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "buffered_bbox": {
+            "x1": 4976,
+            "y1": 3152,
+            "x2": 5190,
+            "y2": 3308,
+            "confidence": 0.8134765625,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "clip_h": 156,
+        "clip_w": 214,
+        "pad_h": 193,
+        "pad_w": 368,
+        "pad_offset_x": 77,
+        "pad_offset_y": 18,
+        "strip_index": 0,
+        "strip_slot": 0,
+        "strip_bbox": {
+            "x1": 0,
+            "y1": 0,
+            "x2": 368,
+            "y2": 193,
+            "confidence": 0.8134765625,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "crop_strip_bbox": {
+            "x1": 77,
+            "y1": 18,
+            "x2": 291,
+            "y2": 174,
+            "confidence": 0.8134765625,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "seg_found": true,
+        "ocr_found": false,
+        "metadata": {
+            "strip_mask": "0_pred_mask.jpg"
+        },
+        "ocr_words": []
+    },
+    {
+        "det_id": 1,
+        "class_id": 1,
+        "class_name": "RDC",
+        "confidence": 0.79833984375,
+        "orig_bbox": {
+            "x1": 2392,
+            "y1": 1748,
+            "x2": 2649,
+            "y2": 1892,
+            "confidence": 0.79833984375,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "buffered_bbox": {
+            "x1": 2354,
+            "y1": 1727,
+            "x2": 2687,
+            "y2": 1913,
+            "confidence": 0.79833984375,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "clip_h": 186,
+        "clip_w": 333,
+        "pad_h": 193,
+        "pad_w": 368,
+        "pad_offset_x": 17,
+        "pad_offset_y": 3,
+        "strip_index": 0,
+        "strip_slot": 1,
+        "strip_bbox": {
+            "x1": 368,
+            "y1": 0,
+            "x2": 736,
+            "y2": 193,
+            "confidence": 0.79833984375,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "crop_strip_bbox": {
+            "x1": 385,
+            "y1": 3,
+            "x2": 718,
+            "y2": 189,
+            "confidence": 0.79833984375,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "seg_found": true,
+        "ocr_found": true,
+        "metadata": {
+            "strip_mask": "0_pred_mask.jpg"
+        },
+        "ocr_words": [
+            {
+                "text": "1002883543",
+                "raw_text": "1002883543",
+                "det_id": 1,
+                "class_id": 1,
+                "class_name": "RDC",
+                "source": "seg+google_ocr",
+                "strip_bbox": null,
+                "original_bbox": {
+                    "x1": 2409,
+                    "y1": 1818,
+                    "x2": 2636,
+                    "y2": 1870,
+                    "confidence": 1.0,
+                    "class_id": 0,
+                    "class_name": ""
+                },
+                "confidence": 1.0
+            }
+        ]
+    },
+    {
+        "det_id": 2,
+        "class_id": 1,
+        "class_name": "RDC",
+        "confidence": 0.7705078125,
+        "orig_bbox": {
+            "x1": 5029,
+            "y1": 3355,
+            "x2": 5195,
+            "y2": 3467,
+            "confidence": 0.7705078125,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "buffered_bbox": {
+            "x1": 5005,
+            "y1": 3339,
+            "x2": 5219,
+            "y2": 3483,
+            "confidence": 0.7705078125,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "clip_h": 144,
+        "clip_w": 214,
+        "pad_h": 193,
+        "pad_w": 368,
+        "pad_offset_x": 77,
+        "pad_offset_y": 24,
+        "strip_index": 0,
+        "strip_slot": 2,
+        "strip_bbox": {
+            "x1": 736,
+            "y1": 0,
+            "x2": 1104,
+            "y2": 193,
+            "confidence": 0.7705078125,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "crop_strip_bbox": {
+            "x1": 813,
+            "y1": 24,
+            "x2": 1027,
+            "y2": 168,
+            "confidence": 0.7705078125,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "seg_found": true,
+        "ocr_found": false,
+        "metadata": {
+            "strip_mask": "0_pred_mask.jpg"
+        },
+        "ocr_words": []
+    },
+    {
+        "det_id": 3,
+        "class_id": 1,
+        "class_name": "RDC",
+        "confidence": 0.75927734375,
+        "orig_bbox": {
+            "x1": 4992,
+            "y1": 3019,
+            "x2": 5158,
+            "y2": 3127,
+            "confidence": 0.75927734375,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "buffered_bbox": {
+            "x1": 4968,
+            "y1": 3003,
+            "x2": 5182,
+            "y2": 3143,
+            "confidence": 0.75927734375,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "clip_h": 140,
+        "clip_w": 214,
+        "pad_h": 193,
+        "pad_w": 368,
+        "pad_offset_x": 77,
+        "pad_offset_y": 26,
+        "strip_index": 0,
+        "strip_slot": 3,
+        "strip_bbox": {
+            "x1": 1104,
+            "y1": 0,
+            "x2": 1472,
+            "y2": 193,
+            "confidence": 0.75927734375,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "crop_strip_bbox": {
+            "x1": 1181,
+            "y1": 26,
+            "x2": 1395,
+            "y2": 166,
+            "confidence": 0.75927734375,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "seg_found": true,
+        "ocr_found": false,
+        "metadata": {
+            "strip_mask": "0_pred_mask.jpg"
+        },
+        "ocr_words": []
+    },
+    {
+        "det_id": 19,
+        "class_id": 1,
+        "class_name": "RDC",
+        "confidence": 0.4814453125,
+        "orig_bbox": {
+            "x1": 323,
+            "y1": 1911,
+            "x2": 607,
+            "y2": 2060,
+            "confidence": 0.4814453125,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "buffered_bbox": {
+            "x1": 281,
+            "y1": 1889,
+            "x2": 649,
+            "y2": 2082,
+            "confidence": 0.4814453125,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "clip_h": 193,
+        "clip_w": 368,
+        "pad_h": 193,
+        "pad_w": 368,
+        "pad_offset_x": 0,
+        "pad_offset_y": 0,
+        "strip_index": 0,
+        "strip_slot": 4,
+        "strip_bbox": {
+            "x1": 1472,
+            "y1": 0,
+            "x2": 1840,
+            "y2": 193,
+            "confidence": 0.4814453125,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "crop_strip_bbox": {
+            "x1": 1472,
+            "y1": 0,
+            "x2": 1840,
+            "y2": 193,
+            "confidence": 0.4814453125,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "seg_found": true,
+        "ocr_found": false,
+        "metadata": {
+            "strip_mask": "0_pred_mask.jpg"
+        },
+        "ocr_words": []
+    },
+    {
+        "det_id": 22,
+        "class_id": 3,
+        "class_name": "Handwritten",
+        "confidence": 0.334228515625,
+        "orig_bbox": {
+            "x1": 1215,
+            "y1": 2998,
+            "x2": 1624,
+            "y2": 3139,
+            "confidence": 0.334228515625,
+            "class_id": 3,
+            "class_name": "Handwritten"
+        },
+        "buffered_bbox": {
+            "x1": 1154,
+            "y1": 2977,
+            "x2": 1685,
+            "y2": 3160,
+            "confidence": 0.334228515625,
+            "class_id": 3,
+            "class_name": "Handwritten"
+        },
+        "clip_h": 183,
+        "clip_w": 531,
+        "pad_h": 183,
+        "pad_w": 531,
+        "pad_offset_x": 0,
+        "pad_offset_y": 0,
+        "strip_index": 1,
+        "strip_slot": 0,
+        "strip_bbox": {
+            "x1": 0,
+            "y1": 0,
+            "x2": 531,
+            "y2": 183,
+            "confidence": 0.334228515625,
+            "class_id": 3,
+            "class_name": "Handwritten"
+        },
+        "crop_strip_bbox": {
+            "x1": 0,
+            "y1": 0,
+            "x2": 531,
+            "y2": 183,
+            "confidence": 0.334228515625,
+            "class_id": 3,
+            "class_name": "Handwritten"
+        },
+        "seg_found": true,
+        "ocr_found": false,
+        "metadata": {
+            "strip_mask": "1_pred_mask.jpg"
+        },
+        "ocr_words": []
+    },
+    {
+        "det_id": 24,
+        "class_id": 5,
+        "class_name": "Other",
+        "confidence": 0.273193359375,
+        "orig_bbox": {
+            "x1": 2965,
+            "y1": 2838,
+            "x2": 3035,
+            "y2": 2875,
+            "confidence": 0.273193359375,
+            "class_id": 5,
+            "class_name": "Other"
+        },
+        "buffered_bbox": {
+            "x1": 2955,
+            "y1": 2833,
+            "x2": 3045,
+            "y2": 2880,
+            "confidence": 0.273193359375,
+            "class_id": 5,
+            "class_name": "Other"
+        },
+        "clip_h": 47,
+        "clip_w": 90,
+        "pad_h": 183,
+        "pad_w": 531,
+        "pad_offset_x": 220,
+        "pad_offset_y": 68,
+        "strip_index": 1,
+        "strip_slot": 1,
+        "strip_bbox": {
+            "x1": 531,
+            "y1": 0,
+            "x2": 1062,
+            "y2": 183,
+            "confidence": 0.273193359375,
+            "class_id": 5,
+            "class_name": "Other"
+        },
+        "crop_strip_bbox": {
+            "x1": 751,
+            "y1": 68,
+            "x2": 841,
+            "y2": 115,
+            "confidence": 0.273193359375,
+            "class_id": 5,
+            "class_name": "Other"
+        },
+        "seg_found": false,
+        "ocr_found": false,
+        "metadata": {
+            "strip_mask": "1_pred_mask.jpg"
+        },
+        "ocr_words": []
+    },
+    {
+        "det_id": 25,
+        "class_id": 2,
+        "class_name": "Printed_on_Box",
+        "confidence": 0.2724609375,
+        "orig_bbox": {
+            "x1": 318,
+            "y1": 1646,
+            "x2": 472,
+            "y2": 1731,
+            "confidence": 0.2724609375,
+            "class_id": 2,
+            "class_name": "Printed_on_Box"
+        },
+        "buffered_bbox": {
+            "x1": 295,
+            "y1": 1634,
+            "x2": 495,
+            "y2": 1743,
+            "confidence": 0.2724609375,
+            "class_id": 2,
+            "class_name": "Printed_on_Box"
+        },
+        "clip_h": 109,
+        "clip_w": 200,
+        "pad_h": 183,
+        "pad_w": 531,
+        "pad_offset_x": 165,
+        "pad_offset_y": 37,
+        "strip_index": 1,
+        "strip_slot": 2,
+        "strip_bbox": {
+            "x1": 1062,
+            "y1": 0,
+            "x2": 1593,
+            "y2": 183,
+            "confidence": 0.2724609375,
+            "class_id": 2,
+            "class_name": "Printed_on_Box"
+        },
+        "crop_strip_bbox": {
+            "x1": 1227,
+            "y1": 37,
+            "x2": 1427,
+            "y2": 146,
+            "confidence": 0.2724609375,
+            "class_id": 2,
+            "class_name": "Printed_on_Box"
+        },
+        "seg_found": true,
+        "ocr_found": false,
+        "metadata": {
+            "strip_mask": "1_pred_mask.jpg"
+        },
+        "ocr_words": []
+    }
+]

@@ -1,0 +1,4486 @@
+[
+    {
+        "det_id": 0,
+        "class_id": 1,
+        "class_name": "RDC",
+        "confidence": 0.759765625,
+        "orig_bbox": {
+            "x1": 5270,
+            "y1": 2344,
+            "x2": 5312,
+            "y2": 2427,
+            "confidence": 0.759765625,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "buffered_bbox": {
+            "x1": 5264,
+            "y1": 2332,
+            "x2": 5312,
+            "y2": 2439,
+            "confidence": 0.759765625,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "clip_h": 107,
+        "clip_w": 48,
+        "pad_h": 290,
+        "pad_w": 928,
+        "pad_offset_x": 440,
+        "pad_offset_y": 91,
+        "strip_index": 0,
+        "strip_slot": 0,
+        "strip_bbox": {
+            "x1": 0,
+            "y1": 0,
+            "x2": 928,
+            "y2": 290,
+            "confidence": 0.759765625,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "crop_strip_bbox": {
+            "x1": 440,
+            "y1": 91,
+            "x2": 488,
+            "y2": 198,
+            "confidence": 0.759765625,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "seg_found": false,
+        "ocr_found": false,
+        "metadata": {
+            "strip_mask": "0_pred_mask.jpg"
+        },
+        "segmentation": {
+            "found": false,
+            "crop_size": [
+                48,
+                107
+            ],
+            "white_pixels": 0,
+            "postprocessed_minAreaRect": {
+                "crop_local": {
+                    "polygons": [],
+                    "rotated_rects": []
+                },
+                "original_image": {
+                    "polygons": [],
+                    "rotated_rects": []
+                }
+            },
+            "raw_prediction": {
+                "crop_local": {
+                    "polygons": [],
+                    "rotated_rects": []
+                },
+                "original_image": {
+                    "polygons": [],
+                    "rotated_rects": []
+                }
+            }
+        },
+        "ocr_words": []
+    },
+    {
+        "det_id": 4,
+        "class_id": 1,
+        "class_name": "RDC",
+        "confidence": 0.587890625,
+        "orig_bbox": {
+            "x1": 383,
+            "y1": 371,
+            "x2": 496,
+            "y2": 427,
+            "confidence": 0.587890625,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "buffered_bbox": {
+            "x1": 367,
+            "y1": 363,
+            "x2": 512,
+            "y2": 435,
+            "confidence": 0.587890625,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "clip_h": 72,
+        "clip_w": 145,
+        "pad_h": 290,
+        "pad_w": 928,
+        "pad_offset_x": 391,
+        "pad_offset_y": 109,
+        "strip_index": 0,
+        "strip_slot": 1,
+        "strip_bbox": {
+            "x1": 928,
+            "y1": 0,
+            "x2": 1856,
+            "y2": 290,
+            "confidence": 0.587890625,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "crop_strip_bbox": {
+            "x1": 1319,
+            "y1": 109,
+            "x2": 1464,
+            "y2": 181,
+            "confidence": 0.587890625,
+            "class_id": 1,
+            "class_name": "RDC"
+        },
+        "seg_found": true,
+        "ocr_found": false,
+        "metadata": {
+            "strip_mask": "0_pred_mask.jpg"
+        },
+        "segmentation": {
+            "found": true,
+            "crop_size": [
+                145,
+                72
+            ],
+            "white_pixels": 5412,
+            "postprocessed_minAreaRect": {
+                "crop_local": {
+                    "polygons": [
+                        [
+                            [
+                                8,
+                                28
+                            ],
+                            [
+                                8,
+                                71
+                            ],
+                            [
+                                130,
+                                71
+                            ],
+                            [
+                                130,
+                                28
+                            ]
+                        ]
+                    ],
+                    "rotated_rects": [
+                        {
+                            "center": [
+                                68.99999237060547,
+                                49.499996185302734
+                            ],
+                            "size": [
+                                121.99998474121094,
+                                42.99999237060547
+                            ],
+                            "angle": -0.0,
+                            "box_points": [
+                                [
+                                    8,
+                                    70
+                                ],
+                                [
+                                    8,
+                                    28
+                                ],
+                                [
+                                    129,
+                                    28
+                                ],
+                                [
+                                    129,
+                                    70
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "original_image": {
+                    "polygons": [
+                        [
+                            [
+                                375,
+                                391
+                            ],
+                            [
+                                375,
+                                434
+                            ],
+                            [
+                                497,
+                                434
+                            ],
+                            [
+                                497,
+                                391
+                            ]
+                        ]
+                    ],
+                    "rotated_rects": [
+                        {
+                            "center": [
+                                435.99999237060547,
+                                412.49999618530273
+                            ],
+                            "size": [
+                                121.99998474121094,
+                                42.99999237060547
+                            ],
+                            "angle": -0.0,
+                            "box_points": [
+                                [
+                                    375,
+                                    433
+                                ],
+                                [
+                                    375,
+                                    391
+                                ],
+                                [
+                                    496,
+                                    391
+                                ],
+                                [
+                                    496,
+                                    433
+                                ]
+                            ]
+                        }
+                    ]
+                }
+            },
+            "raw_prediction": {
+                "crop_local": {
+                    "polygons": [
+                        [
+                            [
+                                35,
+                                36
+                            ],
+                            [
+                                34,
+                                37
+                            ],
+                            [
+                                33,
+                                37
+                            ],
+                            [
+                                33,
+                                38
+                            ],
+                            [
+                                31,
+                                40
+                            ],
+                            [
+                                31,
+                                41
+                            ],
+                            [
+                                29,
+                                43
+                            ],
+                            [
+                                28,
+                                43
+                            ],
+                            [
+                                26,
+                                45
+                            ],
+                            [
+                                25,
+                                45
+                            ],
+                            [
+                                25,
+                                46
+                            ],
+                            [
+                                24,
+                                47
+                            ],
+                            [
+                                24,
+                                55
+                            ],
+                            [
+                                27,
+                                58
+                            ],
+                            [
+                                28,
+                                58
+                            ],
+                            [
+                                32,
+                                62
+                            ],
+                            [
+                                32,
+                                63
+                            ],
+                            [
+                                34,
+                                65
+                            ],
+                            [
+                                35,
+                                65
+                            ],
+                            [
+                                36,
+                                66
+                            ],
+                            [
+                                103,
+                                66
+                            ],
+                            [
+                                104,
+                                65
+                            ],
+                            [
+                                105,
+                                65
+                            ],
+                            [
+                                107,
+                                63
+                            ],
+                            [
+                                107,
+                                62
+                            ],
+                            [
+                                111,
+                                58
+                            ],
+                            [
+                                112,
+                                58
+                            ],
+                            [
+                                115,
+                                55
+                            ],
+                            [
+                                115,
+                                47
+                            ],
+                            [
+                                111,
+                                43
+                            ],
+                            [
+                                110,
+                                43
+                            ],
+                            [
+                                107,
+                                40
+                            ],
+                            [
+                                107,
+                                39
+                            ],
+                            [
+                                104,
+                                36
+                            ]
+                        ]
+                    ],
+                    "rotated_rects": [
+                        {
+                            "center": [
+                                69.5,
+                                51.0
+                            ],
+                            "size": [
+                                30.0,
+                                91.0
+                            ],
+                            "angle": 90.0,
+                            "box_points": [
+                                [
+                                    24,
+                                    36
+                                ],
+                                [
+                                    115,
+                                    36
+                                ],
+                                [
+                                    115,
+                                    66
+                                ],
+                                [
+                                    24,
+                                    66
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "original_image": {
+                    "polygons": [
+                        [
+                            [
+                                402,
+                                399
+                            ],
+                            [
+                                401,
+                                400
+                            ],
+                            [
+                                400,
+                                400
+                            ],
+                            [
+                                400,
+                                401
+                            ],
+                            [
+                                398,
+                                403
+                            ],
+                            [
+                                398,
+                                404
+                            ],
+                            [
+                                396,
+                                406
+                            ],
+                            [
+                                395,
+                                406
+                            ],
+                            [
+                                393,
+                                408
+                            ],
+                            [
+                                392,
+                                408
+                            ],
+                            [
+                                392,
+                                409
+                            ],
+                            [
+                                391,
+                                410
+                            ],
+                            [
+                                391,
+                                418
+                            ],
+                            [
+                                394,
+                                421
+                            ],
+                            [
+                                395,
+                                421
+                            ],
+                            [
+                                399,
+                                425
+                            ],
+                            [
+                                399,
+                                426
+                            ],
+                            [
+                                401,
+                                428
+                            ],
+                            [
+                                402,
+                                428
+                            ],
+                            [
+                                403,
+                                429
+                            ],
+                            [
+                                470,
+                                429
+                            ],
+                            [
+                                471,
+                                428
+                            ],
+                            [
+                                472,
+                                428
+                            ],
+                            [
+                                474,
+                                426
+                            ],
+                            [
+                                474,
+                                425
+                            ],
+                            [
+                                478,
+                                421
+                            ],
+                            [
+                                479,
+                                421
+                            ],
+                            [
+                                482,
+                                418
+                            ],
+                            [
+                                482,
+                                410
+                            ],
+                            [
+                                478,
+                                406
+                            ],
+                            [
+                                477,
+                                406
+                            ],
+                            [
+                                474,
+                                403
+                            ],
+                            [
+                                474,
+                                402
+                            ],
+                            [
+                                471,
+                                399
+                            ]
+                        ]
+                    ],
+                    "rotated_rects": [
+                        {
+                            "center": [
+                                436.5,
+                                414.0
+                            ],
+                            "size": [
+                                30.0,
+                                91.0
+                            ],
+                            "angle": 90.0,
+                            "box_points": [
+                                [
+                                    391,
+                                    399
+                                ],
+                                [
+                                    482,
+                                    399
+                                ],
+                                [
+                                    482,
+                                    429
+                                ],
+                                [
+                                    391,
+                                    429
+                                ]
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "ocr_words": []
+    },
+    {
+        "det_id": 15,
+        "class_id": 5,
+        "class_name": "Other",
+        "confidence": 0.372314453125,
+        "orig_bbox": {
+            "x1": 0,
+            "y1": 942,
+            "x2": 100,
+            "y2": 1012,
+            "confidence": 0.372314453125,
+            "class_id": 5,
+            "class_name": "Other"
+        },
+        "buffered_bbox": {
+            "x1": 0,
+            "y1": 932,
+            "x2": 115,
+            "y2": 1022,
+            "confidence": 0.372314453125,
+            "class_id": 5,
+            "class_name": "Other"
+        },
+        "clip_h": 90,
+        "clip_w": 115,
+        "pad_h": 290,
+        "pad_w": 928,
+        "pad_offset_x": 406,
+        "pad_offset_y": 100,
+        "strip_index": 0,
+        "strip_slot": 2,
+        "strip_bbox": {
+            "x1": 1856,
+            "y1": 0,
+            "x2": 2784,
+            "y2": 290,
+            "confidence": 0.372314453125,
+            "class_id": 5,
+            "class_name": "Other"
+        },
+        "crop_strip_bbox": {
+            "x1": 2262,
+            "y1": 100,
+            "x2": 2377,
+            "y2": 190,
+            "confidence": 0.372314453125,
+            "class_id": 5,
+            "class_name": "Other"
+        },
+        "seg_found": true,
+        "ocr_found": false,
+        "metadata": {
+            "strip_mask": "0_pred_mask.jpg"
+        },
+        "segmentation": {
+            "found": true,
+            "crop_size": [
+                115,
+                90
+            ],
+            "white_pixels": 4370,
+            "postprocessed_minAreaRect": {
+                "crop_local": {
+                    "polygons": [
+                        [
+                            [
+                                0,
+                                37
+                            ],
+                            [
+                                0,
+                                82
+                            ],
+                            [
+                                94,
+                                82
+                            ],
+                            [
+                                94,
+                                37
+                            ]
+                        ]
+                    ],
+                    "rotated_rects": [
+                        {
+                            "center": [
+                                46.99999237060547,
+                                59.49999237060547
+                            ],
+                            "size": [
+                                93.99998474121094,
+                                44.99999237060547
+                            ],
+                            "angle": -0.0,
+                            "box_points": [
+                                [
+                                    0,
+                                    81
+                                ],
+                                [
+                                    0,
+                                    36
+                                ],
+                                [
+                                    93,
+                                    37
+                                ],
+                                [
+                                    93,
+                                    81
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "original_image": {
+                    "polygons": [
+                        [
+                            [
+                                0,
+                                969
+                            ],
+                            [
+                                0,
+                                1014
+                            ],
+                            [
+                                94,
+                                1014
+                            ],
+                            [
+                                94,
+                                969
+                            ]
+                        ]
+                    ],
+                    "rotated_rects": [
+                        {
+                            "center": [
+                                46.99999237060547,
+                                991.4999923706055
+                            ],
+                            "size": [
+                                93.99998474121094,
+                                44.99999237060547
+                            ],
+                            "angle": -0.0,
+                            "box_points": [
+                                [
+                                    0,
+                                    1013
+                                ],
+                                [
+                                    0,
+                                    968
+                                ],
+                                [
+                                    93,
+                                    969
+                                ],
+                                [
+                                    93,
+                                    1013
+                                ]
+                            ]
+                        }
+                    ]
+                }
+            },
+            "raw_prediction": {
+                "crop_local": {
+                    "polygons": [
+                        [
+                            [
+                                8,
+                                45
+                            ],
+                            [
+                                7,
+                                46
+                            ],
+                            [
+                                6,
+                                46
+                            ],
+                            [
+                                5,
+                                47
+                            ],
+                            [
+                                5,
+                                48
+                            ],
+                            [
+                                3,
+                                50
+                            ],
+                            [
+                                3,
+                                51
+                            ],
+                            [
+                                2,
+                                52
+                            ],
+                            [
+                                1,
+                                52
+                            ],
+                            [
+                                0,
+                                53
+                            ],
+                            [
+                                0,
+                                67
+                            ],
+                            [
+                                1,
+                                67
+                            ],
+                            [
+                                4,
+                                70
+                            ],
+                            [
+                                4,
+                                71
+                            ],
+                            [
+                                8,
+                                75
+                            ],
+                            [
+                                53,
+                                75
+                            ],
+                            [
+                                54,
+                                74
+                            ],
+                            [
+                                55,
+                                74
+                            ],
+                            [
+                                57,
+                                72
+                            ],
+                            [
+                                57,
+                                71
+                            ],
+                            [
+                                61,
+                                67
+                            ],
+                            [
+                                77,
+                                67
+                            ],
+                            [
+                                80,
+                                64
+                            ],
+                            [
+                                80,
+                                56
+                            ],
+                            [
+                                79,
+                                55
+                            ],
+                            [
+                                79,
+                                54
+                            ],
+                            [
+                                78,
+                                54
+                            ],
+                            [
+                                77,
+                                53
+                            ],
+                            [
+                                62,
+                                53
+                            ],
+                            [
+                                61,
+                                52
+                            ],
+                            [
+                                60,
+                                52
+                            ],
+                            [
+                                57,
+                                49
+                            ],
+                            [
+                                57,
+                                48
+                            ],
+                            [
+                                54,
+                                45
+                            ]
+                        ]
+                    ],
+                    "rotated_rects": [
+                        {
+                            "center": [
+                                40.0,
+                                60.0
+                            ],
+                            "size": [
+                                30.0,
+                                80.0
+                            ],
+                            "angle": 90.0,
+                            "box_points": [
+                                [
+                                    0,
+                                    45
+                                ],
+                                [
+                                    80,
+                                    45
+                                ],
+                                [
+                                    80,
+                                    75
+                                ],
+                                [
+                                    0,
+                                    75
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "original_image": {
+                    "polygons": [
+                        [
+                            [
+                                8,
+                                977
+                            ],
+                            [
+                                7,
+                                978
+                            ],
+                            [
+                                6,
+                                978
+                            ],
+                            [
+                                5,
+                                979
+                            ],
+                            [
+                                5,
+                                980
+                            ],
+                            [
+                                3,
+                                982
+                            ],
+                            [
+                                3,
+                                983
+                            ],
+                            [
+                                2,
+                                984
+                            ],
+                            [
+                                1,
+                                984
+                            ],
+                            [
+                                0,
+                                985
+                            ],
+                            [
+                                0,
+                                999
+                            ],
+                            [
+                                1,
+                                999
+                            ],
+                            [
+                                4,
+                                1002
+                            ],
+                            [
+                                4,
+                                1003
+                            ],
+                            [
+                                8,
+                                1007
+                            ],
+                            [
+                                53,
+                                1007
+                            ],
+                            [
+                                54,
+                                1006
+                            ],
+                            [
+                                55,
+                                1006
+                            ],
+                            [
+                                57,
+                                1004
+                            ],
+                            [
+                                57,
+                                1003
+                            ],
+                            [
+                                61,
+                                999
+                            ],
+                            [
+                                77,
+                                999
+                            ],
+                            [
+                                80,
+                                996
+                            ],
+                            [
+                                80,
+                                988
+                            ],
+                            [
+                                79,
+                                987
+                            ],
+                            [
+                                79,
+                                986
+                            ],
+                            [
+                                78,
+                                986
+                            ],
+                            [
+                                77,
+                                985
+                            ],
+                            [
+                                62,
+                                985
+                            ],
+                            [
+                                61,
+                                984
+                            ],
+                            [
+                                60,
+                                984
+                            ],
+                            [
+                                57,
+                                981
+                            ],
+                            [
+                                57,
+                                980
+                            ],
+                            [
+                                54,
+                                977
+                            ]
+                        ]
+                    ],
+                    "rotated_rects": [
+                        {
+                            "center": [
+                                40.0,
+                                992.0
+                            ],
+                            "size": [
+                                30.0,
+                                80.0
+                            ],
+                            "angle": 90.0,
+                            "box_points": [
+                                [
+                                    0,
+                                    977
+                                ],
+                                [
+                                    80,
+                                    977
+                                ],
+                                [
+                                    80,
+                                    1007
+                                ],
+                                [
+                                    0,
+                                    1007
+                                ]
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "ocr_words": []
+    },
+    {
+        "det_id": 16,
+        "class_id": 5,
+        "class_name": "Other",
+        "confidence": 0.32421875,
+        "orig_bbox": {
+            "x1": 5071,
+            "y1": 2832,
+            "x2": 5212,
+            "y2": 2919,
+            "confidence": 0.32421875,
+            "class_id": 5,
+            "class_name": "Other"
+        },
+        "buffered_bbox": {
+            "x1": 5050,
+            "y1": 2819,
+            "x2": 5233,
+            "y2": 2932,
+            "confidence": 0.32421875,
+            "class_id": 5,
+            "class_name": "Other"
+        },
+        "clip_h": 113,
+        "clip_w": 183,
+        "pad_h": 290,
+        "pad_w": 928,
+        "pad_offset_x": 372,
+        "pad_offset_y": 88,
+        "strip_index": 0,
+        "strip_slot": 3,
+        "strip_bbox": {
+            "x1": 2784,
+            "y1": 0,
+            "x2": 3712,
+            "y2": 290,
+            "confidence": 0.32421875,
+            "class_id": 5,
+            "class_name": "Other"
+        },
+        "crop_strip_bbox": {
+            "x1": 3156,
+            "y1": 88,
+            "x2": 3339,
+            "y2": 201,
+            "confidence": 0.32421875,
+            "class_id": 5,
+            "class_name": "Other"
+        },
+        "seg_found": false,
+        "ocr_found": false,
+        "metadata": {
+            "strip_mask": "0_pred_mask.jpg"
+        },
+        "segmentation": {
+            "found": false,
+            "crop_size": [
+                183,
+                113
+            ],
+            "white_pixels": 0,
+            "postprocessed_minAreaRect": {
+                "crop_local": {
+                    "polygons": [],
+                    "rotated_rects": []
+                },
+                "original_image": {
+                    "polygons": [],
+                    "rotated_rects": []
+                }
+            },
+            "raw_prediction": {
+                "crop_local": {
+                    "polygons": [],
+                    "rotated_rects": []
+                },
+                "original_image": {
+                    "polygons": [],
+                    "rotated_rects": []
+                }
+            }
+        },
+        "ocr_words": []
+    },
+    {
+        "det_id": 17,
+        "class_id": 3,
+        "class_name": "Handwritten",
+        "confidence": 0.289794921875,
+        "orig_bbox": {
+            "x1": 1705,
+            "y1": 3506,
+            "x2": 2419,
+            "y2": 3730,
+            "confidence": 0.289794921875,
+            "class_id": 3,
+            "class_name": "Handwritten"
+        },
+        "buffered_bbox": {
+            "x1": 1598,
+            "y1": 3473,
+            "x2": 2526,
+            "y2": 3763,
+            "confidence": 0.289794921875,
+            "class_id": 3,
+            "class_name": "Handwritten"
+        },
+        "clip_h": 290,
+        "clip_w": 928,
+        "pad_h": 290,
+        "pad_w": 928,
+        "pad_offset_x": 0,
+        "pad_offset_y": 0,
+        "strip_index": 0,
+        "strip_slot": 4,
+        "strip_bbox": {
+            "x1": 3712,
+            "y1": 0,
+            "x2": 4640,
+            "y2": 290,
+            "confidence": 0.289794921875,
+            "class_id": 3,
+            "class_name": "Handwritten"
+        },
+        "crop_strip_bbox": {
+            "x1": 3712,
+            "y1": 0,
+            "x2": 4640,
+            "y2": 290,
+            "confidence": 0.289794921875,
+            "class_id": 3,
+            "class_name": "Handwritten"
+        },
+        "seg_found": false,
+        "ocr_found": false,
+        "metadata": {
+            "strip_mask": "0_pred_mask.jpg"
+        },
+        "segmentation": {
+            "found": false,
+            "crop_size": [
+                928,
+                290
+            ],
+            "white_pixels": 0,
+            "postprocessed_minAreaRect": {
+                "crop_local": {
+                    "polygons": [],
+                    "rotated_rects": []
+                },
+                "original_image": {
+                    "polygons": [],
+                    "rotated_rects": []
+                }
+            },
+            "raw_prediction": {
+                "crop_local": {
+                    "polygons": [],
+                    "rotated_rects": []
+                },
+                "original_image": {
+                    "polygons": [],
+                    "rotated_rects": []
+                }
+            }
+        },
+        "ocr_words": []
+    },
+    {
+        "det_id": 18,
+        "class_id": 3,
+        "class_name": "Handwritten",
+        "confidence": 0.287353515625,
+        "orig_bbox": {
+            "x1": 1727,
+            "y1": 3631,
+            "x2": 1978,
+            "y2": 3705,
+            "confidence": 0.287353515625,
+            "class_id": 3,
+            "class_name": "Handwritten"
+        },
+        "buffered_bbox": {
+            "x1": 1690,
+            "y1": 3620,
+            "x2": 2015,
+            "y2": 3716,
+            "confidence": 0.287353515625,
+            "class_id": 3,
+            "class_name": "Handwritten"
+        },
+        "clip_h": 96,
+        "clip_w": 325,
+        "pad_h": 96,
+        "pad_w": 325,
+        "pad_offset_x": 0,
+        "pad_offset_y": 0,
+        "strip_index": 1,
+        "strip_slot": 0,
+        "strip_bbox": {
+            "x1": 0,
+            "y1": 0,
+            "x2": 325,
+            "y2": 96,
+            "confidence": 0.287353515625,
+            "class_id": 3,
+            "class_name": "Handwritten"
+        },
+        "crop_strip_bbox": {
+            "x1": 0,
+            "y1": 0,
+            "x2": 325,
+            "y2": 96,
+            "confidence": 0.287353515625,
+            "class_id": 3,
+            "class_name": "Handwritten"
+        },
+        "seg_found": true,
+        "ocr_found": false,
+        "metadata": {
+            "strip_mask": "1_pred_mask.jpg"
+        },
+        "segmentation": {
+            "found": true,
+            "crop_size": [
+                325,
+                96
+            ],
+            "white_pixels": 14405,
+            "postprocessed_minAreaRect": {
+                "crop_local": {
+                    "polygons": [
+                        [
+                            [
+                                44,
+                                15
+                            ],
+                            [
+                                44,
+                                21
+                            ],
+                            [
+                                43,
+                                22
+                            ],
+                            [
+                                43,
+                                33
+                            ],
+                            [
+                                42,
+                                34
+                            ],
+                            [
+                                42,
+                                46
+                            ],
+                            [
+                                41,
+                                47
+                            ],
+                            [
+                                41,
+                                58
+                            ],
+                            [
+                                40,
+                                59
+                            ],
+                            [
+                                40,
+                                65
+                            ],
+                            [
+                                45,
+                                65
+                            ],
+                            [
+                                46,
+                                66
+                            ],
+                            [
+                                57,
+                                66
+                            ],
+                            [
+                                58,
+                                67
+                            ],
+                            [
+                                68,
+                                67
+                            ],
+                            [
+                                69,
+                                68
+                            ],
+                            [
+                                80,
+                                68
+                            ],
+                            [
+                                81,
+                                69
+                            ],
+                            [
+                                91,
+                                69
+                            ],
+                            [
+                                92,
+                                70
+                            ],
+                            [
+                                102,
+                                70
+                            ],
+                            [
+                                103,
+                                71
+                            ],
+                            [
+                                114,
+                                71
+                            ],
+                            [
+                                115,
+                                72
+                            ],
+                            [
+                                125,
+                                72
+                            ],
+                            [
+                                126,
+                                73
+                            ],
+                            [
+                                137,
+                                73
+                            ],
+                            [
+                                138,
+                                74
+                            ],
+                            [
+                                148,
+                                74
+                            ],
+                            [
+                                149,
+                                75
+                            ],
+                            [
+                                160,
+                                75
+                            ],
+                            [
+                                161,
+                                76
+                            ],
+                            [
+                                171,
+                                76
+                            ],
+                            [
+                                172,
+                                77
+                            ],
+                            [
+                                183,
+                                77
+                            ],
+                            [
+                                184,
+                                78
+                            ],
+                            [
+                                194,
+                                78
+                            ],
+                            [
+                                195,
+                                79
+                            ],
+                            [
+                                205,
+                                79
+                            ],
+                            [
+                                206,
+                                80
+                            ],
+                            [
+                                217,
+                                80
+                            ],
+                            [
+                                218,
+                                81
+                            ],
+                            [
+                                228,
+                                81
+                            ],
+                            [
+                                229,
+                                82
+                            ],
+                            [
+                                240,
+                                82
+                            ],
+                            [
+                                241,
+                                83
+                            ],
+                            [
+                                251,
+                                83
+                            ],
+                            [
+                                252,
+                                84
+                            ],
+                            [
+                                263,
+                                84
+                            ],
+                            [
+                                264,
+                                85
+                            ],
+                            [
+                                274,
+                                85
+                            ],
+                            [
+                                275,
+                                86
+                            ],
+                            [
+                                286,
+                                86
+                            ],
+                            [
+                                287,
+                                87
+                            ],
+                            [
+                                297,
+                                87
+                            ],
+                            [
+                                298,
+                                88
+                            ],
+                            [
+                                308,
+                                88
+                            ],
+                            [
+                                309,
+                                89
+                            ],
+                            [
+                                320,
+                                89
+                            ],
+                            [
+                                321,
+                                90
+                            ],
+                            [
+                                324,
+                                90
+                            ],
+                            [
+                                324,
+                                40
+                            ],
+                            [
+                                315,
+                                40
+                            ],
+                            [
+                                314,
+                                39
+                            ],
+                            [
+                                304,
+                                39
+                            ],
+                            [
+                                303,
+                                38
+                            ],
+                            [
+                                293,
+                                38
+                            ],
+                            [
+                                292,
+                                37
+                            ],
+                            [
+                                282,
+                                37
+                            ],
+                            [
+                                281,
+                                36
+                            ],
+                            [
+                                271,
+                                36
+                            ],
+                            [
+                                270,
+                                35
+                            ],
+                            [
+                                260,
+                                35
+                            ],
+                            [
+                                259,
+                                34
+                            ],
+                            [
+                                249,
+                                34
+                            ],
+                            [
+                                248,
+                                33
+                            ],
+                            [
+                                238,
+                                33
+                            ],
+                            [
+                                237,
+                                32
+                            ],
+                            [
+                                227,
+                                32
+                            ],
+                            [
+                                226,
+                                31
+                            ],
+                            [
+                                216,
+                                31
+                            ],
+                            [
+                                215,
+                                30
+                            ],
+                            [
+                                205,
+                                30
+                            ],
+                            [
+                                204,
+                                29
+                            ],
+                            [
+                                193,
+                                29
+                            ],
+                            [
+                                192,
+                                28
+                            ],
+                            [
+                                182,
+                                28
+                            ],
+                            [
+                                181,
+                                27
+                            ],
+                            [
+                                171,
+                                27
+                            ],
+                            [
+                                170,
+                                26
+                            ],
+                            [
+                                160,
+                                26
+                            ],
+                            [
+                                159,
+                                25
+                            ],
+                            [
+                                149,
+                                25
+                            ],
+                            [
+                                148,
+                                24
+                            ],
+                            [
+                                138,
+                                24
+                            ],
+                            [
+                                137,
+                                23
+                            ],
+                            [
+                                127,
+                                23
+                            ],
+                            [
+                                126,
+                                22
+                            ],
+                            [
+                                116,
+                                22
+                            ],
+                            [
+                                115,
+                                21
+                            ],
+                            [
+                                105,
+                                21
+                            ],
+                            [
+                                104,
+                                20
+                            ],
+                            [
+                                94,
+                                20
+                            ],
+                            [
+                                93,
+                                19
+                            ],
+                            [
+                                83,
+                                19
+                            ],
+                            [
+                                82,
+                                18
+                            ],
+                            [
+                                72,
+                                18
+                            ],
+                            [
+                                71,
+                                17
+                            ],
+                            [
+                                61,
+                                17
+                            ],
+                            [
+                                60,
+                                16
+                            ],
+                            [
+                                50,
+                                16
+                            ],
+                            [
+                                49,
+                                15
+                            ]
+                        ]
+                    ],
+                    "rotated_rects": [
+                        {
+                            "center": [
+                                183.81077575683594,
+                                52.45708465576172
+                            ],
+                            "size": [
+                                285.8671569824219,
+                                51.06705856323242
+                            ],
+                            "angle": 5.013113975524902,
+                            "box_points": [
+                                [
+                                    39,
+                                    65
+                                ],
+                                [
+                                    43,
+                                    14
+                                ],
+                                [
+                                    328,
+                                    39
+                                ],
+                                [
+                                    323,
+                                    90
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "original_image": {
+                    "polygons": [
+                        [
+                            [
+                                1734,
+                                3635
+                            ],
+                            [
+                                1734,
+                                3641
+                            ],
+                            [
+                                1733,
+                                3642
+                            ],
+                            [
+                                1733,
+                                3653
+                            ],
+                            [
+                                1732,
+                                3654
+                            ],
+                            [
+                                1732,
+                                3666
+                            ],
+                            [
+                                1731,
+                                3667
+                            ],
+                            [
+                                1731,
+                                3678
+                            ],
+                            [
+                                1730,
+                                3679
+                            ],
+                            [
+                                1730,
+                                3685
+                            ],
+                            [
+                                1735,
+                                3685
+                            ],
+                            [
+                                1736,
+                                3686
+                            ],
+                            [
+                                1747,
+                                3686
+                            ],
+                            [
+                                1748,
+                                3687
+                            ],
+                            [
+                                1758,
+                                3687
+                            ],
+                            [
+                                1759,
+                                3688
+                            ],
+                            [
+                                1770,
+                                3688
+                            ],
+                            [
+                                1771,
+                                3689
+                            ],
+                            [
+                                1781,
+                                3689
+                            ],
+                            [
+                                1782,
+                                3690
+                            ],
+                            [
+                                1792,
+                                3690
+                            ],
+                            [
+                                1793,
+                                3691
+                            ],
+                            [
+                                1804,
+                                3691
+                            ],
+                            [
+                                1805,
+                                3692
+                            ],
+                            [
+                                1815,
+                                3692
+                            ],
+                            [
+                                1816,
+                                3693
+                            ],
+                            [
+                                1827,
+                                3693
+                            ],
+                            [
+                                1828,
+                                3694
+                            ],
+                            [
+                                1838,
+                                3694
+                            ],
+                            [
+                                1839,
+                                3695
+                            ],
+                            [
+                                1850,
+                                3695
+                            ],
+                            [
+                                1851,
+                                3696
+                            ],
+                            [
+                                1861,
+                                3696
+                            ],
+                            [
+                                1862,
+                                3697
+                            ],
+                            [
+                                1873,
+                                3697
+                            ],
+                            [
+                                1874,
+                                3698
+                            ],
+                            [
+                                1884,
+                                3698
+                            ],
+                            [
+                                1885,
+                                3699
+                            ],
+                            [
+                                1895,
+                                3699
+                            ],
+                            [
+                                1896,
+                                3700
+                            ],
+                            [
+                                1907,
+                                3700
+                            ],
+                            [
+                                1908,
+                                3701
+                            ],
+                            [
+                                1918,
+                                3701
+                            ],
+                            [
+                                1919,
+                                3702
+                            ],
+                            [
+                                1930,
+                                3702
+                            ],
+                            [
+                                1931,
+                                3703
+                            ],
+                            [
+                                1941,
+                                3703
+                            ],
+                            [
+                                1942,
+                                3704
+                            ],
+                            [
+                                1953,
+                                3704
+                            ],
+                            [
+                                1954,
+                                3705
+                            ],
+                            [
+                                1964,
+                                3705
+                            ],
+                            [
+                                1965,
+                                3706
+                            ],
+                            [
+                                1976,
+                                3706
+                            ],
+                            [
+                                1977,
+                                3707
+                            ],
+                            [
+                                1987,
+                                3707
+                            ],
+                            [
+                                1988,
+                                3708
+                            ],
+                            [
+                                1998,
+                                3708
+                            ],
+                            [
+                                1999,
+                                3709
+                            ],
+                            [
+                                2010,
+                                3709
+                            ],
+                            [
+                                2011,
+                                3710
+                            ],
+                            [
+                                2014,
+                                3710
+                            ],
+                            [
+                                2014,
+                                3660
+                            ],
+                            [
+                                2005,
+                                3660
+                            ],
+                            [
+                                2004,
+                                3659
+                            ],
+                            [
+                                1994,
+                                3659
+                            ],
+                            [
+                                1993,
+                                3658
+                            ],
+                            [
+                                1983,
+                                3658
+                            ],
+                            [
+                                1982,
+                                3657
+                            ],
+                            [
+                                1972,
+                                3657
+                            ],
+                            [
+                                1971,
+                                3656
+                            ],
+                            [
+                                1961,
+                                3656
+                            ],
+                            [
+                                1960,
+                                3655
+                            ],
+                            [
+                                1950,
+                                3655
+                            ],
+                            [
+                                1949,
+                                3654
+                            ],
+                            [
+                                1939,
+                                3654
+                            ],
+                            [
+                                1938,
+                                3653
+                            ],
+                            [
+                                1928,
+                                3653
+                            ],
+                            [
+                                1927,
+                                3652
+                            ],
+                            [
+                                1917,
+                                3652
+                            ],
+                            [
+                                1916,
+                                3651
+                            ],
+                            [
+                                1906,
+                                3651
+                            ],
+                            [
+                                1905,
+                                3650
+                            ],
+                            [
+                                1895,
+                                3650
+                            ],
+                            [
+                                1894,
+                                3649
+                            ],
+                            [
+                                1883,
+                                3649
+                            ],
+                            [
+                                1882,
+                                3648
+                            ],
+                            [
+                                1872,
+                                3648
+                            ],
+                            [
+                                1871,
+                                3647
+                            ],
+                            [
+                                1861,
+                                3647
+                            ],
+                            [
+                                1860,
+                                3646
+                            ],
+                            [
+                                1850,
+                                3646
+                            ],
+                            [
+                                1849,
+                                3645
+                            ],
+                            [
+                                1839,
+                                3645
+                            ],
+                            [
+                                1838,
+                                3644
+                            ],
+                            [
+                                1828,
+                                3644
+                            ],
+                            [
+                                1827,
+                                3643
+                            ],
+                            [
+                                1817,
+                                3643
+                            ],
+                            [
+                                1816,
+                                3642
+                            ],
+                            [
+                                1806,
+                                3642
+                            ],
+                            [
+                                1805,
+                                3641
+                            ],
+                            [
+                                1795,
+                                3641
+                            ],
+                            [
+                                1794,
+                                3640
+                            ],
+                            [
+                                1784,
+                                3640
+                            ],
+                            [
+                                1783,
+                                3639
+                            ],
+                            [
+                                1773,
+                                3639
+                            ],
+                            [
+                                1772,
+                                3638
+                            ],
+                            [
+                                1762,
+                                3638
+                            ],
+                            [
+                                1761,
+                                3637
+                            ],
+                            [
+                                1751,
+                                3637
+                            ],
+                            [
+                                1750,
+                                3636
+                            ],
+                            [
+                                1740,
+                                3636
+                            ],
+                            [
+                                1739,
+                                3635
+                            ]
+                        ]
+                    ],
+                    "rotated_rects": [
+                        {
+                            "center": [
+                                1873.810775756836,
+                                3672.4570846557617
+                            ],
+                            "size": [
+                                285.8671569824219,
+                                51.06705856323242
+                            ],
+                            "angle": 5.013113975524902,
+                            "box_points": [
+                                [
+                                    1729,
+                                    3685
+                                ],
+                                [
+                                    1733,
+                                    3634
+                                ],
+                                [
+                                    2018,
+                                    3659
+                                ],
+                                [
+                                    2013,
+                                    3710
+                                ]
+                            ]
+                        }
+                    ]
+                }
+            },
+            "raw_prediction": {
+                "crop_local": {
+                    "polygons": [
+                        [
+                            [
+                                96,
+                                33
+                            ],
+                            [
+                                96,
+                                35
+                            ],
+                            [
+                                95,
+                                36
+                            ],
+                            [
+                                95,
+                                51
+                            ],
+                            [
+                                97,
+                                53
+                            ],
+                            [
+                                101,
+                                53
+                            ],
+                            [
+                                102,
+                                54
+                            ],
+                            [
+                                125,
+                                54
+                            ],
+                            [
+                                126,
+                                55
+                            ],
+                            [
+                                127,
+                                55
+                            ],
+                            [
+                                128,
+                                54
+                            ],
+                            [
+                                130,
+                                54
+                            ],
+                            [
+                                132,
+                                56
+                            ],
+                            [
+                                141,
+                                56
+                            ],
+                            [
+                                143,
+                                54
+                            ],
+                            [
+                                160,
+                                54
+                            ],
+                            [
+                                162,
+                                56
+                            ],
+                            [
+                                163,
+                                56
+                            ],
+                            [
+                                164,
+                                57
+                            ],
+                            [
+                                165,
+                                57
+                            ],
+                            [
+                                171,
+                                63
+                            ],
+                            [
+                                171,
+                                64
+                            ],
+                            [
+                                172,
+                                65
+                            ],
+                            [
+                                172,
+                                66
+                            ],
+                            [
+                                175,
+                                69
+                            ],
+                            [
+                                176,
+                                69
+                            ],
+                            [
+                                177,
+                                70
+                            ],
+                            [
+                                185,
+                                70
+                            ],
+                            [
+                                186,
+                                71
+                            ],
+                            [
+                                186,
+                                72
+                            ],
+                            [
+                                221,
+                                72
+                            ],
+                            [
+                                222,
+                                73
+                            ],
+                            [
+                                249,
+                                73
+                            ],
+                            [
+                                250,
+                                74
+                            ],
+                            [
+                                271,
+                                74
+                            ],
+                            [
+                                272,
+                                75
+                            ],
+                            [
+                                281,
+                                75
+                            ],
+                            [
+                                282,
+                                76
+                            ],
+                            [
+                                298,
+                                76
+                            ],
+                            [
+                                299,
+                                75
+                            ],
+                            [
+                                299,
+                                68
+                            ],
+                            [
+                                298,
+                                67
+                            ],
+                            [
+                                298,
+                                64
+                            ],
+                            [
+                                297,
+                                63
+                            ],
+                            [
+                                297,
+                                60
+                            ],
+                            [
+                                296,
+                                59
+                            ],
+                            [
+                                296,
+                                56
+                            ],
+                            [
+                                295,
+                                55
+                            ],
+                            [
+                                295,
+                                52
+                            ],
+                            [
+                                294,
+                                51
+                            ],
+                            [
+                                294,
+                                48
+                            ],
+                            [
+                                293,
+                                47
+                            ],
+                            [
+                                293,
+                                46
+                            ],
+                            [
+                                292,
+                                45
+                            ],
+                            [
+                                291,
+                                45
+                            ],
+                            [
+                                290,
+                                44
+                            ],
+                            [
+                                250,
+                                44
+                            ],
+                            [
+                                249,
+                                43
+                            ],
+                            [
+                                233,
+                                43
+                            ],
+                            [
+                                232,
+                                42
+                            ],
+                            [
+                                224,
+                                42
+                            ],
+                            [
+                                223,
+                                41
+                            ],
+                            [
+                                213,
+                                41
+                            ],
+                            [
+                                211,
+                                39
+                            ],
+                            [
+                                203,
+                                39
+                            ],
+                            [
+                                202,
+                                38
+                            ],
+                            [
+                                196,
+                                38
+                            ],
+                            [
+                                195,
+                                37
+                            ],
+                            [
+                                193,
+                                37
+                            ],
+                            [
+                                192,
+                                36
+                            ],
+                            [
+                                187,
+                                36
+                            ],
+                            [
+                                186,
+                                35
+                            ],
+                            [
+                                177,
+                                35
+                            ],
+                            [
+                                176,
+                                34
+                            ],
+                            [
+                                166,
+                                34
+                            ],
+                            [
+                                165,
+                                33
+                            ],
+                            [
+                                130,
+                                33
+                            ],
+                            [
+                                129,
+                                34
+                            ],
+                            [
+                                125,
+                                34
+                            ],
+                            [
+                                124,
+                                35
+                            ],
+                            [
+                                116,
+                                35
+                            ],
+                            [
+                                115,
+                                36
+                            ],
+                            [
+                                112,
+                                36
+                            ],
+                            [
+                                111,
+                                35
+                            ],
+                            [
+                                110,
+                                35
+                            ],
+                            [
+                                108,
+                                33
+                            ]
+                        ]
+                    ],
+                    "rotated_rects": [
+                        {
+                            "center": [
+                                197.09674072265625,
+                                54.4005126953125
+                            ],
+                            "size": [
+                                206.63345336914062,
+                                37.008975982666016
+                            ],
+                            "angle": 5.029073715209961,
+                            "box_points": [
+                                [
+                                    92,
+                                    63
+                                ],
+                                [
+                                    95,
+                                    26
+                                ],
+                                [
+                                    301,
+                                    45
+                                ],
+                                [
+                                    298,
+                                    81
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "original_image": {
+                    "polygons": [
+                        [
+                            [
+                                1786,
+                                3653
+                            ],
+                            [
+                                1786,
+                                3655
+                            ],
+                            [
+                                1785,
+                                3656
+                            ],
+                            [
+                                1785,
+                                3671
+                            ],
+                            [
+                                1787,
+                                3673
+                            ],
+                            [
+                                1791,
+                                3673
+                            ],
+                            [
+                                1792,
+                                3674
+                            ],
+                            [
+                                1815,
+                                3674
+                            ],
+                            [
+                                1816,
+                                3675
+                            ],
+                            [
+                                1817,
+                                3675
+                            ],
+                            [
+                                1818,
+                                3674
+                            ],
+                            [
+                                1820,
+                                3674
+                            ],
+                            [
+                                1822,
+                                3676
+                            ],
+                            [
+                                1831,
+                                3676
+                            ],
+                            [
+                                1833,
+                                3674
+                            ],
+                            [
+                                1850,
+                                3674
+                            ],
+                            [
+                                1852,
+                                3676
+                            ],
+                            [
+                                1853,
+                                3676
+                            ],
+                            [
+                                1854,
+                                3677
+                            ],
+                            [
+                                1855,
+                                3677
+                            ],
+                            [
+                                1861,
+                                3683
+                            ],
+                            [
+                                1861,
+                                3684
+                            ],
+                            [
+                                1862,
+                                3685
+                            ],
+                            [
+                                1862,
+                                3686
+                            ],
+                            [
+                                1865,
+                                3689
+                            ],
+                            [
+                                1866,
+                                3689
+                            ],
+                            [
+                                1867,
+                                3690
+                            ],
+                            [
+                                1875,
+                                3690
+                            ],
+                            [
+                                1876,
+                                3691
+                            ],
+                            [
+                                1876,
+                                3692
+                            ],
+                            [
+                                1911,
+                                3692
+                            ],
+                            [
+                                1912,
+                                3693
+                            ],
+                            [
+                                1939,
+                                3693
+                            ],
+                            [
+                                1940,
+                                3694
+                            ],
+                            [
+                                1961,
+                                3694
+                            ],
+                            [
+                                1962,
+                                3695
+                            ],
+                            [
+                                1971,
+                                3695
+                            ],
+                            [
+                                1972,
+                                3696
+                            ],
+                            [
+                                1988,
+                                3696
+                            ],
+                            [
+                                1989,
+                                3695
+                            ],
+                            [
+                                1989,
+                                3688
+                            ],
+                            [
+                                1988,
+                                3687
+                            ],
+                            [
+                                1988,
+                                3684
+                            ],
+                            [
+                                1987,
+                                3683
+                            ],
+                            [
+                                1987,
+                                3680
+                            ],
+                            [
+                                1986,
+                                3679
+                            ],
+                            [
+                                1986,
+                                3676
+                            ],
+                            [
+                                1985,
+                                3675
+                            ],
+                            [
+                                1985,
+                                3672
+                            ],
+                            [
+                                1984,
+                                3671
+                            ],
+                            [
+                                1984,
+                                3668
+                            ],
+                            [
+                                1983,
+                                3667
+                            ],
+                            [
+                                1983,
+                                3666
+                            ],
+                            [
+                                1982,
+                                3665
+                            ],
+                            [
+                                1981,
+                                3665
+                            ],
+                            [
+                                1980,
+                                3664
+                            ],
+                            [
+                                1940,
+                                3664
+                            ],
+                            [
+                                1939,
+                                3663
+                            ],
+                            [
+                                1923,
+                                3663
+                            ],
+                            [
+                                1922,
+                                3662
+                            ],
+                            [
+                                1914,
+                                3662
+                            ],
+                            [
+                                1913,
+                                3661
+                            ],
+                            [
+                                1903,
+                                3661
+                            ],
+                            [
+                                1901,
+                                3659
+                            ],
+                            [
+                                1893,
+                                3659
+                            ],
+                            [
+                                1892,
+                                3658
+                            ],
+                            [
+                                1886,
+                                3658
+                            ],
+                            [
+                                1885,
+                                3657
+                            ],
+                            [
+                                1883,
+                                3657
+                            ],
+                            [
+                                1882,
+                                3656
+                            ],
+                            [
+                                1877,
+                                3656
+                            ],
+                            [
+                                1876,
+                                3655
+                            ],
+                            [
+                                1867,
+                                3655
+                            ],
+                            [
+                                1866,
+                                3654
+                            ],
+                            [
+                                1856,
+                                3654
+                            ],
+                            [
+                                1855,
+                                3653
+                            ],
+                            [
+                                1820,
+                                3653
+                            ],
+                            [
+                                1819,
+                                3654
+                            ],
+                            [
+                                1815,
+                                3654
+                            ],
+                            [
+                                1814,
+                                3655
+                            ],
+                            [
+                                1806,
+                                3655
+                            ],
+                            [
+                                1805,
+                                3656
+                            ],
+                            [
+                                1802,
+                                3656
+                            ],
+                            [
+                                1801,
+                                3655
+                            ],
+                            [
+                                1800,
+                                3655
+                            ],
+                            [
+                                1798,
+                                3653
+                            ]
+                        ]
+                    ],
+                    "rotated_rects": [
+                        {
+                            "center": [
+                                1887.0967407226562,
+                                3674.4005126953125
+                            ],
+                            "size": [
+                                206.63345336914062,
+                                37.008975982666016
+                            ],
+                            "angle": 5.029073715209961,
+                            "box_points": [
+                                [
+                                    1782,
+                                    3683
+                                ],
+                                [
+                                    1785,
+                                    3646
+                                ],
+                                [
+                                    1991,
+                                    3665
+                                ],
+                                [
+                                    1988,
+                                    3701
+                                ]
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "ocr_words": []
+    },
+    {
+        "det_id": 19,
+        "class_id": 2,
+        "class_name": "Printed_on_Box",
+        "confidence": 0.250732421875,
+        "orig_bbox": {
+            "x1": 5121,
+            "y1": 1809,
+            "x2": 5312,
+            "y2": 1875,
+            "confidence": 0.250732421875,
+            "class_id": 2,
+            "class_name": "Printed_on_Box"
+        },
+        "buffered_bbox": {
+            "x1": 5093,
+            "y1": 1800,
+            "x2": 5312,
+            "y2": 1884,
+            "confidence": 0.250732421875,
+            "class_id": 2,
+            "class_name": "Printed_on_Box"
+        },
+        "clip_h": 84,
+        "clip_w": 219,
+        "pad_h": 96,
+        "pad_w": 325,
+        "pad_offset_x": 53,
+        "pad_offset_y": 6,
+        "strip_index": 1,
+        "strip_slot": 1,
+        "strip_bbox": {
+            "x1": 325,
+            "y1": 0,
+            "x2": 650,
+            "y2": 96,
+            "confidence": 0.250732421875,
+            "class_id": 2,
+            "class_name": "Printed_on_Box"
+        },
+        "crop_strip_bbox": {
+            "x1": 378,
+            "y1": 6,
+            "x2": 597,
+            "y2": 90,
+            "confidence": 0.250732421875,
+            "class_id": 2,
+            "class_name": "Printed_on_Box"
+        },
+        "seg_found": true,
+        "ocr_found": false,
+        "metadata": {
+            "strip_mask": "1_pred_mask.jpg"
+        },
+        "segmentation": {
+            "found": true,
+            "crop_size": [
+                219,
+                84
+            ],
+            "white_pixels": 14535,
+            "postprocessed_minAreaRect": {
+                "crop_local": {
+                    "polygons": [
+                        [
+                            [
+                                0,
+                                0
+                            ],
+                            [
+                                0,
+                                63
+                            ],
+                            [
+                                3,
+                                63
+                            ],
+                            [
+                                4,
+                                64
+                            ],
+                            [
+                                14,
+                                64
+                            ],
+                            [
+                                15,
+                                65
+                            ],
+                            [
+                                25,
+                                65
+                            ],
+                            [
+                                26,
+                                66
+                            ],
+                            [
+                                36,
+                                66
+                            ],
+                            [
+                                37,
+                                67
+                            ],
+                            [
+                                46,
+                                67
+                            ],
+                            [
+                                47,
+                                68
+                            ],
+                            [
+                                57,
+                                68
+                            ],
+                            [
+                                58,
+                                69
+                            ],
+                            [
+                                68,
+                                69
+                            ],
+                            [
+                                69,
+                                70
+                            ],
+                            [
+                                78,
+                                70
+                            ],
+                            [
+                                79,
+                                71
+                            ],
+                            [
+                                89,
+                                71
+                            ],
+                            [
+                                90,
+                                72
+                            ],
+                            [
+                                100,
+                                72
+                            ],
+                            [
+                                101,
+                                73
+                            ],
+                            [
+                                111,
+                                73
+                            ],
+                            [
+                                112,
+                                74
+                            ],
+                            [
+                                121,
+                                74
+                            ],
+                            [
+                                122,
+                                75
+                            ],
+                            [
+                                132,
+                                75
+                            ],
+                            [
+                                133,
+                                76
+                            ],
+                            [
+                                143,
+                                76
+                            ],
+                            [
+                                144,
+                                77
+                            ],
+                            [
+                                154,
+                                77
+                            ],
+                            [
+                                155,
+                                78
+                            ],
+                            [
+                                164,
+                                78
+                            ],
+                            [
+                                165,
+                                79
+                            ],
+                            [
+                                175,
+                                79
+                            ],
+                            [
+                                176,
+                                80
+                            ],
+                            [
+                                186,
+                                80
+                            ],
+                            [
+                                187,
+                                81
+                            ],
+                            [
+                                196,
+                                81
+                            ],
+                            [
+                                197,
+                                82
+                            ],
+                            [
+                                207,
+                                82
+                            ],
+                            [
+                                208,
+                                83
+                            ],
+                            [
+                                218,
+                                83
+                            ],
+                            [
+                                218,
+                                18
+                            ],
+                            [
+                                214,
+                                18
+                            ],
+                            [
+                                213,
+                                17
+                            ],
+                            [
+                                203,
+                                17
+                            ],
+                            [
+                                202,
+                                16
+                            ],
+                            [
+                                193,
+                                16
+                            ],
+                            [
+                                192,
+                                15
+                            ],
+                            [
+                                182,
+                                15
+                            ],
+                            [
+                                181,
+                                14
+                            ],
+                            [
+                                171,
+                                14
+                            ],
+                            [
+                                170,
+                                13
+                            ],
+                            [
+                                160,
+                                13
+                            ],
+                            [
+                                159,
+                                12
+                            ],
+                            [
+                                149,
+                                12
+                            ],
+                            [
+                                148,
+                                11
+                            ],
+                            [
+                                139,
+                                11
+                            ],
+                            [
+                                138,
+                                10
+                            ],
+                            [
+                                128,
+                                10
+                            ],
+                            [
+                                127,
+                                9
+                            ],
+                            [
+                                117,
+                                9
+                            ],
+                            [
+                                116,
+                                8
+                            ],
+                            [
+                                106,
+                                8
+                            ],
+                            [
+                                105,
+                                7
+                            ],
+                            [
+                                96,
+                                7
+                            ],
+                            [
+                                95,
+                                6
+                            ],
+                            [
+                                85,
+                                6
+                            ],
+                            [
+                                84,
+                                5
+                            ],
+                            [
+                                74,
+                                5
+                            ],
+                            [
+                                73,
+                                4
+                            ],
+                            [
+                                63,
+                                4
+                            ],
+                            [
+                                62,
+                                3
+                            ],
+                            [
+                                53,
+                                3
+                            ],
+                            [
+                                52,
+                                2
+                            ],
+                            [
+                                42,
+                                2
+                            ],
+                            [
+                                41,
+                                1
+                            ],
+                            [
+                                31,
+                                1
+                            ],
+                            [
+                                30,
+                                0
+                            ]
+                        ]
+                    ],
+                    "rotated_rects": [
+                        {
+                            "center": [
+                                109.08647155761719,
+                                40.56874465942383
+                            ],
+                            "size": [
+                                224.74032592773438,
+                                66.2507095336914
+                            ],
+                            "angle": 5.30510950088501,
+                            "box_points": [
+                                [
+                                    -5,
+                                    63
+                                ],
+                                [
+                                    0,
+                                    -2
+                                ],
+                                [
+                                    224,
+                                    17
+                                ],
+                                [
+                                    217,
+                                    83
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "original_image": {
+                    "polygons": [
+                        [
+                            [
+                                5093,
+                                1800
+                            ],
+                            [
+                                5093,
+                                1863
+                            ],
+                            [
+                                5096,
+                                1863
+                            ],
+                            [
+                                5097,
+                                1864
+                            ],
+                            [
+                                5107,
+                                1864
+                            ],
+                            [
+                                5108,
+                                1865
+                            ],
+                            [
+                                5118,
+                                1865
+                            ],
+                            [
+                                5119,
+                                1866
+                            ],
+                            [
+                                5129,
+                                1866
+                            ],
+                            [
+                                5130,
+                                1867
+                            ],
+                            [
+                                5139,
+                                1867
+                            ],
+                            [
+                                5140,
+                                1868
+                            ],
+                            [
+                                5150,
+                                1868
+                            ],
+                            [
+                                5151,
+                                1869
+                            ],
+                            [
+                                5161,
+                                1869
+                            ],
+                            [
+                                5162,
+                                1870
+                            ],
+                            [
+                                5171,
+                                1870
+                            ],
+                            [
+                                5172,
+                                1871
+                            ],
+                            [
+                                5182,
+                                1871
+                            ],
+                            [
+                                5183,
+                                1872
+                            ],
+                            [
+                                5193,
+                                1872
+                            ],
+                            [
+                                5194,
+                                1873
+                            ],
+                            [
+                                5204,
+                                1873
+                            ],
+                            [
+                                5205,
+                                1874
+                            ],
+                            [
+                                5214,
+                                1874
+                            ],
+                            [
+                                5215,
+                                1875
+                            ],
+                            [
+                                5225,
+                                1875
+                            ],
+                            [
+                                5226,
+                                1876
+                            ],
+                            [
+                                5236,
+                                1876
+                            ],
+                            [
+                                5237,
+                                1877
+                            ],
+                            [
+                                5247,
+                                1877
+                            ],
+                            [
+                                5248,
+                                1878
+                            ],
+                            [
+                                5257,
+                                1878
+                            ],
+                            [
+                                5258,
+                                1879
+                            ],
+                            [
+                                5268,
+                                1879
+                            ],
+                            [
+                                5269,
+                                1880
+                            ],
+                            [
+                                5279,
+                                1880
+                            ],
+                            [
+                                5280,
+                                1881
+                            ],
+                            [
+                                5289,
+                                1881
+                            ],
+                            [
+                                5290,
+                                1882
+                            ],
+                            [
+                                5300,
+                                1882
+                            ],
+                            [
+                                5301,
+                                1883
+                            ],
+                            [
+                                5311,
+                                1883
+                            ],
+                            [
+                                5311,
+                                1818
+                            ],
+                            [
+                                5307,
+                                1818
+                            ],
+                            [
+                                5306,
+                                1817
+                            ],
+                            [
+                                5296,
+                                1817
+                            ],
+                            [
+                                5295,
+                                1816
+                            ],
+                            [
+                                5286,
+                                1816
+                            ],
+                            [
+                                5285,
+                                1815
+                            ],
+                            [
+                                5275,
+                                1815
+                            ],
+                            [
+                                5274,
+                                1814
+                            ],
+                            [
+                                5264,
+                                1814
+                            ],
+                            [
+                                5263,
+                                1813
+                            ],
+                            [
+                                5253,
+                                1813
+                            ],
+                            [
+                                5252,
+                                1812
+                            ],
+                            [
+                                5242,
+                                1812
+                            ],
+                            [
+                                5241,
+                                1811
+                            ],
+                            [
+                                5232,
+                                1811
+                            ],
+                            [
+                                5231,
+                                1810
+                            ],
+                            [
+                                5221,
+                                1810
+                            ],
+                            [
+                                5220,
+                                1809
+                            ],
+                            [
+                                5210,
+                                1809
+                            ],
+                            [
+                                5209,
+                                1808
+                            ],
+                            [
+                                5199,
+                                1808
+                            ],
+                            [
+                                5198,
+                                1807
+                            ],
+                            [
+                                5189,
+                                1807
+                            ],
+                            [
+                                5188,
+                                1806
+                            ],
+                            [
+                                5178,
+                                1806
+                            ],
+                            [
+                                5177,
+                                1805
+                            ],
+                            [
+                                5167,
+                                1805
+                            ],
+                            [
+                                5166,
+                                1804
+                            ],
+                            [
+                                5156,
+                                1804
+                            ],
+                            [
+                                5155,
+                                1803
+                            ],
+                            [
+                                5146,
+                                1803
+                            ],
+                            [
+                                5145,
+                                1802
+                            ],
+                            [
+                                5135,
+                                1802
+                            ],
+                            [
+                                5134,
+                                1801
+                            ],
+                            [
+                                5124,
+                                1801
+                            ],
+                            [
+                                5123,
+                                1800
+                            ]
+                        ]
+                    ],
+                    "rotated_rects": [
+                        {
+                            "center": [
+                                5202.086471557617,
+                                1840.5687446594238
+                            ],
+                            "size": [
+                                224.74032592773438,
+                                66.2507095336914
+                            ],
+                            "angle": 5.30510950088501,
+                            "box_points": [
+                                [
+                                    5087,
+                                    1863
+                                ],
+                                [
+                                    5093,
+                                    1797
+                                ],
+                                [
+                                    5317,
+                                    1817
+                                ],
+                                [
+                                    5310,
+                                    1883
+                                ]
+                            ]
+                        }
+                    ]
+                }
+            },
+            "raw_prediction": {
+                "crop_local": {
+                    "polygons": [
+                        [
+                            [
+                                30,
+                                16
+                            ],
+                            [
+                                28,
+                                18
+                            ],
+                            [
+                                28,
+                                39
+                            ],
+                            [
+                                29,
+                                40
+                            ],
+                            [
+                                29,
+                                44
+                            ],
+                            [
+                                30,
+                                45
+                            ],
+                            [
+                                30,
+                                46
+                            ],
+                            [
+                                31,
+                                47
+                            ],
+                            [
+                                31,
+                                50
+                            ],
+                            [
+                                33,
+                                52
+                            ],
+                            [
+                                33,
+                                54
+                            ],
+                            [
+                                37,
+                                58
+                            ],
+                            [
+                                38,
+                                58
+                            ],
+                            [
+                                39,
+                                59
+                            ],
+                            [
+                                59,
+                                59
+                            ],
+                            [
+                                60,
+                                58
+                            ],
+                            [
+                                62,
+                                58
+                            ],
+                            [
+                                63,
+                                59
+                            ],
+                            [
+                                77,
+                                59
+                            ],
+                            [
+                                78,
+                                60
+                            ],
+                            [
+                                84,
+                                60
+                            ],
+                            [
+                                85,
+                                61
+                            ],
+                            [
+                                97,
+                                61
+                            ],
+                            [
+                                98,
+                                62
+                            ],
+                            [
+                                116,
+                                62
+                            ],
+                            [
+                                117,
+                                63
+                            ],
+                            [
+                                123,
+                                63
+                            ],
+                            [
+                                124,
+                                64
+                            ],
+                            [
+                                126,
+                                64
+                            ],
+                            [
+                                128,
+                                66
+                            ],
+                            [
+                                132,
+                                66
+                            ],
+                            [
+                                133,
+                                67
+                            ],
+                            [
+                                143,
+                                67
+                            ],
+                            [
+                                144,
+                                68
+                            ],
+                            [
+                                155,
+                                68
+                            ],
+                            [
+                                156,
+                                69
+                            ],
+                            [
+                                162,
+                                69
+                            ],
+                            [
+                                163,
+                                70
+                            ],
+                            [
+                                170,
+                                70
+                            ],
+                            [
+                                171,
+                                71
+                            ],
+                            [
+                                205,
+                                71
+                            ],
+                            [
+                                206,
+                                72
+                            ],
+                            [
+                                210,
+                                72
+                            ],
+                            [
+                                210,
+                                71
+                            ],
+                            [
+                                211,
+                                70
+                            ],
+                            [
+                                211,
+                                30
+                            ],
+                            [
+                                210,
+                                29
+                            ],
+                            [
+                                210,
+                                28
+                            ],
+                            [
+                                208,
+                                26
+                            ],
+                            [
+                                199,
+                                26
+                            ],
+                            [
+                                198,
+                                25
+                            ],
+                            [
+                                168,
+                                25
+                            ],
+                            [
+                                167,
+                                24
+                            ],
+                            [
+                                150,
+                                24
+                            ],
+                            [
+                                149,
+                                23
+                            ],
+                            [
+                                144,
+                                23
+                            ],
+                            [
+                                143,
+                                22
+                            ],
+                            [
+                                134,
+                                22
+                            ],
+                            [
+                                133,
+                                21
+                            ],
+                            [
+                                113,
+                                21
+                            ],
+                            [
+                                112,
+                                20
+                            ],
+                            [
+                                108,
+                                20
+                            ],
+                            [
+                                107,
+                                19
+                            ],
+                            [
+                                106,
+                                19
+                            ],
+                            [
+                                104,
+                                17
+                            ],
+                            [
+                                102,
+                                17
+                            ],
+                            [
+                                101,
+                                16
+                            ]
+                        ]
+                    ],
+                    "rotated_rects": [
+                        {
+                            "center": [
+                                119.68032836914062,
+                                42.016395568847656
+                            ],
+                            "size": [
+                                186.95631408691406,
+                                48.43662643432617
+                            ],
+                            "angle": 5.19442892074585,
+                            "box_points": [
+                                [
+                                    24,
+                                    57
+                                ],
+                                [
+                                    28,
+                                    9
+                                ],
+                                [
+                                    214,
+                                    26
+                                ],
+                                [
+                                    210,
+                                    74
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "original_image": {
+                    "polygons": [
+                        [
+                            [
+                                5123,
+                                1816
+                            ],
+                            [
+                                5121,
+                                1818
+                            ],
+                            [
+                                5121,
+                                1839
+                            ],
+                            [
+                                5122,
+                                1840
+                            ],
+                            [
+                                5122,
+                                1844
+                            ],
+                            [
+                                5123,
+                                1845
+                            ],
+                            [
+                                5123,
+                                1846
+                            ],
+                            [
+                                5124,
+                                1847
+                            ],
+                            [
+                                5124,
+                                1850
+                            ],
+                            [
+                                5126,
+                                1852
+                            ],
+                            [
+                                5126,
+                                1854
+                            ],
+                            [
+                                5130,
+                                1858
+                            ],
+                            [
+                                5131,
+                                1858
+                            ],
+                            [
+                                5132,
+                                1859
+                            ],
+                            [
+                                5152,
+                                1859
+                            ],
+                            [
+                                5153,
+                                1858
+                            ],
+                            [
+                                5155,
+                                1858
+                            ],
+                            [
+                                5156,
+                                1859
+                            ],
+                            [
+                                5170,
+                                1859
+                            ],
+                            [
+                                5171,
+                                1860
+                            ],
+                            [
+                                5177,
+                                1860
+                            ],
+                            [
+                                5178,
+                                1861
+                            ],
+                            [
+                                5190,
+                                1861
+                            ],
+                            [
+                                5191,
+                                1862
+                            ],
+                            [
+                                5209,
+                                1862
+                            ],
+                            [
+                                5210,
+                                1863
+                            ],
+                            [
+                                5216,
+                                1863
+                            ],
+                            [
+                                5217,
+                                1864
+                            ],
+                            [
+                                5219,
+                                1864
+                            ],
+                            [
+                                5221,
+                                1866
+                            ],
+                            [
+                                5225,
+                                1866
+                            ],
+                            [
+                                5226,
+                                1867
+                            ],
+                            [
+                                5236,
+                                1867
+                            ],
+                            [
+                                5237,
+                                1868
+                            ],
+                            [
+                                5248,
+                                1868
+                            ],
+                            [
+                                5249,
+                                1869
+                            ],
+                            [
+                                5255,
+                                1869
+                            ],
+                            [
+                                5256,
+                                1870
+                            ],
+                            [
+                                5263,
+                                1870
+                            ],
+                            [
+                                5264,
+                                1871
+                            ],
+                            [
+                                5298,
+                                1871
+                            ],
+                            [
+                                5299,
+                                1872
+                            ],
+                            [
+                                5303,
+                                1872
+                            ],
+                            [
+                                5303,
+                                1871
+                            ],
+                            [
+                                5304,
+                                1870
+                            ],
+                            [
+                                5304,
+                                1830
+                            ],
+                            [
+                                5303,
+                                1829
+                            ],
+                            [
+                                5303,
+                                1828
+                            ],
+                            [
+                                5301,
+                                1826
+                            ],
+                            [
+                                5292,
+                                1826
+                            ],
+                            [
+                                5291,
+                                1825
+                            ],
+                            [
+                                5261,
+                                1825
+                            ],
+                            [
+                                5260,
+                                1824
+                            ],
+                            [
+                                5243,
+                                1824
+                            ],
+                            [
+                                5242,
+                                1823
+                            ],
+                            [
+                                5237,
+                                1823
+                            ],
+                            [
+                                5236,
+                                1822
+                            ],
+                            [
+                                5227,
+                                1822
+                            ],
+                            [
+                                5226,
+                                1821
+                            ],
+                            [
+                                5206,
+                                1821
+                            ],
+                            [
+                                5205,
+                                1820
+                            ],
+                            [
+                                5201,
+                                1820
+                            ],
+                            [
+                                5200,
+                                1819
+                            ],
+                            [
+                                5199,
+                                1819
+                            ],
+                            [
+                                5197,
+                                1817
+                            ],
+                            [
+                                5195,
+                                1817
+                            ],
+                            [
+                                5194,
+                                1816
+                            ]
+                        ]
+                    ],
+                    "rotated_rects": [
+                        {
+                            "center": [
+                                5212.680328369141,
+                                1842.0163955688477
+                            ],
+                            "size": [
+                                186.95631408691406,
+                                48.43662643432617
+                            ],
+                            "angle": 5.19442892074585,
+                            "box_points": [
+                                [
+                                    5117,
+                                    1857
+                                ],
+                                [
+                                    5121,
+                                    1809
+                                ],
+                                [
+                                    5307,
+                                    1826
+                                ],
+                                [
+                                    5303,
+                                    1874
+                                ]
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "ocr_words": []
+    }
+]

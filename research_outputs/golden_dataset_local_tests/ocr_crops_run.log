@@ -1,0 +1,3 @@
+Using env file: /Users/avinash.patel/Downloads/HomeDepotCV/.env
+Wrote ocr-crops summary: /Users/avinash.patel/Downloads/HomeDepotCV/research_outputs/golden_dataset_local_tests/ocr-crops_summary.csv
+Accuracy summary: 6/7 correct (85.7%), 1 incorrect, 4 N/A (see expected_sku_notes), 1399 rows still need expected_sku

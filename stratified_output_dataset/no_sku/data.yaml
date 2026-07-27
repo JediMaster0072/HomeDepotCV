@@ -1,0 +1,10 @@
+train: /home/harish.k/Projects/Home-Depot/new_dataset_copy/Single_line/stratified_output_dataset/no_sku/images/train
+val: /home/harish.k/Projects/Home-Depot/new_dataset_copy/Single_line/stratified_output_dataset/no_sku/images/val
+nc: 6
+names:
+- Pallet
+- RDC
+- Printed_on_Box
+- Handwritten
+- Multiline_Label
+- Other

@@ -1,0 +1,61 @@
+[
+    {
+        "det_id": 13,
+        "class_id": 5,
+        "class_name": "Other",
+        "confidence": 0.303466796875,
+        "orig_bbox": {
+            "x1": 1555,
+            "y1": 3147,
+            "x2": 1656,
+            "y2": 3392,
+            "confidence": 0.303466796875,
+            "class_id": 5,
+            "class_name": "Other"
+        },
+        "buffered_bbox": {
+            "x1": 1540,
+            "y1": 3111,
+            "x2": 1671,
+            "y2": 3428,
+            "confidence": 0.303466796875,
+            "class_id": 5,
+            "class_name": "Other"
+        },
+        "clip_h": 317,
+        "clip_w": 131,
+        "pad_h": 317,
+        "pad_w": 131,
+        "pad_offset_x": 0,
+        "pad_offset_y": 0,
+        "strip_index": 0,
+        "strip_slot": 0,
+        "strip_bbox": {
+            "x1": 0,
+            "y1": 0,
+            "x2": 131,
+            "y2": 317,
+            "confidence": 0.303466796875,
+            "class_id": 5,
+            "class_name": "Other"
+        },
+        "crop_strip_bbox": {
+            "x1": 0,
+            "y1": 0,
+            "x2": 131,
+            "y2": 317,
+            "confidence": 0.303466796875,
+            "class_id": 5,
+            "class_name": "Other"
+        },
+        "seg_found": false,
+        "ocr_found": false,
+        "metadata": {
+            "strip_mask": "0_pred_mask.jpg"
+        },
+        "segmentation": {
+            "found": false
+        },
+        "ocr_words": []
+    }
+]

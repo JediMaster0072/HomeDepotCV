@@ -1,0 +1,1 @@
+selling-pipeline-ml-models/singleline-pipeline-det-models-1.2/best.pt

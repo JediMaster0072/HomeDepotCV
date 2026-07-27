@@ -1,0 +1,60 @@
+Using env file: /Users/avinash.patel/Downloads/HomeDepotCV/.env
+Traceback (most recent call last):
+  File "/Users/avinash.patel/Downloads/HomeDepotCV/cv-singleline-processor-CV-1757/scripts/golden_dataset/run_golden_dataset_local.py", line 642, in <module>
+    main()
+  File "/Users/avinash.patel/Downloads/HomeDepotCV/cv-singleline-processor-CV-1757/scripts/golden_dataset/run_golden_dataset_local.py", line 533, in main
+    save_annotation_crops(
+  File "/Users/avinash.patel/Downloads/HomeDepotCV/cv-singleline-processor-CV-1757/scripts/golden_dataset/run_golden_dataset_local.py", line 363, in save_annotation_crops
+    ocr_results = ocr_runner(crop_rgb)
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/avinash.patel/Downloads/HomeDepotCV/cv-singleline-processor-CV-1757/scripts/golden_dataset/run_golden_dataset_local.py", line 135, in <lambda>
+    return lambda image: run_google_ocr_words_with_api_key(api_key, image)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/avinash.patel/Downloads/HomeDepotCV/cv-singleline-processor-CV-1757/pipeline/ocr_stage.py", line 165, in run_google_ocr_words_with_api_key
+    return _run_google_ocr_words_with_callable(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/avinash.patel/Downloads/HomeDepotCV/cv-singleline-processor-CV-1757/pipeline/ocr_stage.py", line 48, in _run_google_ocr_words_with_callable
+    annotations = call_annotations_fn(image)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/avinash.patel/Downloads/HomeDepotCV/cv-singleline-processor-CV-1757/pipeline/ocr_stage.py", line 167, in <lambda>
+    call_annotations_fn=lambda ocr_image: call_google_ocr_api_key(api_key, ocr_image),
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/avinash.patel/Downloads/HomeDepotCV/cv-singleline-processor-CV-1757/pipeline/ocr_stage.py", line 235, in call_google_ocr_api_key
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15_3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15_3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15_3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15_3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15_3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15_3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 1352, in do_open
+    r = h.getresponse()
+        ^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15_3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1415, in getresponse
+    response.begin()
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15_3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 330, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15_3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 291, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15_3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 718, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15_3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py", line 1314, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15_3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py", line 1166, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out

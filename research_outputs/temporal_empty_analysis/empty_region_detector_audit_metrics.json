@@ -1,0 +1,15 @@
+{
+  "total_predictions": 42,
+  "reviewed_predictions": 0,
+  "true_empty_count": 0,
+  "false_positive_count": 0,
+  "unsure_count": 0,
+  "remaining_unreviewed": 42,
+  "precision": 0.0,
+  "false_positive_rate": 0.0,
+  "recall": null,
+  "f1": null,
+  "recall_note": "Recall is not measurable from camera_cart positives alone. Review only covers detector-emitted EmptyItem boxes.",
+  "by_image": {},
+  "by_slot": {}
+}

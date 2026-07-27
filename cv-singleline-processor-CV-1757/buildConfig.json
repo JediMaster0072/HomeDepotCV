@@ -1,0 +1,30 @@
+{
+  "projectInfo": {
+    "name": "cv-singleline-processor",
+    "fmsNumber": "IT-00000",
+    "cdTemplate": "CD0000000",
+    "language": "py",
+    "versionStrategy": "tracker"
+  },
+
+  "github": {
+    "org": "one-thd",
+    "repo": "cv-db-writer",
+    "URL": "https://api.github.com/repos"
+  },
+  "tracker": {
+    "projectId": 2134482
+  },
+
+  "environments": {
+    "development": {
+      "artifactCategory": "snapshot",
+      "associatedBranchName": "master"
+    },
+    "production": {
+      "artifactCategory": "release",
+      "associatedBranchName": "master"
+    }
+  }
+
+}
