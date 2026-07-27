@@ -21,10 +21,28 @@ NON_SCORABLE_REVIEW_STATUSES = frozenset(
     }
 )
 LEGACY_SCORABLE_REVIEW_STATUSES = frozenset({"reviewed", "reviewed_ocr_assisted"})
+VALID_SKU_LENGTHS = frozenset({6, 10})
+# Separators reviewers may type; stripped before length checks.
+_SKU_SEPARATOR_RE = re.compile(r"[\s\-_./]")
+_SKU_TOKEN_RE = re.compile(r"^[0-9Xx]+$")
 
 
 def normalize_sku_digits(value: str) -> str:
+    """Digits only — used for OCR exact-match comparisons."""
     return re.sub(r"\D", "", str(value or ""))
+
+
+def normalize_sku_token(value: str) -> str:
+    """Digits + X placeholders (X uppercased). Separators are removed."""
+    cleaned = _SKU_SEPARATOR_RE.sub("", str(value or "").strip())
+    if not cleaned or not _SKU_TOKEN_RE.fullmatch(cleaned):
+        return ""
+    return cleaned.upper()  # digits unchanged; x -> X
+
+
+def is_valid_sku_token(value: str) -> bool:
+    token = normalize_sku_token(value)
+    return len(token) in VALID_SKU_LENGTHS
 
 
 def is_na_expected_sku(value: str) -> bool:
@@ -32,13 +50,13 @@ def is_na_expected_sku(value: str) -> bool:
 
 
 def is_reviewed_expected_sku(value: str) -> bool:
-    return bool(normalize_sku_digits(value)) or is_na_expected_sku(value)
+    return is_valid_sku_token(value) or is_na_expected_sku(value)
 
 
 def scorability_from_expected_sku(value: str) -> str:
     if is_na_expected_sku(value):
         return "non-scorable"
-    if normalize_sku_digits(value):
+    if is_valid_sku_token(value):
         return "scorable"
     return ""
 
@@ -47,10 +65,10 @@ def sku_digit_class(value: str) -> str:
     """Classify a reviewed value without relying on a separate manual label."""
     if is_na_expected_sku(value):
         return "not-visible"
-    digits = normalize_sku_digits(value)
-    if len(digits) == 6:
+    token = normalize_sku_token(value)
+    if len(token) == 6:
         return "6-digit"
-    if len(digits) == 10:
+    if len(token) == 10:
         return "10-digit"
     return ""
 
@@ -83,7 +101,7 @@ def normalize_review_status(
                 return reason
         return "unreadable"
 
-    if normalize_sku_digits(expected_sku):
+    if is_valid_sku_token(expected_sku):
         return SCORABLE_REVIEW_STATUS
     return ""
 
@@ -108,6 +126,9 @@ def parse_expected_sku_input(raw: str) -> tuple[str | None, str | None]:
     """
     Parse reviewer input.
 
+    Accepts exactly 6 or 10 characters from digits and optional X placeholders
+    (for digits that are not visible). Bare X / N/A still means not visible.
+
     Returns:
         (stored_value, error_message). error_message is set when input is invalid.
     """
@@ -118,11 +139,14 @@ def parse_expected_sku_input(raw: str) -> tuple[str | None, str | None]:
     if is_na_expected_sku(text):
         return "X" if text.upper() == "X" else "N/A", None
 
-    digits = normalize_sku_digits(text)
-    if len(digits) in {6, 10}:
-        return digits, None
+    token = normalize_sku_token(text)
+    if len(token) in VALID_SKU_LENGTHS:
+        return token, None
 
-    return None, "expected_sku must contain exactly 6 or 10 digits."
+    return (
+        None,
+        "expected_sku must be exactly 6 or 10 characters (digits and X for unclear digits).",
+    )
 
 
 def expected_sku_notes_from_shape(shape: dict) -> str:

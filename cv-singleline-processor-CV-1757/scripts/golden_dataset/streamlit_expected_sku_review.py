@@ -457,7 +457,8 @@ def draw_sku_bbox_on_context(
 def render_annotation_team_tab() -> None:
     st.header("Golden Dataset expected_sku Review")
     st.caption(
-        "Enter a verified 6- or 10-digit SKU, or use Mark X when it is not visible. "
+        "Enter a verified 6- or 10-character SKU (digits, with X for unclear digits), "
+        "or use Mark X when it is not visible. "
         "Only verified Scorable rows contribute to OCR accuracy."
     )
 
@@ -934,12 +935,15 @@ def render_annotation_team_tab() -> None:
             "Verified expected SKU",
             value=current_expected,
             key=f"expected_sku_{current_key}",
-            help="Enter exactly 6 or 10 digits. Use Mark X when the SKU is not visible.",
+            help=(
+                "Enter exactly 6 or 10 characters: digits, plus X for any digit that "
+                "is not visible. Use Mark X when the whole SKU is not visible."
+            ),
         )
         entered_class = sku_digit_class(expected_sku)
         if expected_sku:
             form_section.caption(
-                f"Classification: {entered_class or 'invalid — enter 6 or 10 digits'}"
+                f"Classification: {entered_class or 'invalid — enter 6 or 10 chars (digits/X)'}"
             )
 
         notes = form_section.text_area(
@@ -983,7 +987,9 @@ def render_annotation_team_tab() -> None:
         if action_col1.button("Save", use_container_width=True):
             stored_value, error = parse_expected_sku_input(expected_sku)
             if error or stored_value in {"N/A", "X"}:
-                form_section.error(error or "A verified SKU must contain 6 or 10 digits.")
+                form_section.error(
+                    error or "A verified SKU must be exactly 6 or 10 characters (digits/X)."
+                )
                 stored_value = None
 
             if stored_value:
@@ -1003,7 +1009,8 @@ def render_annotation_team_tab() -> None:
             suggested_value, suggestion_error = parse_expected_sku_input(ocr_hint)
             if suggestion_error or suggested_value in {None, "N/A", "X"}:
                 form_section.error(
-                    suggestion_error or "OCR suggestion is not a valid 6- or 10-digit SKU."
+                    suggestion_error
+                    or "OCR suggestion is not a valid 6- or 10-character SKU (digits/X)."
                 )
             else:
                 updates = {

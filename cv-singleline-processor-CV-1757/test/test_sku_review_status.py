@@ -60,7 +60,14 @@ def test_sku_input_and_digit_class_require_six_or_ten_digits():
     assert parse_expected_sku_input("1009901192") == ("1009901192", None)
     assert parse_expected_sku_input("12345")[0] is None
     assert parse_expected_sku_input("X") == ("X", None)
+    # X placeholders count toward the 6/10 length (not digits-only).
+    assert parse_expected_sku_input("12XX34") == ("12XX34", None)
+    assert parse_expected_sku_input("12X456") == ("12X456", None)
+    assert parse_expected_sku_input("1X09901192") == ("1X09901192", None)
+    assert parse_expected_sku_input("12XX3")[0] is None  # 5 chars after normalize
+    assert parse_expected_sku_input("12XX345")[0] is None  # 7 chars
     assert sku_digit_class("123456") == "6-digit"
+    assert sku_digit_class("12XX34") == "6-digit"
     assert sku_digit_class("1009901192") == "10-digit"
     assert sku_digit_class("X") == "not-visible"
 

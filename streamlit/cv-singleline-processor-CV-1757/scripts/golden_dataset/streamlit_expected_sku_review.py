@@ -395,7 +395,10 @@ def main() -> None:
             "expected_sku",
             value="",
             key=f"expected_sku_{current_key}",
-            help="Enter SKU digits, or N/A when no SKU applies (notes required for N/A).",
+            help=(
+                "Enter exactly 6 or 10 characters: digits, plus X for any digit that "
+                "is not visible. Use N/A when no SKU applies (notes required for N/A)."
+            ),
         )
 
         notes = st.text_area(
