@@ -337,27 +337,37 @@ gsutil cp gs://selling-pipeline-ml-models/singleline-pipeline-seg-models-1.1/seg
 
 ### Option B — Copy weights from your Mac (`scp`)
 
-If you still have the original zip (`HomeDepotCV 2.zip`) on your laptop, extract only the `.pt` files without unpacking the full archive:
+**Run these commands on your Mac (laptop), not on `GPU1-A2080`.**  
+`scp` pushes files **from the Mac → GPU**. If you run `scp` while already SSH'd into the GPU, `$WORKDIR` will be empty and you will get `No such file or directory`.
 
-**On your Mac** (VPN on):
+If you still have the original zip (`HomeDepotCV 2.zip`) on your laptop, extract only the `.pt` files:
+
+**On your Mac** (VPN on, new Terminal window — do **not** be SSH'd into the GPU):
 
 ```bash
 ZIP="/Users/avinash_a_patel/Downloads/HOMEDEPOT/HomeDepotCV 2.zip"
 WORKDIR=/tmp/hd-weights
 mkdir -p "$WORKDIR"
 
-# Extract detection weights from the zip
 unzip -j "$ZIP" "HomeDepotCV/singleline-pipeline-det-models-1.2_best.pt" -d "$WORKDIR"
-mv "$WORKDIR/singleline-pipeline-det-models-1.2_best.pt" "$WORKDIR/best.pt"
-
-# Extract segmentation weights from the zip
 unzip -j "$ZIP" "HomeDepotCV/singleline-pipeline-seg-models_segmentation.pt" -d "$WORKDIR"
+mv "$WORKDIR/singleline-pipeline-det-models-1.2_best.pt" "$WORKDIR/best.pt"
 mv "$WORKDIR/singleline-pipeline-seg-models_segmentation.pt" "$WORKDIR/segmentation.pt"
 
 ls -lh "$WORKDIR"/*.pt
 ```
 
-Copy to the GPU:
+Copy to the GPU (still on your Mac):
+
+```bash
+scp "$WORKDIR/best.pt" \
+  avinash.patel@172.16.20.100:~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+
+scp "$WORKDIR/segmentation.pt" \
+  avinash.patel@172.16.20.100:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+```
+
+If you use SSH config alias `Ant-PC-2080`:
 
 ```bash
 scp "$WORKDIR/best.pt" \
@@ -367,7 +377,15 @@ scp "$WORKDIR/segmentation.pt" \
   Ant-PC-2080:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
 ```
 
-If you already have `.pt` files elsewhere on the Mac, `scp` them directly to those two paths.
+**Then** SSH back into the GPU and verify:
+
+```bash
+ssh Ant-PC-2080
+ls -lh ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+ls -lh ~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+```
+
+If you already have `.pt` files elsewhere on the Mac, `scp` them directly to those two remote paths.
 
 ---
 
