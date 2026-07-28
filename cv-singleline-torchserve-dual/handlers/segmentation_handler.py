@@ -36,14 +36,18 @@ class SegmentationHandler(BaseHandler):
         serialized = context.manifest["model"]["serializedFile"]
         weights_path = model_dir / serialized
 
-        unpack = str(model_dir)
-        while unpack in sys.path:
-            sys.path.remove(unpack)
-        sys.path.insert(0, unpack)
+        sys.path.insert(0, str(model_dir))
+        from mar_bootstrap import prepare_model_dir  # noqa: E402
+
+        model_dir = prepare_model_dir(model_dir)
+        weights_path = model_dir / serialized
 
         print(
             f"[SegmentationHandler] model_dir={model_dir} weights={weights_path} "
-            f"cuda={torch.cuda.is_available()}"
+            f"exists={weights_path.is_file()} cuda={torch.cuda.is_available()} "
+            f"common_config={(model_dir / 'common_config_gpu.py').is_file()} "
+            f"pipeline_pkg={(model_dir / 'service_pipeline_gpu').is_dir()} "
+            f"entries={sorted(p.name for p in model_dir.iterdir())[:30]}"
         )
 
         try:
