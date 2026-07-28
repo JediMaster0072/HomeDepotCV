@@ -1,0 +1,16 @@
+# Shared deps for dual TorchServe image (det + seg).
+matplotlib>=3.2.2
+numpy==1.26.4
+opencv-python==4.10.0.82
+Pillow>=7.1.2
+PyYAML>=5.3.1
+requests>=2.23.0
+scipy>=1.11.0,<1.16.0
+tqdm>=4.41.0
+protobuf<4.21.3
+tensorboard>=2.4.1
+pandas>=1.1.4
+seaborn>=0.11.0
+ipython
+psutil
+thop

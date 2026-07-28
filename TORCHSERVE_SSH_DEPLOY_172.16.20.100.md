@@ -1,6 +1,6 @@
 # SSH + TorchServe deploy guide — `172.16.20.100`
 
-Use this guide from your **work laptop on corporate VPN** to SSH into the GPU box at `172.16.20.100`, pull the latest HomeDepotCV code (including TorchServe import-collision fixes), rebuild containers, and verify inference.
+Use this guide from your **work laptop on corporate VPN** to SSH into the GPU box at `172.16.20.100`, pull the latest HomeDepotCV code, and run **one TorchServe container** that serves both detection and segmentation (Option 1: two `.mar` files, separate worker processes).
 
 | Item | Value |
 |------|--------|
@@ -10,6 +10,8 @@ Use this guide from your **work laptop on corporate VPN** to SSH into the GPU bo
 | SSH user | `avinash.patel` (confirm with your IT admin if login fails) |
 | Private key (local only) | `avinash_patel (1).pem` |
 | GitHub repo | https://github.com/JediMaster0072/HomeDepotCV |
+| Preferred deploy | `hd-dual-gpu` — one container, ports `9000/9001/9002` |
+| Endpoints | `POST /predictions/detector` and `POST /predictions/segmenter` |
 | Related host (5090 / Streamlit team app) | `172.16.20.108` — different key, see bottom |
 
 **Security:** `*.pem` is in `.gitignore`. Never commit private keys to GitHub.
@@ -513,242 +515,191 @@ If either file is missing or tiny, do not run `docker build` yet.
 
 ---
 
-## 5. Build TorchServe Docker images
+## 5. Build TorchServe Docker image (preferred: dual Option 1)
 
 SSH into the host, then:
 
 > If you get `permission denied ... docker.sock`, prefix with `sudo` or add your user to the `docker` group (`sudo usermod -aG docker $USER` then re-login / `newgrp docker`).
 
-### Detection image
+### Dual image — one TorchServe, two MARs (`hd-dual-gpu`)
+
+This is the **preferred** path: one container on this single GPU server serves both models. Each model is a separate `.mar` with its own worker process and `model_dir` (`yolov7/` never shares a process with `yolov7-seg/`).
+
+Confirm weights:
 
 ```bash
-cd ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2
-# Confirm weights exist first
-ls -lh best.pt
-sudo docker build -t hd-det-gpu .
+ls -lh ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+ls -lh ~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
 ```
 
-The Dockerfile:
-
-1. Installs PyTorch + TorchServe
-2. Runs `torch-model-archiver` to create `yolov7.mar`
-3. Sets `CMD` to start TorchServe on ports `8080/8081/8082` inside the container
-
-### Segmentation image
-
-Before building, confirm `segmentation.pt` is present and that `requirements.txt` does **not** pin `scipy==1.6.0` (that old pin forces a source build and fails with “No BLAS/LAPACK”).
-
-```bash
-cd ~/HomeDepotCV/cv-singleline-detector-yolov7-seg
-ls -lh segmentation.pt
-grep scipy requirements.txt   # should be something like scipy>=1.11, NOT scipy==1.6.0
-
-# Pull latest Dockerfile/requirements if you fixed them on GitHub:
-cd ~/HomeDepotCV && git pull origin main
-cd ~/HomeDepotCV/cv-singleline-detector-yolov7-seg
-
-sudo docker build -t hd-seg-gpu .
-```
-
-#### If seg build fails on SciPy / BLAS
-
-Cause: `pip install -r requirements.txt --no-deps` + `scipy==1.6.0` tries to compile SciPy from source.
-
-Fix (already in repo if you pulled latest):
-
-1. Remove `--no-deps` from the Dockerfile
-2. Replace `scipy==1.6.0` with a modern wheel-backed pin (`scipy>=1.11`)
-3. Rebuild
-
-### Optional — use the repo deploy helper
-
-From repo root on the host (adapt GPU indices/ports if this box has one GPU):
+Build from **repo root** (Dockerfile copies both trees into separate MAR staging dirs):
 
 ```bash
 cd ~/HomeDepotCV
-./scripts/deploy_gpu_5090_updated.sh --build-only
+git pull origin main
+chmod +x cv-singleline-torchserve-dual/scripts/build_and_run.sh
+./cv-singleline-torchserve-dual/scripts/build_and_run.sh --build-only
+# or:
+# docker build -f cv-singleline-torchserve-dual/Dockerfile -t hd-dual-gpu .
 ```
 
-> **Note:** `deploy_gpu_5090_updated.sh` was written for the **5090** host (`172.16.20.108`) with two GPUs. On a single-GPU `2080` box, run the manual `docker run` commands below instead of binding `gpu=0` and `gpu=1`.
+What the dual Dockerfile does:
+
+1. Installs CUDA PyTorch + TorchServe
+2. Builds `detector.mar` (best.pt + yolov7/ + detection handler)
+3. Builds `segmenter.mar` (segmentation.pt + yolov7-seg/ + segmentation handler)
+4. Starts **one** TorchServe with `--models detector=detector.mar,segmenter=segmenter.mar`
+
+See also `cv-singleline-torchserve-dual/README.md`.
+
+### Fallback — separate det/seg images (legacy)
+
+```bash
+cd ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2 && sudo docker build -t hd-det-gpu .
+cd ~/HomeDepotCV/cv-singleline-detector-yolov7-seg && sudo docker build -t hd-seg-gpu .
+```
 
 ---
 
-## 6. Start TorchServe containers
+## 6. Start TorchServe (preferred: one dual container)
 
-### Single-GPU host (typical for `172.16.20.100`)
+### Dual container on `172.16.20.100`
 
-Stop old containers:
+Stop old split **and** dual containers:
 
 ```bash
-docker rm -f hd-det-gpu hd-seg-gpu 2>/dev/null || true
+docker rm -f hd-dual-gpu hd-det-gpu hd-seg-gpu 2>/dev/null || true
 ```
 
-Start **detection** (host port `9000`):
+Start **one** dual service (host ports `9000/9001/9002`):
+
+```bash
+cd ~/HomeDepotCV
+./cv-singleline-torchserve-dual/scripts/build_and_run.sh
+```
+
+Or manually:
 
 ```bash
 docker run -d \
-  --name hd-det-gpu \
+  --name hd-dual-gpu \
   --gpus all \
   -p 9000:8080 \
   -p 9001:8081 \
   -p 9002:8082 \
   --shm-size=8g \
   --restart unless-stopped \
-  hd-det-gpu
+  hd-dual-gpu
 ```
 
-Start **segmentation** (host port `10000`):
+Both models load onto the same GPU (one worker each). Watch `nvidia-smi` during load.
 
-```bash
-docker run -d \
-  --name hd-seg-gpu \
-  --gpus all \
-  -p 10000:8080 \
-  -p 10001:8081 \
-  -p 10002:8082 \
-  --shm-size=8g \
-  --restart unless-stopped \
-  hd-seg-gpu
-```
-
-> If both containers need the same GPU, they will share VRAM. Watch `nvidia-smi` during load.
-
-### What runs inside each container
+Inside the dual container:
 
 ```bash
 torchserve --start --foreground --ncs \
   --ts-config /app/config.properties \
-  --model-store model_store \
-  --models yolov7=yolov7.mar
+  --model-store /app/model_store \
+  --models detector=detector.mar,segmenter=segmenter.mar
 ```
 
-(Seg image uses `model_store` after the Dockerfile fix.)
+**Do not run `torchserve` on the host.** It runs inside Docker.
 
-**Do not run `torchserve` on the host.** It is already started inside the containers you launched (`hd-det-gpu` / `hd-seg-gpu`). The host does not have TorchServe installed — that is expected. If you see `torchserve: command not found` on the GPU shell, ignore it and use the Docker health checks below instead.
+### Fallback — two containers (legacy)
+
+```bash
+docker rm -f hd-det-gpu hd-seg-gpu 2>/dev/null || true
+docker run -d --name hd-det-gpu --gpus all \
+  -p 9000:8080 -p 9001:8081 -p 9002:8082 \
+  --shm-size=8g --restart unless-stopped hd-det-gpu
+docker run -d --name hd-seg-gpu --gpus all \
+  -p 10000:8080 -p 10001:8081 -p 10002:8082 \
+  --shm-size=8g --restart unless-stopped hd-seg-gpu
+```
 
 ---
 
 ## 7. Verify health
 
-### Confirm containers are running
+### Confirm the dual container is running
 
 ```bash
-docker ps --filter name=hd-
-docker logs --tail 80 hd-det-gpu
-docker logs --tail 80 hd-seg-gpu
+docker ps --filter name=hd-dual
+docker logs --tail 120 hd-dual-gpu
 ```
 
-### Health checks (on the GPU)
+Look for both workers initializing (detection Stage 1 and segmentation Stage 2).
+
+### Health checks (on the GPU) — dual
+
+```bash
+curl -s http://127.0.0.1:9000/ping
+curl -s http://127.0.0.1:9001/models
+curl -s http://127.0.0.1:9001/models/detector | python3 -m json.tool
+curl -s http://127.0.0.1:9001/models/segmenter | python3 -m json.tool
+```
+
+Expect `"status":"Healthy"` and both `detector` and `segmenter` with workers `"status": "READY"`. First load can take a few minutes.
+
+Successful dual logs should include lines like:
+
+```
+[DetectionHandler] Loading Stage 1 — YOLOv7 detection …
+[DetectionHandler] Stage 1 ready …
+[SegmentationHandler] Loading Stage 2 — YOLOv7-seg …
+[SegmentationHandler] Stage 2 ready …
+```
+
+### Legacy split-container checks
 
 ```bash
 curl -s http://127.0.0.1:9000/ping
 curl -s http://127.0.0.1:10000/ping
-
-curl -s http://127.0.0.1:9001/models
-curl -s http://127.0.0.1:10001/models
-```
-
-Expect `"status":"Healthy"` and a `yolov7` model entry.
-
-### Wait for workers READY
-
-```bash
 curl -s http://127.0.0.1:9001/models/yolov7 | python3 -m json.tool
 curl -s http://127.0.0.1:10001/models/yolov7 | python3 -m json.tool
 ```
-
-Look for `"status": "READY"`. First load can take a minute or two (GPU weight load).
-
-Expected ping response:
-
-```json
-{"status":"Healthy"}
-```
-
-### Follow live logs
-
-```bash
-docker logs -f hd-det-gpu
-docker logs -f hd-seg-gpu
-```
-
-Successful detection init should show:
-
-```
-[Handler] Loading Stage 1 — YOLOv7 detection model …
-[Stage1] model loaded | device=cuda …
-[Handler] Stage 1 ready.
-```
-
-Successful segmentation init should show:
-
-```
-[Handler] Loading Stage 2 — YOLOv7-seg segmentation model …
-[Stage2] model loaded …
-```
-
-(or, for the seg-only container, Stage 2 loading during `initialize()`).
-
-If ping fails, check logs for OOM (both containers on one GPU) or `Weights only load failed` (seg needs `torch.load(..., weights_only=False)` — see troubleshooting).
 
 ---
 
 ## 8. Smoke-test inference
 
-### Detection
-
-From the detection directory (needs `test_image.jpg` or edit path):
-
-```bash
-cd ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2
-# Edit test_torchserve.py URL if needed — default may be localhost:9000
-python3 test_torchserve.py
-```
-
-Or with `curl` + `request.json`:
-
-```bash
-curl -X POST http://127.0.0.1:9000/predictions/yolov7 \
-  -H "Content-Type: application/json" \
-  --data-binary @request.json
-```
-
-Request body shape:
-
-```json
-{
-  "instances": [
-    {
-      "model_name": "detection",
-      "file": "<base64-encoded-png>"
-    }
-  ]
-}
-```
-
-### Segmentation
+### Dual (preferred)
 
 ```bash
 cd ~/HomeDepotCV
 python3 scripts/smoke_test_gpu_detectors_updated.py \
-  --det-url http://127.0.0.1:9000 \
-  --seg-url http://127.0.0.1:10000 \
-  --det-image /path/to/shelf.jpg \
-  --seg-strip /path/to/strip.jpg
+  --base-url http://127.0.0.1:9000
 ```
 
-Segmentation request shape:
+With optional images:
 
-```json
-{
-  "instances": [
-    {
-      "model_name": "segmentation",
-      "strip_id": 0,
-      "file": "<base64-encoded-png>"
-    }
-  ]
-}
+```bash
+python3 scripts/smoke_test_gpu_detectors_updated.py \
+  --base-url http://127.0.0.1:9000 \
+  --det-image /path/to/shelf.jpg \
+  --seg-strip /path/to/strip.png
+```
+
+Manual curls:
+
+```bash
+# Detection
+curl -X POST http://127.0.0.1:9000/predictions/detector \
+  -H 'Content-Type: application/json' \
+  -d '{"instances":[{"model_name":"detection","file":"<base64>"}]}'
+
+# Segmentation
+curl -X POST http://127.0.0.1:9000/predictions/segmenter \
+  -H 'Content-Type: application/json' \
+  -d '{"instances":[{"model_name":"segmentation","strip_id":0,"file":"<base64>"}]}'
+```
+
+### Legacy two-URL mode
+
+```bash
+python3 scripts/smoke_test_gpu_detectors_updated.py \
+  --det-url http://127.0.0.1:9000 \
+  --seg-url http://127.0.0.1:10000
 ```
 
 ---
@@ -765,29 +716,18 @@ ssh Ant-PC-2080 'hostname && nvidia-smi -L'
 # 3) Pull latest code ON THE SERVER
 ssh Ant-PC-2080 'cd ~/HomeDepotCV && git pull origin main'
 
-# 4) Rebuild + restart ON THE SERVER
+# 4) Rebuild + restart dual ON THE SERVER
 ssh Ant-PC-2080 'bash -s' <<'REMOTE'
 set -euo pipefail
-cd ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2
-[[ -f best.pt ]] || bash model.sh
-docker build -t hd-det-gpu .
-cd ~/HomeDepotCV/cv-singleline-detector-yolov7-seg
-[[ -f segmentation.pt ]] || bash model.sh
-docker build -t hd-seg-gpu .
-docker rm -f hd-det-gpu hd-seg-gpu 2>/dev/null || true
-docker run -d --name hd-det-gpu --gpus all \
-  -p 9000:8080 -p 9001:8081 -p 9002:8082 \
-  --shm-size=8g --restart unless-stopped hd-det-gpu
-docker run -d --name hd-seg-gpu --gpus all \
-  -p 10000:8080 -p 10001:8081 -p 10002:8082 \
-  --shm-size=8g --restart unless-stopped hd-seg-gpu
-sleep 15
-curl -sf http://127.0.0.1:9000/ping
-curl -sf http://127.0.0.1:10000/ping
+cd ~/HomeDepotCV
+ls -lh cv-singleline-detector-yolo7_det_dep_2/best.pt
+ls -lh cv-singleline-detector-yolov7-seg/segmentation.pt
+chmod +x cv-singleline-torchserve-dual/scripts/build_and_run.sh
+./cv-singleline-torchserve-dual/scripts/build_and_run.sh
 REMOTE
 
-# 5) Optional smoke test ON THE SERVER
-ssh Ant-PC-2080 'cd ~/HomeDepotCV && python3 scripts/smoke_test_gpu_detectors_updated.py --det-url http://127.0.0.1:9000 --seg-url http://127.0.0.1:10000'
+# 5) Smoke test ON THE SERVER
+ssh Ant-PC-2080 'cd ~/HomeDepotCV && python3 scripts/smoke_test_gpu_detectors_updated.py --base-url http://127.0.0.1:9000'
 ```
 
 ---
@@ -796,14 +736,17 @@ ssh Ant-PC-2080 'cd ~/HomeDepotCV && python3 scripts/smoke_test_gpu_detectors_up
 
 | Service | Container | Inference | Management | Metrics |
 |---------|-----------|-----------|------------|---------|
-| Detection | `hd-det-gpu` | `9000` → `8080` | `9001` → `8081` | `9002` → `8082` |
-| Segmentation | `hd-seg-gpu` | `10000` → `8080` | `10001` → `8081` | `10002` → `8082` |
+| **Dual (preferred)** | `hd-dual-gpu` | `9000` → `8080` | `9001` → `8081` | `9002` → `8082` |
+| Detection (legacy) | `hd-det-gpu` | `9000` → `8080` | `9001` → `8081` | `9002` → `8082` |
+| Segmentation (legacy) | `hd-seg-gpu` | `10000` → `8080` | `10001` → `8081` | `10002` → `8082` |
 
-From another machine on VPN (replace with server hostname if DNS exists):
+Dual model URLs (same host port):
+
+- `http://172.16.20.100:9000/predictions/detector`
+- `http://172.16.20.100:9000/predictions/segmenter`
 
 ```bash
 curl http://172.16.20.100:9000/ping
-curl http://172.16.20.100:10000/ping
 ```
 
 Firewall rules on the host must allow these ports if you call from outside localhost.
@@ -816,23 +759,21 @@ Firewall rules on the host must allow these ports if you call from outside local
 |---------|--------------|-----|
 | `Permission denied (publickey)` | Wrong PEM or user | Check `IdentityFile`, `chmod 400`, username |
 | `ping` fails | VPN off | Connect corporate VPN |
-| Docker has no GPU | NVIDIA runtime / CDI | See `gpu-docker-cdi-fix.md` (written for `.108`, same class of issue) |
-| `sm_120 NOT supported` | Wrong PyTorch image for GPU gen | 5090 needs CUDA 12.8+ PyTorch; 2080 may need different base |
-| Segmentation imports detection `utils` | Module cache collision | Ensure latest `common_config_gpu.py` + stage files are deployed |
-| Seg init: `Weights only load failed` / `weights_only` | PyTorch 2.6+ default | `yolov7-seg/models/experimental.py` must use `torch.load(..., weights_only=False)` then rebuild image |
-| Container exits immediately | Missing weights / bad `.mar` | `docker logs hd-det-gpu` |
-| Port already in use | Old container running | `docker rm -f hd-det-gpu hd-seg-gpu` |
+| Docker has no GPU | NVIDIA runtime / CDI | See `gpu-docker-cdi-fix.md` |
+| Seg init: `Weights only load failed` / `weights_only` | PyTorch 2.6+ default | `yolov7-seg/models/experimental.py` must use `torch.load(..., weights_only=False)` then rebuild |
+| Container exits immediately | Missing weights / bad `.mar` | `docker logs hd-dual-gpu` |
+| Port already in use | Old container running | `docker rm -f hd-dual-gpu hd-det-gpu hd-seg-gpu` |
+| Dual OOM on 2080 | Both models in VRAM | Keep 1 worker/model; reduce concurrency; check `nvidia-smi` |
+| Import confusion / wrong `models`/`utils` | Both YOLO trees on shared PYTHONPATH | Dual image must not set `PYTHONPATH=/app` with both repos; use MAR `model_dir` only |
 
-### Confirm import-collision fix is live
-
-On the server:
+### Confirm dual package is present
 
 ```bash
-grep -n "purge_yolo_modules\|activate_det_repo\|activate_seg_repo" \
-  ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/common_config_gpu.py
+ls ~/HomeDepotCV/cv-singleline-torchserve-dual/Dockerfile
+ls ~/HomeDepotCV/cv-singleline-torchserve-dual/handlers/
 ```
 
-You should see those function names. Rebuild Docker images after pulling — a running container does not pick up file changes until rebuilt.
+Rebuild after `git pull` — a running container does not pick up file changes until rebuilt.
 
 ---
 
@@ -869,23 +810,27 @@ export HOME_DEPOT_SSH_KEY="$HOME/.ssh/avinash_patel_100.pem"
 
 ---
 
-## 14. Quick reference
+
+
+## 14. Quick reference (dual)
 
 ```bash
 # Connect
 ssh Ant-PC-2080
 
-# Pull + rebuild TorchServe (on server)
+# Pull + rebuild dual TorchServe (on server)
 cd ~/HomeDepotCV && git pull origin main
-cd cv-singleline-detector-yolo7_det_dep_2 && docker build -t hd-det-gpu .
-cd ../cv-singleline-detector-yolov7-seg && docker build -t hd-seg-gpu .
-
-# Restart
-docker rm -f hd-det-gpu hd-seg-gpu
-docker run -d --name hd-det-gpu --gpus all -p 9000:8080 -p 9001:8081 --shm-size=8g hd-det-gpu
-docker run -d --name hd-seg-gpu --gpus all -p 10000:8080 -p 10001:8081 --shm-size=8g hd-seg-gpu
+./cv-singleline-torchserve-dual/scripts/build_and_run.sh
 
 # Health
 curl http://127.0.0.1:9000/ping
-curl http://127.0.0.1:10000/ping
+curl http://127.0.0.1:9001/models/detector
+curl http://127.0.0.1:9001/models/segmenter
+
+# Smoke
+python3 scripts/smoke_test_gpu_detectors_updated.py --base-url http://127.0.0.1:9000
 ```
+
+## 15. Longer-term note (Triton)
+
+TorchServe Option 1 meets the single-GPU-server goal today. TorchServe is in limited upstream maintenance; if you later need a longer-lived multi-model server on the same host, evaluate **NVIDIA Triton** (model repository + separate backends per model) without splitting across two GPU servers. LitServe is a lighter Python option. No migration is required for the current dual MAR deploy.

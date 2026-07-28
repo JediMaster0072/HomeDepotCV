@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Health + optional inference smoke tests for the two TorchServe detector containers."""
+"""Health + optional inference smoke tests for TorchServe detectors.
+
+Supports:
+  - Dual Option 1 (one container): --base-url http://127.0.0.1:9000
+    models: detector + segmenter
+  - Legacy two containers: --det-url / --seg-url (models named yolov7)
+"""
 
 from __future__ import annotations
 
@@ -30,8 +36,8 @@ def ping(url: str, label: str) -> None:
     print(f"[ok] {label} ping")
 
 
-def model_ready(mgmt_url: str, label: str) -> None:
-    body = http_json("GET", f"{mgmt_url}/models/yolov7", timeout=15)
+def model_ready(mgmt_url: str, model_name: str, label: str) -> None:
+    body = http_json("GET", f"{mgmt_url}/models/{model_name}", timeout=15)
     try:
         workers = body[0].get("workers", [])
     except Exception:
@@ -39,14 +45,14 @@ def model_ready(mgmt_url: str, label: str) -> None:
     ready = [w for w in workers if w.get("status") == "READY"]
     if not ready:
         raise RuntimeError(f"{label} has no READY workers: {json.dumps(body, indent=2)}")
-    print(f"[ok] {label} model workers READY ({len(ready)}/{len(workers)})")
+    print(f"[ok] {label} model={model_name} workers READY ({len(ready)}/{len(workers)})")
 
 
 def encode_image(path: Path) -> str:
     return base64.b64encode(path.read_bytes()).decode("ascii")
 
 
-def test_detection(infer_url: str, image_path: Path) -> None:
+def test_detection(infer_url: str, model_name: str, image_path: Path) -> None:
     payload = {
         "instances": [
             {
@@ -55,15 +61,20 @@ def test_detection(infer_url: str, image_path: Path) -> None:
             }
         ]
     }
-    data = http_json("POST", f"{infer_url}/predictions/yolov7", payload)
-    preds = data.get("predictions", [{}])[0]
+    data = http_json("POST", f"{infer_url}/predictions/{model_name}", payload)
+    # TorchServe may return list or dict depending on handler wrapping
+    if isinstance(data, list):
+        data = data[0] if data else {}
+    preds = data.get("predictions", [{}])
+    if isinstance(preds, list):
+        preds = preds[0] if preds else {}
     dets = preds.get("detections", [])
-    print(f"[ok] detection inference — {len(dets)} bbox(es)")
+    print(f"[ok] detection inference ({model_name}) — {len(dets)} bbox(es)")
     if dets:
         print(f"     first detection: {dets[0]}")
 
 
-def test_segmentation(infer_url: str, strip_path: Path) -> None:
+def test_segmentation(infer_url: str, model_name: str, strip_path: Path) -> None:
     payload = {
         "instances": [
             {
@@ -73,17 +84,44 @@ def test_segmentation(infer_url: str, strip_path: Path) -> None:
             }
         ]
     }
-    data = http_json("POST", f"{infer_url}/predictions/yolov7", payload)
-    seg_node = data.get("predictions", [{}])[0].get("segmentation")
+    data = http_json("POST", f"{infer_url}/predictions/{model_name}", payload)
+    if isinstance(data, list):
+        data = data[0] if data else {}
+    preds = data.get("predictions", [{}])
+    if isinstance(preds, list):
+        preds = preds[0] if preds else {}
+    seg_node = preds.get("segmentation")
     if seg_node is None:
         raise RuntimeError(f"segmentation response missing 'segmentation' key: {data}")
-    print("[ok] segmentation inference — response contains segmentation payload")
+    print(f"[ok] segmentation inference ({model_name}) — response contains segmentation payload")
+
+
+def infer_mgmt(infer_url: str) -> str:
+    """Map common inference ports to management ports."""
+    replacements = (
+        (":9000", ":9001"),
+        (":10000", ":10001"),
+        (":8080", ":8081"),
+    )
+    out = infer_url
+    for a, b in replacements:
+        if a in out:
+            return out.replace(a, b)
+    # Fallback: assume mgmt is infer+1 on last port component
+    return out
 
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument(
+        "--base-url",
+        default=None,
+        help="Dual Option 1: single TorchServe base (e.g. http://127.0.0.1:9000)",
+    )
     p.add_argument("--det-url", default="http://127.0.0.1:9000")
     p.add_argument("--seg-url", default="http://127.0.0.1:10000")
+    p.add_argument("--det-model", default=None, help="Override detection model name")
+    p.add_argument("--seg-model", default=None, help="Override segmentation model name")
     p.add_argument("--det-image", type=Path, default=None, help="Optional shelf image for detection infer")
     p.add_argument("--seg-strip", type=Path, default=None, help="Optional strip image for segmentation infer")
     return p.parse_args()
@@ -91,28 +129,47 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    det_infer = args.det_url.rstrip("/")
-    seg_infer = args.seg_url.rstrip("/")
-    det_mgmt = det_infer.replace(":8080", ":8081").replace(":9000", ":9001")
-    seg_mgmt = seg_infer.replace(":8080", ":8081").replace(":10000", ":10001")
+
+    if args.base_url:
+        base = args.base_url.rstrip("/")
+        det_infer = base
+        seg_infer = base
+        det_model = args.det_model or "detector"
+        seg_model = args.seg_model or "segmenter"
+        det_mgmt = infer_mgmt(det_infer)
+        seg_mgmt = det_mgmt
+        mode = "dual"
+    else:
+        det_infer = args.det_url.rstrip("/")
+        seg_infer = args.seg_url.rstrip("/")
+        det_model = args.det_model or "yolov7"
+        seg_model = args.seg_model or "yolov7"
+        det_mgmt = infer_mgmt(det_infer)
+        seg_mgmt = infer_mgmt(seg_infer)
+        mode = "split"
 
     try:
-        ping(det_infer, "detection")
-        ping(seg_infer, "segmentation")
-        model_ready(det_mgmt, "detection")
-        model_ready(seg_mgmt, "segmentation")
+        if mode == "dual":
+            ping(det_infer, "dual-torchserve")
+            model_ready(det_mgmt, det_model, "detection")
+            model_ready(seg_mgmt, seg_model, "segmentation")
+        else:
+            ping(det_infer, "detection")
+            ping(seg_infer, "segmentation")
+            model_ready(det_mgmt, det_model, "detection")
+            model_ready(seg_mgmt, seg_model, "segmentation")
 
         if args.det_image:
             if not args.det_image.is_file():
                 print(f"[skip] detection image not found: {args.det_image}", file=sys.stderr)
             else:
-                test_detection(det_infer, args.det_image)
+                test_detection(det_infer, det_model, args.det_image)
 
         if args.seg_strip:
             if not args.seg_strip.is_file():
                 print(f"[skip] segmentation strip not found: {args.seg_strip}", file=sys.stderr)
             else:
-                test_segmentation(seg_infer, args.seg_strip)
+                test_segmentation(seg_infer, seg_model, args.seg_strip)
 
         if not args.det_image and not args.seg_strip:
             print("[info] ping/model checks only — pass --det-image / --seg-strip for inference smoke")
