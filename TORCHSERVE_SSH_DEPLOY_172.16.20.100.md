@@ -41,8 +41,8 @@ On the remote host (`172.16.20.100`):
 
 ```bash
 # Copy key to a stable location (example)
-mkdir -p ~/.ssh
-cp "/path/to/avinash_patel (1).pem" ~/.ssh/avinash_patel_100.pem
+avinash.patel@Avinash-Patel HomeDepotCV % mkdir -p ~/.ssh
+cp "/Users/avinash.patel/Downloads/HomeDepotCV/avinash_patel (1).pem" ~/.ssh/avinash_patel_100.pem
 chmod 400 ~/.ssh/avinash_patel_100.pem
 ```
 
