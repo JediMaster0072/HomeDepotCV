@@ -6,6 +6,7 @@ Use this guide from your **work laptop on corporate VPN** to SSH into the GPU bo
 |------|--------|
 | Host IP | `172.16.20.100` |
 | SSH alias (recommended) | `Ant-PC-2080` |
+| Remote hostname | `GPU1-A2080` |
 | SSH user | `avinash.patel` (confirm with your IT admin if login fails) |
 | Private key (local only) | `avinash_patel (1).pem` |
 | GitHub repo | https://github.com/JediMaster0072/HomeDepotCV |
@@ -107,47 +108,163 @@ If SSH fails:
 
 ---
 
-## 3. Get latest code on the remote host
+## 3. Get latest code on the remote host (`GPU1-A2080`)
 
-### Option A — `git pull` on the server (recommended)
+If you see:
+
+```text
+cd: /home/avinash.patel/HomeDepotCV: No such file or directory
+fatal: not a git repository (or any of the parent directories): .git
+```
+
+the repo has **not been cloned yet** on that machine. Run the **first-time setup** below once, then use `git pull` on future updates.
+
+---
+
+### 3a. First-time git setup on `GPU1-A2080` (run on the server)
+
+SSH in:
+
+```bash
+ssh Ant-PC-2080
+# you should see a prompt like: avinash.patel@GPU1-A2080:~$
+```
+
+#### Step 1 — Install git (if missing)
+
+```bash
+git --version
+```
+
+If that fails:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y git
+```
+
+#### Step 2 — Clone the GitHub repo (HTTPS — no GitHub login required for pull)
+
+The repo is public. Clone it into your home directory:
+
+```bash
+cd ~
+git clone https://github.com/JediMaster0072/HomeDepotCV.git
+cd ~/HomeDepotCV
+```
+
+Expected:
+
+```text
+Cloning into 'HomeDepotCV'...
+```
+
+#### Step 3 — Verify the remote and branch
+
+```bash
+cd ~/HomeDepotCV
+git remote -v
+git branch
+git log -1 --oneline
+```
+
+You should see:
+
+```text
+origin  https://github.com/JediMaster0072/HomeDepotCV.git (fetch)
+origin  https://github.com/JediMaster0072/HomeDepotCV.git (push)
+* main
+158c25e ...   # commit hash will vary
+```
+
+#### Step 4 — Optional git identity (only needed if you will commit from this host)
+
+```bash
+git config --global user.name "Avinash Patel"
+git config --global user.email "your.email@example.com"
+```
+
+Not required for `git pull` / `git clone` only.
+
+#### Step 5 — Confirm TorchServe directories exist
+
+```bash
+ls ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2
+ls ~/HomeDepotCV/cv-singleline-detector-yolov7-seg
+ls ~/HomeDepotCV/scripts/deploy_gpu_5090_updated.sh
+```
+
+If those paths exist, you are ready for **Section 4** (weights) and **Section 5** (Docker build).
+
+---
+
+### 3b. Update an existing clone (`git pull`)
+
+Only run this **after** `~/HomeDepotCV` already exists from section 3a:
 
 ```bash
 ssh Ant-PC-2080
 
-cd ~/HomeDepotCV   # adjust if your checkout lives elsewhere
+cd ~/HomeDepotCV
 git pull origin main
 git log -1 --oneline
 ```
 
-Clone fresh if needed:
+If `git pull` asks for credentials on HTTPS, the GPU host may not have outbound GitHub access. Use **Option C (rsync)** below instead.
 
-```bash
-ssh Ant-PC-2080
-git clone https://github.com/JediMaster0072/HomeDepotCV.git
-cd HomeDepotCV
-```
+---
 
-### Option B — `rsync` from laptop (code only, no PEM)
+### Option C — `rsync` from laptop (no git on server required)
 
-From your laptop (VPN on):
+From your laptop (VPN on) if the GPU cannot reach GitHub:
 
 ```bash
 LOCAL_REPO=~/Downloads/HOMEDEPOT/HomeDepotCV
 REMOTE=Ant-PC-2080
 REMOTE_HOME=~/HomeDepotCV
 
-rsync -az --delete \
+ssh Ant-PC-2080 "mkdir -p ~/HomeDepotCV"
+
+rsync -az \
   --exclude '.git' \
   --exclude '*.pem' \
   --exclude '*.pt' \
   --exclude '*.jpg' \
   --exclude '.venv' \
-  -e "ssh -i $HOME_DEPOT_SSH_KEY" \
+  -e "ssh" \
   "$LOCAL_REPO/" \
   "${REMOTE}:${REMOTE_HOME}/"
 ```
 
 Do **not** rsync over intern annotation CSVs unless you intend to overwrite team labels.
+
+---
+
+### Option D — GitHub SSH from the GPU (optional, for push access)
+
+Only needed if you want to **push commits from** `GPU1-A2080`, not for `git pull`.
+
+On the GPU host:
+
+```bash
+ssh-keygen -t ed25519 -C "avinash.patel@GPU1-A2080" -f ~/.ssh/id_ed25519_github -N ""
+cat ~/.ssh/id_ed25519_github.pub
+```
+
+Add the printed public key in GitHub → **Settings → SSH and GPG keys → New SSH key**.
+
+Then on the GPU:
+
+```bash
+cd ~
+git clone git@github.com:JediMaster0072/HomeDepotCV.git
+# or switch an existing HTTPS clone:
+cd ~/HomeDepotCV
+git remote set-url origin git@github.com:JediMaster0072/HomeDepotCV.git
+git pull origin main
+```
+
+---
 
 ### TorchServe files changed recently (import collision fix)
 
