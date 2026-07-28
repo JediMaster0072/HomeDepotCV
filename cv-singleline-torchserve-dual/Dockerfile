@@ -84,28 +84,30 @@ COPY cv-singleline-torchserve-dual/handlers/segmentation_handler.py /mar_build/s
 RUN find /mar_build -type d \( -name wandb -o -name __pycache__ -o -name .git \) -prune -exec rm -rf {} + 2>/dev/null || true
 
 # Build detector.mar (yolov7 only).
-# Pass directories with trailing slash so TorchServe keeps package layout.
-# Also ship mar_bootstrap.py for zip extract / sys.path setup.
+# Zip code extras so directory layout is preserved; mar_bootstrap extracts at runtime.
+# Keep mar_bootstrap.py as a loose extra so the handler can import it before unzip.
 WORKDIR /mar_build/detection
 COPY cv-singleline-torchserve-dual/handlers/mar_bootstrap.py /mar_build/detection/mar_bootstrap.py
-RUN torch-model-archiver \
+RUN zip -r code_extra.zip yolov7 service_pipeline_gpu codec_gpu.py common_config_gpu.py \
+    && torch-model-archiver \
     --model-name detector \
     --version 1.0 \
     --handler model_handler.py \
     --serialized-file best.pt \
-    --extra-files "yolov7/,service_pipeline_gpu/,codec_gpu.py,common_config_gpu.py,mar_bootstrap.py" \
+    --extra-files "code_extra.zip,mar_bootstrap.py" \
     --export-path /mar_build \
     --force
 
 # Build segmenter.mar (yolov7-seg only)
 WORKDIR /mar_build/segmentation
 COPY cv-singleline-torchserve-dual/handlers/mar_bootstrap.py /mar_build/segmentation/mar_bootstrap.py
-RUN torch-model-archiver \
+RUN zip -r code_extra.zip yolov7-seg service_pipeline_gpu codec_gpu.py common_config_gpu.py \
+    && torch-model-archiver \
     --model-name segmenter \
     --version 1.0 \
     --handler model_handler.py \
     --serialized-file segmentation.pt \
-    --extra-files "yolov7-seg/,service_pipeline_gpu/,codec_gpu.py,common_config_gpu.py,mar_bootstrap.py" \
+    --extra-files "code_extra.zip,mar_bootstrap.py" \
     --export-path /mar_build \
     --force
 
