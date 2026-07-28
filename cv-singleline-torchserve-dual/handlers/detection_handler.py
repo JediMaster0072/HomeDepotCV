@@ -44,7 +44,9 @@ class DetectionHandler(BaseHandler):
 
         print(
             f"[DetectionHandler] model_dir={model_dir} weights={weights_path} "
-            f"exists={weights_path.is_file()} cuda={torch.cuda.is_available()}"
+            f"exists={weights_path.is_file()} cuda={torch.cuda.is_available()} "
+            f"pipeline_pkg={(model_dir / 'service_pipeline_gpu').is_dir()} "
+            f"entries={sorted(p.name for p in model_dir.iterdir())[:30]}"
         )
 
         try:

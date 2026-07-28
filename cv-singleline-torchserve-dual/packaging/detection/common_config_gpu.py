@@ -48,8 +48,13 @@ def activate_seg_repo(config: Dict) -> str:
 
 
 def ensure_gpu_only_import_paths(model_dir: Optional[str] = None) -> None:
+    """Put MAR unpack root on sys.path so `import service_pipeline_gpu` works.
+
+    Do NOT prepend the service_pipeline_gpu/ directory itself — that breaks the
+    package import (Python would look for service_pipeline_gpu/service_pipeline_gpu).
+    """
     root = os.path.abspath(model_dir) if model_dir else _PACKAGE_ROOT
-    _prepend_path(os.path.join(root, "service_pipeline_gpu"))
+    _prepend_path(root)
 
 
 def build_gpu_config(model_dir: Optional[str] = None) -> Dict:

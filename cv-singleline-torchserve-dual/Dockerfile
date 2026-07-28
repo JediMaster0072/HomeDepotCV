@@ -33,6 +33,7 @@ RUN apt-get update && apt-get install -y \
     libxext6 \
     libxrender1 \
     rsync \
+    zip \
     && rm -rf /var/lib/apt/lists/*
 
 RUN python3 -m pip install --upgrade pip setuptools wheel
@@ -82,25 +83,28 @@ COPY cv-singleline-torchserve-dual/handlers/segmentation_handler.py /mar_build/s
 # Drop wandb / caches from staged trees (shrink image, avoid noise)
 RUN find /mar_build -type d \( -name wandb -o -name __pycache__ -o -name .git \) -prune -exec rm -rf {} + 2>/dev/null || true
 
-# Build detector.mar (yolov7 only)
+# Build detector.mar (yolov7 only).
+# Zip extras so directory layout (service_pipeline_gpu/, yolov7/) is preserved in the MAR.
 WORKDIR /mar_build/detection
-RUN torch-model-archiver \
+RUN zip -r /mar_build/det_extra.zip yolov7 service_pipeline_gpu codec_gpu.py common_config_gpu.py \
+    && torch-model-archiver \
     --model-name detector \
     --version 1.0 \
     --handler model_handler.py \
     --serialized-file best.pt \
-    --extra-files "yolov7/,service_pipeline_gpu/,codec_gpu.py,common_config_gpu.py" \
+    --extra-files /mar_build/det_extra.zip \
     --export-path /mar_build \
     --force
 
 # Build segmenter.mar (yolov7-seg only)
 WORKDIR /mar_build/segmentation
-RUN torch-model-archiver \
+RUN zip -r /mar_build/seg_extra.zip yolov7-seg service_pipeline_gpu codec_gpu.py common_config_gpu.py \
+    && torch-model-archiver \
     --model-name segmenter \
     --version 1.0 \
     --handler model_handler.py \
     --serialized-file segmentation.pt \
-    --extra-files "yolov7-seg/,service_pipeline_gpu/,codec_gpu.py,common_config_gpu.py" \
+    --extra-files /mar_build/seg_extra.zip \
     --export-path /mar_build \
     --force
 
