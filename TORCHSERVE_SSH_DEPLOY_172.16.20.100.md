@@ -517,11 +517,15 @@ If either file is missing or tiny, do not run `docker build` yet.
 
 SSH into the host, then:
 
+> If you get `permission denied ... docker.sock`, prefix with `sudo` or add your user to the `docker` group (`sudo usermod -aG docker $USER` then re-login / `newgrp docker`).
+
 ### Detection image
 
 ```bash
 cd ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2
-docker build -t hd-det-gpu .
+# Confirm weights exist first
+ls -lh best.pt
+sudo docker build -t hd-det-gpu .
 ```
 
 The Dockerfile:
@@ -532,10 +536,29 @@ The Dockerfile:
 
 ### Segmentation image
 
+Before building, confirm `segmentation.pt` is present and that `requirements.txt` does **not** pin `scipy==1.6.0` (that old pin forces a source build and fails with “No BLAS/LAPACK”).
+
 ```bash
 cd ~/HomeDepotCV/cv-singleline-detector-yolov7-seg
-docker build -t hd-seg-gpu .
+ls -lh segmentation.pt
+grep scipy requirements.txt   # should be something like scipy>=1.11, NOT scipy==1.6.0
+
+# Pull latest Dockerfile/requirements if you fixed them on GitHub:
+cd ~/HomeDepotCV && git pull origin main
+cd ~/HomeDepotCV/cv-singleline-detector-yolov7-seg
+
+sudo docker build -t hd-seg-gpu .
 ```
+
+#### If seg build fails on SciPy / BLAS
+
+Cause: `pip install -r requirements.txt --no-deps` + `scipy==1.6.0` tries to compile SciPy from source.
+
+Fix (already in repo if you pulled latest):
+
+1. Remove `--no-deps` from the Dockerfile
+2. Replace `scipy==1.6.0` with a modern wheel-backed pin (`scipy>=1.11`)
+3. Rebuild
 
 ### Optional — use the repo deploy helper
 
