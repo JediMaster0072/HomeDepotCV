@@ -30,6 +30,16 @@ logger = logging.getLogger("sku_pipeline.stage1")
 class Stage1Detection:
     """YOLOv7 label detection on a full shelf image."""
 
+    def _purge_yolo_modules():
+    for name in list(sys.modules.keys()):
+        if (
+            name == "models"
+            or name.startswith("models.")
+            or name == "utils"
+            or name.startswith("utils.")
+        ):
+            del sys.modules[name]
+
     def __init__(self, config: dict):
         self.config = config
         self.model = None
