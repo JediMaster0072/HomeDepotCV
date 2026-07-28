@@ -8,14 +8,15 @@ Input:  BGR ndarray (full shelf image)
 Output: list[LabelRecord], list[dict] raw detections
 """
 
-import sys
-import time
 import logging
-from typing import List, Dict, Tuple
+import time
+from typing import Dict, List, Tuple
 
 import numpy as np
 import torch
 import torch.backends.cudnn as cudnn
+
+from common_config_gpu import activate_det_repo
 
 from .label_record import LabelRecord
 from .pipeline_config import (
@@ -30,16 +31,6 @@ logger = logging.getLogger("sku_pipeline.stage1")
 class Stage1Detection:
     """YOLOv7 label detection on a full shelf image."""
 
-    def _purge_yolo_modules():
-    for name in list(sys.modules.keys()):
-        if (
-            name == "models"
-            or name.startswith("models.")
-            or name == "utils"
-            or name.startswith("utils.")
-        ):
-            del sys.modules[name]
-
     def __init__(self, config: dict):
         self.config = config
         self.model = None
@@ -49,28 +40,34 @@ class Stage1Detection:
         self._imgsz = config.get("detection_imgsz", 640)
         self._conf = config.get("detection_conf_thres", 0.25)
         self._iou = config.get("detection_iou_thres", 0.45)
-        self._device = torch.device("cuda" if config.get("device", "gpu") == "gpu" and torch.cuda.is_available() else "cpu")
+        self._device = torch.device(
+            "cuda"
+            if config.get("device", "gpu") == "gpu" and torch.cuda.is_available()
+            else "cpu"
+        )
+        # Cached detector-repo callables (safe to keep after purge — bound code objects).
+        self._letterbox = None
+        self._non_max_suppression = None
+        self._scale_coords = None
+        self._time_synchronized = None
+
+    def _bind_detector_utils(self) -> None:
+        activate_det_repo(self.config)
+        from utils.datasets import letterbox
+        from utils.general import non_max_suppression, scale_coords
+        from utils.torch_utils import time_synchronized
+
+        self._letterbox = letterbox
+        self._non_max_suppression = non_max_suppression
+        self._scale_coords = scale_coords
+        self._time_synchronized = time_synchronized
 
     def load_model(self) -> None:
         """Load YOLOv7 detection weights."""
-        det_root = self.config.get("det_repo_root", "")
-        seg_root = self.config.get("seg_repo_root", "")
-
-        removed = False
-        if seg_root and seg_root in sys.path:
-            sys.path.remove(seg_root)
-            removed = True
-
-        if det_root and det_root not in sys.path:
-            sys.path.insert(0, det_root)
-
-        try:
-            from models.experimental import attempt_load
-            from utils.general import check_img_size, set_logging
-            from utils.torch_utils import TracedModel
-        finally:
-            if removed and seg_root not in sys.path:
-                sys.path.append(seg_root)
+        activate_det_repo(self.config)
+        from models.experimental import attempt_load
+        from utils.general import check_img_size, set_logging
+        from utils.torch_utils import TracedModel
 
         set_logging()
         weights = self.config["detection_weights"]
@@ -84,8 +81,8 @@ class Stage1Detection:
             model.half()
 
         model.eval()
-        for m in model.modules():
-            m.training = False
+        for module in model.modules():
+            module.training = False
 
         if self._device.type != "cpu":
             cudnn.benchmark = True
@@ -96,32 +93,24 @@ class Stage1Detection:
 
         self.model = model
         self.names = model.module.names if hasattr(model, "module") else model.names
-        logger.info(f"[Stage1] model loaded | device={self._device} | imgsz={self._imgsz} | half={self._half} | classes={self.names}")
+        self._bind_detector_utils()
+        logger.info(
+            f"[Stage1] model loaded | device={self._device} "
+            f"| imgsz={self._imgsz} | half={self._half} | classes={self.names}"
+        )
 
     def run_inference(self, image_bgr: np.ndarray) -> List[Dict]:
         """
         GPU phase: letterbox → tensor → YOLOv7 → NMS.
         Returns a flat list of raw detection dicts.
         """
-        det_root = self.config.get("det_repo_root", "")
-        # seg_root = self.config.get("seg_repo_root", "")
+        if self._letterbox is None:
+            self._bind_detector_utils()
 
-        removed = False
-        # if seg_root and seg_root in sys.path:
-        #     sys.path.remove(seg_root)
-        #     removed = True
-
-        if det_root and det_root not in sys.path:
-            sys.path.insert(0, det_root)
-
-        try:
-            from utils.general import non_max_suppression, scale_coords
-            from utils.torch_utils import time_synchronized
-            from utils.datasets import letterbox
-        finally:
-            # if removed and seg_root not in sys.path:
-            #     sys.path.append(seg_root)
-            pass
+        letterbox = self._letterbox
+        non_max_suppression = self._non_max_suppression
+        scale_coords = self._scale_coords
+        time_synchronized = self._time_synchronized
 
         h0, w0 = image_bgr.shape[:2]
 
@@ -181,7 +170,8 @@ class Stage1Detection:
         with_ch = sum(1 for r in records if r.has_children)
         without_ch = sum(1 for r in records if not r.has_children)
         logger.info(
-            f"[Stage1] {source_image}: {len(records)} labels ({with_ch} with children, {without_ch} without) [{(time.time() - t0) * 1e3:.0f}ms]"
+            f"[Stage1] {source_image}: {len(records)} labels ({with_ch} with children, {without_ch} without) "
+            f"[{(time.time() - t0) * 1e3:.0f}ms]"
         )
         return records
 
@@ -217,10 +207,15 @@ class Stage1Detection:
                 type_counts[name] = type_counts.get(name, 0) + 1
             for name, cnt in type_counts.items():
                 if cnt > 1:
-                    logger.warning(f"  [Stage1] Label#{final_id.get(i, i)} has {cnt}x {name} — possible NMS cross-class issue")
+                    logger.warning(
+                        f"  [Stage1] Label#{final_id.get(i, i)} has {cnt}x {name} — possible NMS cross-class issue"
+                    )
 
         matched = sum(1 for r in results if r["children"])
-        logger.info(f"  [Stage1] {img_name}: {len(labels)} labels | {matched} with children | multi_match={multi_match} unmatched={unmatched}")
+        logger.info(
+            f"  [Stage1] {img_name}: {len(labels)} labels | {matched} with children | "
+            f"multi_match={multi_match} unmatched={unmatched}"
+        )
         return results
 
     def _create_records(

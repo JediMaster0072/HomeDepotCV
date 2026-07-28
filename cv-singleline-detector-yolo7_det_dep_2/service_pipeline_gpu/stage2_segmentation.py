@@ -1,15 +1,16 @@
 # service_pipeline_gpu/stage2_segmentation.py
 
-import sys
-import time
 import base64
-import logging
 import io
+import logging
+import time
 
 import cv2
 import numpy as np
 import torch
 from PIL import Image
+
+from common_config_gpu import activate_seg_repo
 
 logger = logging.getLogger("sku_pipeline.stage2")
 
@@ -18,10 +19,6 @@ class Stage2Segmentation:
     """
     YOLOv7-seg segmentation stage.
     Returns a single combined binary mask per strip.
-
-    Assumes Dockerfile exposes yolov7-seg as:
-      - seg_models
-      - seg_utils
     """
 
     def __init__(self, config):
@@ -38,23 +35,24 @@ class Stage2Segmentation:
         self.conf_thres = config.get("seg_conf_thres", 0.25)
         self.iou_thres = config.get("seg_iou_thres", 0.45)
         self.max_det = config.get("seg_max_det", 1000)
+        self._letterbox = None
+        self._non_max_suppression = None
+        self._scale_coords = None
+        self._process_mask_fn = None
 
-    def _ensure_seg_path(self):
-        seg_root = self.repo_root  # /app/seg_repo
-        det_root = self.config.get("det_repo_root", "")
+    def _bind_segmentation_utils(self) -> None:
+        activate_seg_repo(self.config)
+        from utils.augmentations import letterbox
+        from utils.general import non_max_suppression, scale_coords
+        from utils.segment.general import process_mask
 
-        # Remove det_repo so its utils/ cannot shadow seg_repo's utils/
-        if det_root and det_root in sys.path:
-            sys.path.remove(det_root)
-
-        # Add seg_repo — this makes BOTH seg_models/ AND utils/ importable from seg_repo
-        if seg_root not in sys.path:
-            sys.path.insert(0, seg_root)
-
+        self._letterbox = letterbox
+        self._non_max_suppression = non_max_suppression
+        self._scale_coords = scale_coords
+        self._process_mask_fn = process_mask
 
     def load_model(self):
-        self._ensure_seg_path()
-
+        activate_seg_repo(self.config)
         from models.common import DetectMultiBackend
         from utils.general import check_img_size
 
@@ -64,34 +62,38 @@ class Stage2Segmentation:
             device=self.device,
             dnn=False,
             data=None,
-            fp16=self.half
+            fp16=self.half,
         )
         self.stride = self.model.stride
         self.names = self.model.names
         self.pt = self.model.pt
         self.imgsz = check_img_size(self.imgsz, s=self.stride)
         self.model.warmup(imgsz=(1, 3, self.imgsz, self.imgsz))
+        self._bind_segmentation_utils()
 
         logger.info(
-            f"[Stage2] model loaded in {int((time.time()-t0)*1000)} ms "
+            f"[Stage2] model loaded in {int((time.time() - t0) * 1000)} ms "
             f"device={self.device} imgsz={self.imgsz} half={self.half}"
         )
 
     def run_inference(self, strips):
+        if self._letterbox is None:
+            self._bind_segmentation_utils()
+
         results = []
         for strip in strips:
             single = self._run_single(strip.strip_image)
-            results.append({
-                "strip_index": strip.strip_index,
-                "detections": single["detections"],
-                "mask": single["mask"],
-            })
+            results.append(
+                {
+                    "strip_index": strip.strip_index,
+                    "detections": single["detections"],
+                    "mask": single["mask"],
+                }
+            )
         return results
 
     def _preprocess(self, image_bgr):
-        self._ensure_seg_path()
-        from utils.augmentations import letterbox
-
+        letterbox = self._letterbox
         img = letterbox(image_bgr, self.imgsz, stride=self.stride, auto=self.pt)[0]
         img = img[:, :, ::-1]
         img = img.transpose((2, 0, 1))
@@ -116,34 +118,20 @@ class Stage2Segmentation:
                 candidates.append(x)
 
         flatten(output)
-        proto = next(
-            (t for t in candidates if t.ndim == 4 and t.shape[1] == 32),
-            None
-        )
+        proto = next((t for t in candidates if t.ndim == 4 and t.shape[1] == 32), None)
         if proto is None:
             shapes = [c.shape for c in candidates]
             raise ValueError(f"[Stage2] Proto tensor not found. Candidates: {shapes}")
         return proto
 
     def _process_mask(self, proto, mask_coeffs, boxes_xyxy, input_hw, orig_hw):
-        self._ensure_seg_path()
-        from utils.segment.general import process_mask
-
-        masks_tensor = process_mask(
-            proto[0],
-            mask_coeffs,
-            boxes_xyxy,
-            input_hw,
-            upsample=True
-        )
+        process_mask = self._process_mask_fn
+        masks_tensor = process_mask(proto[0], mask_coeffs, boxes_xyxy, input_hw, upsample=True)
         masks_np = masks_tensor.cpu().numpy()
         masks_np = (masks_np > 0.5).astype(np.uint8) * 255
 
         orig_h, orig_w = orig_hw
-        resized = [
-            cv2.resize(m, (orig_w, orig_h), interpolation=cv2.INTER_NEAREST)
-            for m in masks_np
-        ]
+        resized = [cv2.resize(m, (orig_w, orig_h), interpolation=cv2.INTER_NEAREST) for m in masks_np]
         return np.stack(resized, axis=0)
 
     @staticmethod
@@ -154,8 +142,8 @@ class Stage2Segmentation:
         return base64.b64encode(buf.getvalue()).decode("utf-8")
 
     def _run_single(self, image_bgr):
-        self._ensure_seg_path()
-        from utils.general import non_max_suppression, scale_coords
+        non_max_suppression = self._non_max_suppression
+        scale_coords = self._scale_coords
 
         orig_h, orig_w = image_bgr.shape[:2]
         img_tensor = self._preprocess(image_bgr)
@@ -177,7 +165,7 @@ class Stage2Segmentation:
             classes=None,
             agnostic=False,
             max_det=self.max_det,
-            nm=32
+            nm=32,
         )[0]
 
         if pred is None or len(pred) == 0:
@@ -186,13 +174,7 @@ class Stage2Segmentation:
         boxes_xyxy = pred[:, :4]
         mask_coeffs = pred[:, 6:]
 
-        masks_np = self._process_mask(
-            proto,
-            mask_coeffs,
-            boxes_xyxy,
-            input_hw,
-            (orig_h, orig_w)
-        )
+        masks_np = self._process_mask(proto, mask_coeffs, boxes_xyxy, input_hw, (orig_h, orig_w))
 
         pred[:, :4] = scale_coords(input_hw, pred[:, :4], (orig_h, orig_w)).round()
 
@@ -202,11 +184,13 @@ class Stage2Segmentation:
 
         for i, det in enumerate(pred_cpu):
             x1, y1, x2, y2, conf, cls_id = det[:6].tolist()
-            detections.append({
-                "bbox": [float(x1), float(y1), float(x2), float(y2)],
-                "confidence": float(conf),
-                "class_id": int(cls_id),
-            })
+            detections.append(
+                {
+                    "bbox": [float(x1), float(y1), float(x2), float(y2)],
+                    "confidence": float(conf),
+                    "class_id": int(cls_id),
+                }
+            )
             binary_mask = cv2.bitwise_or(binary_mask, masks_np[i])
 
         mask_dict = {
