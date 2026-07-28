@@ -82,7 +82,7 @@ Example (from your laptop, VPN on), sync **code only**:
 # Adjust LOCAL_REPO and REMOTE_HOME to match your layout
 LOCAL_REPO=~/Downloads/HOMEDEPOT/HomeDepotCV
 REMOTE=Ant-PC-2080
-REMOTE_HOME=~/HomeDepotCV   # change if the checkout path differs
+REMOTE_HOME=/data/$USER/HomeDepotCV   # e.g. /data/avinash.patel/HomeDepotCV on GPU1-A2080
 
 rsync -az -e ssh \
   "$LOCAL_REPO/cv-singleline-processor-CV-1757/scripts/common/sku_review.py" \

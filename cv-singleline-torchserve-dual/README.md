@@ -31,9 +31,27 @@ This is the **glue package** that serves both models from **one** TorchServe con
 
 At build time it pulls `best.pt` + `yolov7/` from the det folder and `segmentation.pt` + `yolov7-seg/` from the seg folder into **separate** MARs. That is how one GPU server can run both without path confusion.
 
+## GPU checkout path
+
+On `GPU1-A2080`, use the shared data volume (not a laptop path, not only `$HOME`):
+
+```text
+/data/<your_user>/HomeDepotCV
+```
+
+For `avinash.patel`:
+
+```bash
+cd /data/avinash.patel/HomeDepotCV
+```
+
+One-time setup (create `/data/$USER`, move or clone) is in `TORCHSERVE_SSH_DEPLOY_172.16.20.100.md` section **0a**.
+
 ## Build / run (from repo root on the GPU host)
 
 ```bash
+cd /data/avinash.patel/HomeDepotCV   # or: cd /data/$USER/HomeDepotCV
+
 # Weights required:
 ls cv-singleline-detector-yolo7_det_dep_2/best.pt
 ls cv-singleline-detector-yolov7-seg/segmentation.pt
@@ -44,6 +62,7 @@ ls cv-singleline-detector-yolov7-seg/segmentation.pt
 Or manually:
 
 ```bash
+cd /data/avinash.patel/HomeDepotCV
 docker build -f cv-singleline-torchserve-dual/Dockerfile -t hd-dual-gpu .
 docker rm -f hd-dual-gpu hd-det-gpu hd-seg-gpu 2>/dev/null || true
 docker run -d --name hd-dual-gpu --gpus all \
@@ -62,6 +81,7 @@ curl -s http://127.0.0.1:9001/models/segmenter
 ## Smoke test
 
 ```bash
+cd /data/avinash.patel/HomeDepotCV
 python3 scripts/smoke_test_gpu_detectors_updated.py \
   --base-url http://127.0.0.1:9000
 ```

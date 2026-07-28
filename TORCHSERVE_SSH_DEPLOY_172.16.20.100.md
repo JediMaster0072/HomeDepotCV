@@ -13,8 +13,56 @@ Use this guide from your **work laptop on corporate VPN** to SSH into the GPU bo
 | Preferred deploy | `hd-dual-gpu` — one container, ports `9000/9001/9002` |
 | Endpoints | `POST /predictions/detector` and `POST /predictions/segmenter` |
 | Related host (5090 / Streamlit team app) | `172.16.20.108` — different key, see bottom |
+| Repo on GPU (preferred) | `/data/avinash.patel/HomeDepotCV` |
 
 **Security:** `*.pem` is in `.gitignore`. Never commit private keys to GitHub.
+
+
+**Do not use** a Mac path like `/Users/.../Downloads/HomeDepotCV` on the GPU. Teammates cannot see your laptop disk. On `GPU1-A2080`, keep the checkout under `/data/<your_user>/HomeDepotCV` so it lives on the shared data volume.
+
+---
+
+## 0a. One-time: put the repo under `/data` (on the GPU)
+
+SSH in, then:
+
+```bash
+# Create your data directory (ask admin if /data is root-owned)
+sudo mkdir -p /data/$USER
+sudo chown -R $USER:$USER /data/$USER
+
+# Option A — move existing home checkout (keeps weights + containers build context)
+if [ -d "$HOME/HomeDepotCV" ] && [ ! -d "/data/avinash.patel/HomeDepotCV" ]; then
+  mv "$HOME/HomeDepotCV" "/data/avinash.patel/HomeDepotCV"
+fi
+
+# Option B — fresh clone
+mkdir -p /data/$USER
+cd /data/$USER
+git clone https://github.com/JediMaster0072/HomeDepotCV.git
+# If you already moved/cloned as avinash.patel, use:
+# cd /data/avinash.patel/HomeDepotCV
+
+cd /data/avinash.patel/HomeDepotCV
+git pull origin main
+
+# Confirm weights still present after a move
+ls -lh cv-singleline-detector-yolo7_det_dep_2/best.pt
+ls -lh cv-singleline-detector-yolov7-seg/segmentation.pt
+```
+
+From then on, **always**:
+
+```bash
+cd /data/avinash.patel/HomeDepotCV
+```
+
+Optional convenience symlink from home:
+
+```bash
+ln -sfn /data/avinash.patel/HomeDepotCV ~/HomeDepotCV
+```
+
 
 ---
 
@@ -115,7 +163,7 @@ If SSH fails:
 If you see:
 
 ```text
-cd: /home/avinash.patel/HomeDepotCV: No such file or directory
+cd: /data/avinash.patel/HomeDepotCV: No such file or directory
 fatal: not a git repository (or any of the parent directories): .git
 ```
 
@@ -152,7 +200,7 @@ The repo is public. Clone it into your home directory:
 ```bash
 cd ~
 git clone https://github.com/JediMaster0072/HomeDepotCV.git
-cd ~/HomeDepotCV
+cd /data/avinash.patel/HomeDepotCV
 ```
 
 Expected:
@@ -164,7 +212,7 @@ Cloning into 'HomeDepotCV'...
 #### Step 3 — Verify the remote and branch
 
 ```bash
-cd ~/HomeDepotCV
+cd /data/avinash.patel/HomeDepotCV
 git remote -v
 git branch
 git log -1 --oneline
@@ -191,9 +239,9 @@ Not required for `git pull` / `git clone` only.
 #### Step 5 — Confirm TorchServe directories exist
 
 ```bash
-ls ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2
-ls ~/HomeDepotCV/cv-singleline-detector-yolov7-seg
-ls ~/HomeDepotCV/scripts/deploy_gpu_5090_updated.sh
+ls /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2
+ls /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg
+ls /data/avinash.patel/HomeDepotCV/scripts/deploy_gpu_5090_updated.sh
 ```
 
 If those paths exist, you are ready for **Section 4** (weights) and **Section 5** (Docker build).
@@ -202,12 +250,12 @@ If those paths exist, you are ready for **Section 4** (weights) and **Section 5*
 
 ### 3b. Update an existing clone (`git pull`)
 
-Only run this **after** `~/HomeDepotCV` already exists from section 3a:
+Only run this **after** `/data/avinash.patel/HomeDepotCV` already exists from section 3a:
 
 ```bash
 ssh Ant-PC-2080
 
-cd ~/HomeDepotCV
+cd /data/avinash.patel/HomeDepotCV
 git pull origin main
 git log -1 --oneline
 ```
@@ -223,9 +271,9 @@ From your laptop (VPN on) if the GPU cannot reach GitHub:
 ```bash
 LOCAL_REPO=~/Downloads/HOMEDEPOT/HomeDepotCV
 REMOTE=Ant-PC-2080
-REMOTE_HOME=~/HomeDepotCV
+REMOTE_HOME=/data/avinash.patel/HomeDepotCV
 
-ssh Ant-PC-2080 "mkdir -p ~/HomeDepotCV"
+ssh Ant-PC-2080 "mkdir -p /data/avinash.patel/HomeDepotCV"
 
 rsync -az \
   --exclude '.git' \
@@ -261,7 +309,7 @@ Then on the GPU:
 cd ~
 git clone git@github.com:JediMaster0072/HomeDepotCV.git
 # or switch an existing HTTPS clone:
-cd ~/HomeDepotCV
+cd /data/avinash.patel/HomeDepotCV
 git remote set-url origin git@github.com:JediMaster0072/HomeDepotCV.git
 git pull origin main
 ```
@@ -326,10 +374,10 @@ gsutil version
 Then download weights:
 
 ```bash
-cd ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2
+cd /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2
 bash model.sh
 
-cd ~/HomeDepotCV/cv-singleline-detector-yolov7-seg
+cd /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg
 bash model.sh
 ```
 
@@ -347,11 +395,11 @@ Manual `gsutil` paths (same as `model.sh`):
 ```bash
 # Detection (~136 MB)
 gsutil cp gs://selling-pipeline-ml-models/singleline-pipeline-det-models-1.2/best.pt \
-  ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+  /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
 
 # Segmentation (~454 MB)
 gsutil cp gs://selling-pipeline-ml-models/singleline-pipeline-seg-models-1.1/segmentation.pt \
-  ~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+  /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
 ```
 
 ---
@@ -371,18 +419,18 @@ Example when files exist under `~/Downloads/HomeDepotCV/`:
 
 ```bash
 scp ~/Downloads/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt \
-  Ant-PC-2080:~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
 
 scp ~/Downloads/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt \
-  Ant-PC-2080:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
 ```
 
 Verify on the GPU:
 
 ```bash
 ssh Ant-PC-2080
-ls -lh ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
-ls -lh ~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
 ```
 
 ---
@@ -418,10 +466,10 @@ Copy to the 2080:
 
 ```bash
 scp /tmp/hd-weights/best.pt \
-  Ant-PC-2080:~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
 
 scp /tmp/hd-weights/segmentation.pt \
-  Ant-PC-2080:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
 ```
 
 **Common mistake:** pasting the doc placeholder literally:
@@ -443,8 +491,8 @@ If TorchServe was already deployed on `GPU5-A5090` (`172.16.20.108`), the `.pt` 
 
 ```bash
 ssh -i ~/.ssh/avinash_patel_lf.pem avinash.patel@172.16.20.108 \
-  'ls -lh ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt \
-         ~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt 2>&1'
+  'ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt \
+         /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt 2>&1'
 ```
 
 (Adjust key/user if your `.108` access differs.)
@@ -458,7 +506,7 @@ scp -i ~/.ssh/avinash_patel_lf.pem \
   /tmp/best.pt
 
 scp /tmp/best.pt \
-  Ant-PC-2080:~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
 
 # Segmentation
 scp -i ~/.ssh/avinash_patel_lf.pem \
@@ -466,23 +514,23 @@ scp -i ~/.ssh/avinash_patel_lf.pem \
   /tmp/segmentation.pt
 
 scp /tmp/segmentation.pt \
-  Ant-PC-2080:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
 ```
 
 Alternative: one-hop via `scp -3` (Mac as relay, files never need a local zip):
 
 ```bash
 ssh Ant-PC-2080 \
-  'mkdir -p ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2 \
-            ~/HomeDepotCV/cv-singleline-detector-yolov7-seg'
+  'mkdir -p /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2 \
+            /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg'
 
 scp -3 -i ~/.ssh/avinash_patel_lf.pem \
   avinash.patel@172.16.20.108:~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt \
-  avinash.patel@172.16.20.100:~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+  avinash.patel@172.16.20.100:/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
 
 scp -3 -i ~/.ssh/avinash_patel_lf.pem \
   avinash.patel@172.16.20.108:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt \
-  avinash.patel@172.16.20.100:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+  avinash.patel@172.16.20.100:/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
 ```
 
 If `.108` also does not have the weights, re-obtain `HomeDepotCV 2.zip` from whoever shared it, or get GCP bucket access and use Option A with `gcloud auth login`.
@@ -493,8 +541,8 @@ If `.108` also does not have the weights, re-obtain `HomeDepotCV 2.zip` from who
 
 ```bash
 ssh Ant-PC-2080
-ls -lh ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
-ls -lh ~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
 ```
 
 Rough expected sizes:
@@ -508,8 +556,8 @@ Destination paths on `GPU1-A2080`:
 
 | File | Remote path |
 |------|-------------|
-| `best.pt` | `~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt` |
-| `segmentation.pt` | `~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt` |
+| `best.pt` | `/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt` |
+| `segmentation.pt` | `/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt` |
 
 If either file is missing or tiny, do not run `docker build` yet.
 
@@ -528,14 +576,14 @@ This is the **preferred** path: one container on this single GPU server serves b
 Confirm weights:
 
 ```bash
-ls -lh ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
-ls -lh ~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
 ```
 
 Build from **repo root** (Dockerfile copies both trees into separate MAR staging dirs):
 
 ```bash
-cd ~/HomeDepotCV
+cd /data/avinash.patel/HomeDepotCV
 git pull origin main
 chmod +x cv-singleline-torchserve-dual/scripts/build_and_run.sh
 ./cv-singleline-torchserve-dual/scripts/build_and_run.sh --build-only
@@ -555,8 +603,8 @@ See also `cv-singleline-torchserve-dual/README.md`.
 ### Fallback — separate det/seg images (legacy)
 
 ```bash
-cd ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2 && sudo docker build -t hd-det-gpu .
-cd ~/HomeDepotCV/cv-singleline-detector-yolov7-seg && sudo docker build -t hd-seg-gpu .
+cd /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2 && sudo docker build -t hd-det-gpu .
+cd /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg && sudo docker build -t hd-seg-gpu .
 ```
 
 ---
@@ -574,7 +622,7 @@ docker rm -f hd-dual-gpu hd-det-gpu hd-seg-gpu 2>/dev/null || true
 Start **one** dual service (host ports `9000/9001/9002`):
 
 ```bash
-cd ~/HomeDepotCV
+cd /data/avinash.patel/HomeDepotCV
 ./cv-singleline-torchserve-dual/scripts/build_and_run.sh
 ```
 
@@ -666,7 +714,7 @@ curl -s http://127.0.0.1:10001/models/yolov7 | python3 -m json.tool
 ### Dual (preferred)
 
 ```bash
-cd ~/HomeDepotCV
+cd /data/avinash.patel/HomeDepotCV
 python3 scripts/smoke_test_gpu_detectors_updated.py \
   --base-url http://127.0.0.1:9000
 ```
@@ -714,12 +762,12 @@ Run from your **work laptop** unless noted.
 ssh Ant-PC-2080 'hostname && nvidia-smi -L'
 
 # 3) Pull latest code ON THE SERVER
-ssh Ant-PC-2080 'cd ~/HomeDepotCV && git pull origin main'
+ssh Ant-PC-2080 'cd /data/avinash.patel/HomeDepotCV && git pull origin main'
 
 # 4) Rebuild + restart dual ON THE SERVER
 ssh Ant-PC-2080 'bash -s' <<'REMOTE'
 set -euo pipefail
-cd ~/HomeDepotCV
+cd /data/avinash.patel/HomeDepotCV
 ls -lh cv-singleline-detector-yolo7_det_dep_2/best.pt
 ls -lh cv-singleline-detector-yolov7-seg/segmentation.pt
 chmod +x cv-singleline-torchserve-dual/scripts/build_and_run.sh
@@ -727,7 +775,7 @@ chmod +x cv-singleline-torchserve-dual/scripts/build_and_run.sh
 REMOTE
 
 # 5) Smoke test ON THE SERVER
-ssh Ant-PC-2080 'cd ~/HomeDepotCV && python3 scripts/smoke_test_gpu_detectors_updated.py --base-url http://127.0.0.1:9000'
+ssh Ant-PC-2080 'cd /data/avinash.patel/HomeDepotCV && python3 scripts/smoke_test_gpu_detectors_updated.py --base-url http://127.0.0.1:9000'
 ```
 
 ---
@@ -769,8 +817,8 @@ Firewall rules on the host must allow these ports if you call from outside local
 ### Confirm dual package is present
 
 ```bash
-ls ~/HomeDepotCV/cv-singleline-torchserve-dual/Dockerfile
-ls ~/HomeDepotCV/cv-singleline-torchserve-dual/handlers/
+ls /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/Dockerfile
+ls /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/handlers/
 ```
 
 Rebuild after `git pull` — a running container does not pick up file changes until rebuilt.
@@ -781,7 +829,7 @@ Rebuild after `git pull` — a running container does not pick up file changes u
 
 ```bash
 # This should show the pem as ignored:
-cd ~/HomeDepotCV
+cd /data/avinash.patel/HomeDepotCV
 git check-ignore -v "avinash_patel (1).pem"
 ```
 
@@ -819,7 +867,7 @@ export HOME_DEPOT_SSH_KEY="$HOME/.ssh/avinash_patel_100.pem"
 ssh Ant-PC-2080
 
 # Pull + rebuild dual TorchServe (on server)
-cd ~/HomeDepotCV && git pull origin main
+cd /data/avinash.patel/HomeDepotCV && git pull origin main
 ./cv-singleline-torchserve-dual/scripts/build_and_run.sh
 
 # Health
