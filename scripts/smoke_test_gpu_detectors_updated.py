@@ -65,9 +65,13 @@ def test_detection(infer_url: str, model_name: str, image_path: Path) -> None:
     # TorchServe may return list or dict depending on handler wrapping
     if isinstance(data, list):
         data = data[0] if data else {}
+    if isinstance(data, dict) and data.get("error"):
+        raise RuntimeError(f"detection error from server: {data['error']}")
     preds = data.get("predictions", [{}])
     if isinstance(preds, list):
         preds = preds[0] if preds else {}
+    if isinstance(preds, dict) and preds.get("error"):
+        raise RuntimeError(f"detection error from server: {preds['error']}")
     dets = preds.get("detections", [])
     print(f"[ok] detection inference ({model_name}) — {len(dets)} bbox(es)")
     if dets:

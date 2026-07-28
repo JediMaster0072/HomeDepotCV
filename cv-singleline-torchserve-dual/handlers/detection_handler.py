@@ -24,10 +24,13 @@ class DetectionHandler(BaseHandler):
     def __init__(self, *args, **kwargs):
         super().__init__()
         self.initialized = False
+        self._init_error = None
         self.config = None
         self.stage1 = None
+        self._context = None
 
     def initialize(self, context):
+        self._context = context
         properties = context.system_properties
         model_dir = Path(properties["model_dir"]).resolve()
         serialized = context.manifest["model"]["serializedFile"]
@@ -41,7 +44,7 @@ class DetectionHandler(BaseHandler):
 
         print(
             f"[DetectionHandler] model_dir={model_dir} weights={weights_path} "
-            f"cuda={torch.cuda.is_available()}"
+            f"exists={weights_path.is_file()} cuda={torch.cuda.is_available()}"
         )
 
         try:
@@ -53,6 +56,8 @@ class DetectionHandler(BaseHandler):
             self.config = build_gpu_config(model_dir=str(model_dir))
             if weights_path.is_file():
                 self.config["detection_weights"] = str(weights_path)
+            else:
+                raise FileNotFoundError(f"detection weights missing: {weights_path}")
 
             self.stage1 = Stage1Detection(self.config)
             t0 = time.time()
@@ -60,14 +65,22 @@ class DetectionHandler(BaseHandler):
             self.stage1.load_model()
             print(f"[DetectionHandler] Stage 1 ready in {int((time.time() - t0) * 1000)} ms")
             self.initialized = True
+            self._init_error = None
         except Exception as e:
             print(f"[DetectionHandler] Initialization failed: {e}")
             traceback.print_exc()
             self.initialized = False
+            self._init_error = str(e)
 
     def handle(self, data, context):
         if not self.initialized:
-            return [{"error": "model not initialized"}]
+            # One retry — covers transient CUDA / startup-order failures.
+            if self._context is not None:
+                print("[DetectionHandler] Not initialized; retrying initialize() …")
+                self.initialize(self._context)
+            if not self.initialized:
+                err = self._init_error or "model not initialized"
+                return [{"error": err}]
         try:
             model_input = self.preprocess(data)
             if model_input is None:
