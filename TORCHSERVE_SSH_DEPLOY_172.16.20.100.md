@@ -622,13 +622,23 @@ torchserve --start --foreground --ncs \
   --models yolov7=yolov7.mar
 ```
 
-(Seg image uses `modelstore` — name differs slightly in its Dockerfile.)
+(Seg image uses `model_store` after the Dockerfile fix.)
+
+**Do not run `torchserve` on the host.** It is already started inside the containers you launched (`hd-det-gpu` / `hd-seg-gpu`). The host does not have TorchServe installed — that is expected. If you see `torchserve: command not found` on the GPU shell, ignore it and use the Docker health checks below instead.
 
 ---
 
 ## 7. Verify health
 
-On the remote host:
+### Confirm containers are running
+
+```bash
+docker ps --filter name=hd-
+docker logs --tail 80 hd-det-gpu
+docker logs --tail 80 hd-seg-gpu
+```
+
+### Health checks (on the GPU)
 
 ```bash
 curl -s http://127.0.0.1:9000/ping
@@ -638,21 +648,24 @@ curl -s http://127.0.0.1:9001/models
 curl -s http://127.0.0.1:10001/models
 ```
 
-Expected ping:
+Expect `"status":"Healthy"` and a `yolov7` model entry.
+
+### Wait for workers READY
+
+```bash
+curl -s http://127.0.0.1:9001/models/yolov7 | python3 -m json.tool
+curl -s http://127.0.0.1:10001/models/yolov7 | python3 -m json.tool
+```
+
+Look for `"status": "READY"`. First load can take a minute or two (GPU weight load).
+
+Expected ping response:
 
 ```json
 {"status":"Healthy"}
 ```
 
-Check worker status:
-
-```bash
-curl -s http://127.0.0.1:9001/models/yolov7 | python3 -m json.tool
-```
-
-Look for `"status": "READY"`.
-
-### Logs
+### Follow live logs
 
 ```bash
 docker logs -f hd-det-gpu
@@ -667,12 +680,16 @@ Successful detection init should show:
 [Handler] Stage 1 ready.
 ```
 
-First segmentation request should show:
+Successful segmentation init should show:
 
 ```
 [Handler] Loading Stage 2 — YOLOv7-seg segmentation model …
 [Stage2] model loaded …
 ```
+
+(or, for the seg-only container, Stage 2 loading during `initialize()`).
+
+If ping fails, check logs for OOM (both containers on one GPU) or `Weights only load failed` (seg needs `torch.load(..., weights_only=False)` — see troubleshooting).
 
 ---
 
