@@ -802,6 +802,7 @@ Firewall rules on the host must allow these ports if you call from outside local
 | Docker has no GPU | NVIDIA runtime / CDI | See `gpu-docker-cdi-fix.md` (written for `.108`, same class of issue) |
 | `sm_120 NOT supported` | Wrong PyTorch image for GPU gen | 5090 needs CUDA 12.8+ PyTorch; 2080 may need different base |
 | Segmentation imports detection `utils` | Module cache collision | Ensure latest `common_config_gpu.py` + stage files are deployed |
+| Seg init: `Weights only load failed` / `weights_only` | PyTorch 2.6+ default | `yolov7-seg/models/experimental.py` must use `torch.load(..., weights_only=False)` then rebuild image |
 | Container exits immediately | Missing weights / bad `.mar` | `docker logs hd-det-gpu` |
 | Port already in use | Old container running | `docker rm -f hd-det-gpu hd-seg-gpu` |
 
