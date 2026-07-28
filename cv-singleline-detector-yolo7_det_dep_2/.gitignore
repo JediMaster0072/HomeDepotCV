@@ -13,6 +13,9 @@
 *.TIF
 *.TIFF
 *.HEIC
+# Keep dual-endpoint smoke-test shelf images
+!test_image.jpg
+!test_img_new.jpg
 *.mp4
 *.mov
 *.MOV

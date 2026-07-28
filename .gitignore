@@ -24,6 +24,9 @@ __pycache__/
 *.tiff
 *.webp
 *.heic
+# Dual TorchServe smoke-test shelf images (small; keep in git)
+!cv-singleline-detector-yolo7_det_dep_2/test_image.jpg
+!cv-singleline-detector-yolo7_det_dep_2/test_img_new.jpg
 
 # Model weights (restore via scripts/extract_models_from_zip.py)
 *.pt
