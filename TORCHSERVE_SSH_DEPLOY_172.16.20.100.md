@@ -283,17 +283,29 @@ If you use **separate** seg-only deploy tree, mirror the same pattern under `cv-
 
 ## 4. Download model weights (if missing)
 
-`model.sh` uses `gsutil` to pull weights from Google Cloud Storage. If you see:
+Weights (`best.pt`, `segmentation.pt`) are **not** in GitHub — they are large binaries and are gitignored. `git pull` alone will never create them.
 
-```text
-model.sh: line 4: gsutil: command not found
-```
+`model.sh` tries to download from Google Cloud Storage via `gsutil`. Common failures:
 
-use **Option A** (install `gsutil`) or **Option B** (copy from your Mac).
+| Error | Meaning | What to do |
+|-------|---------|------------|
+| `gsutil: command not found` | Cloud SDK not installed | Option A |
+| `401 Anonymous caller` / `Permission denied` | Bucket is private; GPU not logged into GCP | Option C (preferred) or `gcloud auth login` |
+| `unzip: cannot find or open ... HomeDepotCV 2.zip` | Original zip is gone / wrong path on this Mac | Option C, or find/re-obtain the zip (Option B) |
+| `scp: No such file or directory` while on GPU prompt | `scp` was run **on the GPU** | Run `scp` from a **Mac** terminal instead |
 
 ---
 
-### Option A — Install `gsutil` on `GPU1-A2080` (recommended)
+### Where to run `scp`
+
+You can run `scp` from **any folder on your Mac** (`cd ~` is fine). The working directory does not matter if you use absolute paths.
+
+**Must be a local Mac terminal** — prompt like `avinash.patel@Avinash-Patel ~ %`  
+**Not** `avinash.patel@GPU1-A2080:...$`
+
+---
+
+### Option A — Install `gsutil` on `GPU1-A2080`
 
 On the GPU host:
 
@@ -319,7 +331,14 @@ cd ~/HomeDepotCV/cv-singleline-detector-yolov7-seg
 bash model.sh
 ```
 
-If `gsutil cp` fails with **AccessDenied** or **401**, the bucket is private. Use **Option B** or ask your team for `gcloud auth login` / a service-account key with read access to `gs://selling-pipeline-ml-models/`.
+If `gsutil cp` fails with **401 Anonymous caller**, the bucket is private. Authenticate (if you have HD GCP access):
+
+```bash
+gcloud auth login
+# then re-run bash model.sh
+```
+
+Or skip GCS and use **Option C**.
 
 Manual `gsutil` paths (same as `model.sh`):
 
@@ -335,17 +354,23 @@ gsutil cp gs://selling-pipeline-ml-models/singleline-pipeline-seg-models-1.1/seg
 
 ---
 
-### Option B — Copy weights from your Mac (`scp`)
+### Option B — Extract from `HomeDepotCV 2.zip` on your Mac, then `scp`
 
-**Run these commands on your Mac (laptop), not on `GPU1-A2080`.**  
-`scp` pushes files **from the Mac → GPU**. If you run `scp` while already SSH'd into the GPU, `$WORKDIR` will be empty and you will get `No such file or directory`.
-
-If you still have the original zip (`HomeDepotCV 2.zip`) on your laptop, extract only the `.pt` files:
-
-**On your Mac** (VPN on, new Terminal window — do **not** be SSH'd into the GPU):
+**Only works if the zip still exists on this machine.** First locate it:
 
 ```bash
-ZIP="/Users/avinash_a_patel/Downloads/HOMEDEPOT/HomeDepotCV 2.zip"
+# On your Mac
+find ~/Downloads -maxdepth 4 -iname '*HomeDepotCV*.zip' 2>/dev/null
+find ~/Downloads -name '*.pt' 2>/dev/null | head
+```
+
+If unzip fails with `cannot find or open ... HomeDepotCV 2.zip`, the file is missing (it may have been deleted after the earlier extract). Use **Option C** instead.
+
+If you find the zip, set `ZIP` to the **actual path** returned by `find` (path may differ between `avinash_a_patel` and `avinash.patel` home directories):
+
+```bash
+# On your Mac (VPN on) — any cwd, e.g. cd ~
+ZIP="/path/from/find/HomeDepotCV 2.zip"   # <-- replace with real path
 WORKDIR=/tmp/hd-weights
 mkdir -p "$WORKDIR"
 
@@ -353,45 +378,80 @@ unzip -j "$ZIP" "HomeDepotCV/singleline-pipeline-det-models-1.2_best.pt" -d "$WO
 unzip -j "$ZIP" "HomeDepotCV/singleline-pipeline-seg-models_segmentation.pt" -d "$WORKDIR"
 mv "$WORKDIR/singleline-pipeline-det-models-1.2_best.pt" "$WORKDIR/best.pt"
 mv "$WORKDIR/singleline-pipeline-seg-models_segmentation.pt" "$WORKDIR/segmentation.pt"
-
 ls -lh "$WORKDIR"/*.pt
 ```
 
-Copy to the GPU (still on your Mac):
+Copy to the 2080 (still on your Mac):
 
 ```bash
-scp "$WORKDIR/best.pt" \
-  avinash.patel@172.16.20.100:~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
-
-scp "$WORKDIR/segmentation.pt" \
-  avinash.patel@172.16.20.100:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
-```
-
-If you use SSH config alias `Ant-PC-2080`:
-
-```bash
-scp "$WORKDIR/best.pt" \
+scp /tmp/hd-weights/best.pt \
   Ant-PC-2080:~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
 
-scp "$WORKDIR/segmentation.pt" \
+scp /tmp/hd-weights/segmentation.pt \
   Ant-PC-2080:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
 ```
 
-**Then** SSH back into the GPU and verify:
+---
+
+### Option C — Copy weights from the 5090 host (`172.16.20.108`) → 2080 (`172.16.20.100`)
+
+**Preferred when the Mac zip is gone and GCS is private.**  
+If TorchServe was already deployed on `GPU5-A5090` (`172.16.20.108`), the `.pt` files are often already there.
+
+**First, check that `.108` has the weights** (from your Mac):
 
 ```bash
-ssh Ant-PC-2080
-ls -lh ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
-ls -lh ~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+ssh -i ~/.ssh/avinash_patel_lf.pem avinash.patel@172.16.20.108 \
+  'ls -lh ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt \
+         ~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt 2>&1'
 ```
 
-If you already have `.pt` files elsewhere on the Mac, `scp` them directly to those two remote paths.
+(Adjust key/user if your `.108` access differs.)
+
+**Then copy Mac ← 5090 ← then → 2080** (run all of this on your Mac):
+
+```bash
+# Detection
+scp -i ~/.ssh/avinash_patel_lf.pem \
+  avinash.patel@172.16.20.108:~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt \
+  /tmp/best.pt
+
+scp /tmp/best.pt \
+  Ant-PC-2080:~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+
+# Segmentation
+scp -i ~/.ssh/avinash_patel_lf.pem \
+  avinash.patel@172.16.20.108:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt \
+  /tmp/segmentation.pt
+
+scp /tmp/segmentation.pt \
+  Ant-PC-2080:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+```
+
+Alternative: one-hop via `scp -3` (Mac as relay, files never need a local zip):
+
+```bash
+ssh Ant-PC-2080 \
+  'mkdir -p ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2 \
+            ~/HomeDepotCV/cv-singleline-detector-yolov7-seg'
+
+scp -3 -i ~/.ssh/avinash_patel_lf.pem \
+  avinash.patel@172.16.20.108:~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt \
+  avinash.patel@172.16.20.100:~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+
+scp -3 -i ~/.ssh/avinash_patel_lf.pem \
+  avinash.patel@172.16.20.108:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt \
+  avinash.patel@172.16.20.100:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+```
+
+If `.108` also does not have the weights, re-obtain `HomeDepotCV 2.zip` from whoever shared it, or get GCP bucket access and use Option A with `gcloud auth login`.
 
 ---
 
 ### Verify on the GPU
 
 ```bash
+ssh Ant-PC-2080
 ls -lh ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
 ls -lh ~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
 ```
@@ -402,6 +462,13 @@ Rough expected sizes:
 |------|--------|
 | `best.pt` | 136 MB |
 | `segmentation.pt` | 454 MB |
+
+Destination paths on `GPU1-A2080`:
+
+| File | Remote path |
+|------|-------------|
+| `best.pt` | `~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt` |
+| `segmentation.pt` | `~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt` |
 
 If either file is missing or tiny, do not run `docker build` yet.
 
