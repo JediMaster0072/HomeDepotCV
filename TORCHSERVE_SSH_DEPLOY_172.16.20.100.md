@@ -354,23 +354,54 @@ gsutil cp gs://selling-pipeline-ml-models/singleline-pipeline-seg-models-1.1/seg
 
 ---
 
-### Option B — Extract from `HomeDepotCV 2.zip` on your Mac, then `scp`
+### Option B — Copy weights from your Mac (`scp`)
 
-**Only works if the zip still exists on this machine.** First locate it:
+**Only unzip if you do not already have `.pt` files on the Mac.**
+
+If `find` already shows weights (common after cloning/extracting `HomeDepotCV` locally), **skip unzip** and `scp` them directly:
 
 ```bash
-# On your Mac
-find ~/Downloads -maxdepth 4 -iname '*HomeDepotCV*.zip' 2>/dev/null
-find ~/Downloads -name '*.pt' 2>/dev/null | head
+# On your Mac — check what you already have
+find ~/Downloads -name 'best.pt' -o -name 'segmentation.pt' 2>/dev/null | head
 ```
 
-If unzip fails with `cannot find or open ... HomeDepotCV 2.zip`, the file is missing (it may have been deleted after the earlier extract). Use **Option C** instead.
-
-If you find the zip, set `ZIP` to the **actual path** returned by `find` (path may differ between `avinash_a_patel` and `avinash.patel` home directories):
+Example when files exist under `~/Downloads/HomeDepotCV/`:
 
 ```bash
-# On your Mac (VPN on) — any cwd, e.g. cd ~
-ZIP="/path/from/find/HomeDepotCV 2.zip"   # <-- replace with real path
+scp ~/Downloads/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt \
+  Ant-PC-2080:~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+
+scp ~/Downloads/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt \
+  Ant-PC-2080:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+```
+
+Verify on the GPU:
+
+```bash
+ssh Ant-PC-2080
+ls -lh ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+ls -lh ~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+```
+
+---
+
+#### Option B2 — Extract from zip (only if `.pt` files are not already on the Mac)
+
+**Run on your Mac (laptop), not on `GPU1-A2080`.**
+
+First locate the zip:
+
+```bash
+find ~/Downloads -maxdepth 4 -iname '*HomeDepotCV*.zip' 2>/dev/null
+```
+
+Use the **real path** from `find` — do not leave the placeholder `/path/from/find/...` in the command.
+
+Example for `avinash.patel` home directory:
+
+```bash
+cd ~
+ZIP="$HOME/Downloads/HomeDepotCV 2.zip"   # real path from find
 WORKDIR=/tmp/hd-weights
 mkdir -p "$WORKDIR"
 
@@ -381,7 +412,7 @@ mv "$WORKDIR/singleline-pipeline-seg-models_segmentation.pt" "$WORKDIR/segmentat
 ls -lh "$WORKDIR"/*.pt
 ```
 
-Copy to the 2080 (still on your Mac):
+Copy to the 2080:
 
 ```bash
 scp /tmp/hd-weights/best.pt \
@@ -390,6 +421,14 @@ scp /tmp/hd-weights/best.pt \
 scp /tmp/hd-weights/segmentation.pt \
   Ant-PC-2080:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
 ```
+
+**Common mistake:** pasting the doc placeholder literally:
+
+```bash
+ZIP="/path/from/find/HomeDepotCV 2.zip"   # WRONG — replace with real path
+```
+
+That will always fail with `cannot find or open`.
 
 ---
 
