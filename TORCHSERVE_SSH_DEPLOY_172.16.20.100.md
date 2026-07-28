@@ -283,22 +283,109 @@ If you use **separate** seg-only deploy tree, mirror the same pattern under `cv-
 
 ## 4. Download model weights (if missing)
 
-On the remote host:
+`model.sh` uses `gsutil` to pull weights from Google Cloud Storage. If you see:
+
+```text
+model.sh: line 4: gsutil: command not found
+```
+
+use **Option A** (install `gsutil`) or **Option B** (copy from your Mac).
+
+---
+
+### Option A — Install `gsutil` on `GPU1-A2080` (recommended)
+
+On the GPU host:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates gnupg curl
+curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg \
+  | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" \
+  | sudo tee /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt-get update
+sudo apt-get install -y google-cloud-cli
+gsutil version
+```
+
+Then download weights:
 
 ```bash
 cd ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2
-bash model.sh          # downloads best.pt via gsutil
+bash model.sh
 
 cd ~/HomeDepotCV/cv-singleline-detector-yolov7-seg
-bash model.sh          # downloads segmentation.pt
+bash model.sh
 ```
 
-Verify:
+If `gsutil cp` fails with **AccessDenied** or **401**, the bucket is private. Use **Option B** or ask your team for `gcloud auth login` / a service-account key with read access to `gs://selling-pipeline-ml-models/`.
+
+Manual `gsutil` paths (same as `model.sh`):
+
+```bash
+# Detection (~136 MB)
+gsutil cp gs://selling-pipeline-ml-models/singleline-pipeline-det-models-1.2/best.pt \
+  ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+
+# Segmentation (~454 MB)
+gsutil cp gs://selling-pipeline-ml-models/singleline-pipeline-seg-models-1.1/segmentation.pt \
+  ~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+```
+
+---
+
+### Option B — Copy weights from your Mac (`scp`)
+
+If you still have the original zip (`HomeDepotCV 2.zip`) on your laptop, extract only the `.pt` files without unpacking the full archive:
+
+**On your Mac** (VPN on):
+
+```bash
+ZIP="/Users/avinash_a_patel/Downloads/HOMEDEPOT/HomeDepotCV 2.zip"
+WORKDIR=/tmp/hd-weights
+mkdir -p "$WORKDIR"
+
+# Extract detection weights from the zip
+unzip -j "$ZIP" "HomeDepotCV/singleline-pipeline-det-models-1.2_best.pt" -d "$WORKDIR"
+mv "$WORKDIR/singleline-pipeline-det-models-1.2_best.pt" "$WORKDIR/best.pt"
+
+# Extract segmentation weights from the zip
+unzip -j "$ZIP" "HomeDepotCV/singleline-pipeline-seg-models_segmentation.pt" -d "$WORKDIR"
+mv "$WORKDIR/singleline-pipeline-seg-models_segmentation.pt" "$WORKDIR/segmentation.pt"
+
+ls -lh "$WORKDIR"/*.pt
+```
+
+Copy to the GPU:
+
+```bash
+scp "$WORKDIR/best.pt" \
+  Ant-PC-2080:~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+
+scp "$WORKDIR/segmentation.pt" \
+  Ant-PC-2080:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+```
+
+If you already have `.pt` files elsewhere on the Mac, `scp` them directly to those two paths.
+
+---
+
+### Verify on the GPU
 
 ```bash
 ls -lh ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
 ls -lh ~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
 ```
+
+Rough expected sizes:
+
+| File | ~Size |
+|------|--------|
+| `best.pt` | 136 MB |
+| `segmentation.pt` | 454 MB |
+
+If either file is missing or tiny, do not run `docker build` yet.
 
 ---
 
