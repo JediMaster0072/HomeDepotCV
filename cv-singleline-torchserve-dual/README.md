@@ -65,6 +65,31 @@ This changes how the models are packaged and served. It does not change model
 accuracy, combine the two responses, or remove the GPU memory needed to load
 both models.
 
+## Memory footprint
+
+There is no checked-in measured VRAM/RAM number for this dual container. Both
+models load onto the **same GPU** with **one TorchServe worker each**
+(`min_workers=1` / `max_workers=1` in `config.properties`), which is the
+intended layout for an RTX 2080-class card.
+
+Expect several GB of GPU memory for idle load (two YOLOv7 weights + CUDA /
+TorchServe overhead). Usage rises during inference. Host RAM for the Java /
+TorchServe process is separate from GPU VRAM.
+
+Measure on the GPU while `hd-dual-gpu` is running:
+
+```bash
+docker stats hd-dual-gpu --no-stream
+nvidia-smi
+
+# After detect + segment calls, check again
+nvidia-smi --query-compute-apps=pid,process_name,used_gpu_memory --format=csv
+```
+
+Capture `nvidia-smi` once both workers are `READY`, then again mid-request, if
+you need numbers for capacity planning. If both models OOM on the 2080, keep
+one worker per model, reduce concurrent requests, and re-check `nvidia-smi`.
+
 ## What happens during build and startup
 
 The build uses files from all three project folders:

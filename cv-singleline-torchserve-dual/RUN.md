@@ -118,6 +118,25 @@ python3 test_torchserve.py strip_0.jpg strip_1.jpg
 The old `/predictions/yolov7` endpoint belongs to the legacy two-container
 deployment and should not be used with this container.
 
+## Memory footprint
+
+No measured VRAM/RAM figure is recorded in this repo. Dual mode loads
+**detector + segmenter on one GPU** with **1 worker per model**. Idle load is
+typically several GB of VRAM; peak is higher during inference. Host RAM for
+TorchServe is separate from GPU memory.
+
+Check while the container is up:
+
+```bash
+docker stats hd-dual-gpu --no-stream
+nvidia-smi
+nvidia-smi --query-compute-apps=pid,process_name,used_gpu_memory --format=csv
+```
+
+Run once after both workers are `READY`, and again during a detect/segment
+call, if you need capacity numbers. On OOM, keep 1 worker/model and lower
+concurrency.
+
 ## If startup fails
 
 Check the container logs:
