@@ -1,76 +1,106 @@
-# Dual TorchServe (Option 1) — one container, two models
+# Detection and segmentation in one TorchServe container
 
-One TorchServe process serves:
+This folder is the deployment layer that runs the existing detection and
+segmentation models together on one GPU server. It does not contain a third
+model or replace either YOLO codebase.
 
-| Endpoint | MAR | Code tree |
-|--|--|--|
-| `POST /predictions/detector` | `detector.mar` | `yolov7/` only |
-| `POST /predictions/segmenter` | `segmenter.mar` | `yolov7-seg/` only |
+For copy-and-paste commands, see [RUN.md](RUN.md).
 
-Each model runs in its **own worker process** with its own unpacked `model_dir`, so the shared package names `models` / `utils` do not collide.
+## The problem this solves
 
-## How this folder differs
+The original deployment ran two Docker containers:
 
-This is the **glue package** that serves both models from **one** TorchServe container. It is not another full YOLO codebase.
+- detection on port `9000`
+- segmentation on port `10000`
 
-| | `yolo7_det_dep_2` | `yolov7-seg` | `torchserve-dual` |
-|--|--|--|--|
-| Role | Detection source | Segmentation source | Combined deploy |
-| Contains `yolov7/` / weights | Yes | Yes | **No** — copies from the other two at Docker build |
-| Docker image | `hd-det-gpu` alone | `hd-seg-gpu` alone | **`hd-dual-gpu`** (both) |
-| Endpoints | `:9000` only | `:10000` only | Both on **`:9000`** |
+That worked, but it meant building, starting, monitoring, and connecting to two
+separate services.
 
-## What it contains
+Putting both YOLO projects directly into one Python environment was not safe.
+The projects use some of the same import names, such as `models` and `utils`,
+but those names refer to different code. If both source trees share one Python
+path, one model can import files from the other project and fail at startup or
+run the wrong code.
 
-- **`Dockerfile`** — builds `detector.mar` + `segmenter.mar`, starts one TorchServe with both
-- **`handlers/`** — det-only and seg-only handlers (use each MAR’s `model_dir`, no shared `/app` YOLO path)
-- **`packaging/*/common_config_gpu.py`** — per-model config so trees don’t collide
-- **`config.properties`** — 1 worker per model
-- **`scripts/build_and_run.sh`** — build/run helper
-- **`requirements.txt`**, **`README.md`**
+## The solution
 
-At build time it pulls `best.pt` + `yolov7/` from the det folder and `segmentation.pt` + `yolov7-seg/` from the seg folder into **separate** MARs. That is how one GPU server can run both without path confusion.
+One container now runs one TorchServe service with two model packages:
 
-## GPU checkout path
+- `detector.mar` contains the detection weights and only the `yolov7/` code.
+- `segmenter.mar` contains the segmentation weights and only the
+  `yolov7-seg/` code.
 
-On `GPU1-A2080`, use the shared data volume (not a laptop path, not only `$HOME`):
+TorchServe unpacks each package into its own model directory and starts each
+model in a separate worker process. This keeps their Python imports isolated
+while still allowing both workers to use the same GPU.
 
-```text
-/data/<your_user>/HomeDepotCV
-```
+The two API endpoints are:
 
-For `avinash.patel`:
+- `POST /predictions/detector` for a full shelf image
+- `POST /predictions/segmenter` for one or more shelf-strip crops
+
+Both endpoints use port `9000`. They are separate requests; the container does
+not automatically pass detector output to the segmenter.
+
+## Request flow
+
+1. Send a full shelf image to the detector.
+2. The detector returns product/shelf bounding boxes.
+3. The calling application creates the required shelf-strip crops.
+4. Send those strips to the segmenter.
+5. The segmenter returns the segmentation results.
+
+The application remains responsible for steps 3 and 4.
+
+## What improves
+
+- There is one image and one container to deploy instead of two.
+- Clients use one base URL and select the model by endpoint.
+- Each model still uses its own source tree, configuration, weights, and worker.
+- Import-name collisions between the two YOLO projects are avoided.
+- A failure or code change in one handler is less likely to affect the other
+  model's imports.
+
+This changes how the models are packaged and served. It does not change model
+accuracy, combine the two responses, or remove the GPU memory needed to load
+both models.
+
+## What happens during build and startup
+
+The build uses files from all three project folders:
+
+1. `best.pt` and `yolov7/` are copied from
+   `cv-singleline-detector-yolo7_det_dep_2`.
+2. `segmentation.pt` and `yolov7-seg/` are copied from
+   `cv-singleline-detector-yolov7-seg`.
+3. This folder adds separate handlers and configuration for each model.
+4. The files are archived as `detector.mar` and `segmenter.mar`.
+5. TorchServe starts one worker for each archive.
+
+The helper script checks that both weight files exist, builds the Docker image,
+removes old detection/segmentation containers, starts the new container, and
+waits for TorchServe to become healthy.
+
+## Build and start
+
+Run this from the repository root on `GPU1-A2080`:
 
 ```bash
-cd /data/avinash.patel/HomeDepotCV
-```
+cd /data/$USER/HomeDepotCV
 
-One-time setup (create `/data/$USER`, move or clone) is in `TORCHSERVE_SSH_DEPLOY_172.16.20.100.md` section **0a**.
-
-## Build / run (from repo root on the GPU host)
-
-```bash
-cd /data/avinash.patel/HomeDepotCV   # or: cd /data/$USER/HomeDepotCV
-
-# Weights required:
 ls cv-singleline-detector-yolo7_det_dep_2/best.pt
 ls cv-singleline-detector-yolov7-seg/segmentation.pt
 
 ./cv-singleline-torchserve-dual/scripts/build_and_run.sh
 ```
 
-Or manually:
+The server ports are:
 
-```bash
-cd /data/avinash.patel/HomeDepotCV
-docker build -f cv-singleline-torchserve-dual/Dockerfile -t hd-dual-gpu .
-docker rm -f hd-dual-gpu hd-det-gpu hd-seg-gpu 2>/dev/null || true
-docker run -d --name hd-dual-gpu --gpus all \
-  -p 9000:8080 -p 9001:8081 -p 9002:8082 \
-  --shm-size=8g --restart unless-stopped hd-dual-gpu
-```
+- `9000`: inference requests
+- `9001`: model management and worker status
+- `9002`: metrics
 
-## Health
+## Check the service
 
 ```bash
 curl -s http://127.0.0.1:9000/ping
@@ -78,10 +108,16 @@ curl -s http://127.0.0.1:9001/models/detector
 curl -s http://127.0.0.1:9001/models/segmenter
 ```
 
-## Smoke test
+`/ping` should return `{"status":"Healthy"}`. Each model status should show a
+worker with status `READY`.
+
+To test the full service:
 
 ```bash
-cd /data/avinash.patel/HomeDepotCV
+cd /data/$USER/HomeDepotCV
 python3 scripts/smoke_test_gpu_detectors_updated.py \
   --base-url http://127.0.0.1:9000
 ```
+
+For first-time server setup, weight downloads, SSH instructions, and
+troubleshooting, see `TORCHSERVE_SSH_DEPLOY_172.16.20.100.md`.
