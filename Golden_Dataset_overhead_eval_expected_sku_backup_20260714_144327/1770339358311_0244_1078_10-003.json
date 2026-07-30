@@ -1,0 +1,101 @@
+{
+  "version": null,
+  "flags": {},
+  "shapes": [
+    {
+      "points": [
+        {
+          "0": 1694,
+          "1": 463
+        },
+        {
+          "0": 1682,
+          "1": 542
+        },
+        {
+          "0": 1525,
+          "1": 530
+        },
+        {
+          "0": 1541,
+          "1": 450
+        }
+      ],
+      "labelModifiedBy": "Operator/priyadharshini.v@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2495,
+          "1": 585
+        },
+        {
+          "0": 2484,
+          "1": 666
+        },
+        {
+          "0": 2332,
+          "1": 647
+        },
+        {
+          "0": 2349,
+          "1": 563
+        }
+      ],
+      "labelModifiedBy": "Operator/priyadharshini.v@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3221,
+          "1": 714
+        },
+        {
+          "0": 3209,
+          "1": 789
+        },
+        {
+          "0": 3073,
+          "1": 763
+        },
+        {
+          "0": 3085,
+          "1": 683
+        }
+      ],
+      "labelModifiedBy": "Operator/priyadharshini.v@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    }
+  ],
+  "words": [],
+  "labelDoneBy": [
+    {
+      "roleId": 4,
+      "role": "Operator",
+      "name": "Priyadharshini"
+    }
+  ],
+  "original_words": [],
+  "lineColor": [],
+  "fillColor": [],
+  "jobid": [
+    "8c34650d-b3c2-4bef-bef4-ff7a2705aef9"
+  ],
+  "imagePath": "https://blklabelingeus2sad01.blob.core.windows.net/laptoolabelling/HD/Singleline/Golden_Dataset_overhead_eval/1770339358311_0244_1078_10-003.jpg?sv=2023-01-03&si=bkus2sad01&sr=c&sig=PcZsFBQa8M2Zme38gJVuJ4fr8setZr37ICZquBUHGpw%3D",
+  "fileName": "HD-Singleline/Golden_Dataset_overhead_eval/1770339358311_0244_1078_10-003.jpg",
+  "imageData": null,
+  "imageHeight": 4648,
+  "imageWidth": 5312,
+  "rejectionerror": []
+}

@@ -1,0 +1,188 @@
+{
+  "version": null,
+  "flags": {},
+  "shapes": [
+    {
+      "points": [
+        {
+          "0": 1150,
+          "1": 1104
+        },
+        {
+          "0": 1224,
+          "1": 1076
+        },
+        {
+          "0": 1237,
+          "1": 1145
+        },
+        {
+          "0": 1162,
+          "1": 1170
+        }
+      ],
+      "labelModifiedBy": "Operator/priyadharshini.v@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1781,
+          "1": 999
+        },
+        {
+          "0": 1797,
+          "1": 1067
+        },
+        {
+          "0": 1696,
+          "1": 1087
+        },
+        {
+          "0": 1687,
+          "1": 1021
+        }
+      ],
+      "labelModifiedBy": "Operator/priyadharshini.v@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3865,
+          "1": 616
+        },
+        {
+          "0": 3869,
+          "1": 693
+        },
+        {
+          "0": 3761,
+          "1": 695
+        },
+        {
+          "0": 3754,
+          "1": 627
+        }
+      ],
+      "labelModifiedBy": "Operator/priyadharshini.v@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3345,
+          "1": 1944
+        },
+        {
+          "0": 3342,
+          "1": 2030
+        },
+        {
+          "0": 3220,
+          "1": 2034
+        },
+        {
+          "0": 3220,
+          "1": 1953
+        }
+      ],
+      "labelModifiedBy": "Operator/priyadharshini.v@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2662,
+          "1": 1981
+        },
+        {
+          "0": 2668,
+          "1": 2071
+        },
+        {
+          "0": 2619,
+          "1": 2072
+        },
+        {
+          "0": 2541,
+          "1": 2076
+        },
+        {
+          "0": 2534,
+          "1": 1989
+        },
+        {
+          "0": 2599,
+          "1": 1985
+        }
+      ],
+      "labelModifiedBy": "Operator/priyadharshini.v@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1081,
+          "1": 2097
+        },
+        {
+          "0": 1082,
+          "1": 2125
+        },
+        {
+          "0": 1096,
+          "1": 2169
+        },
+        {
+          "0": 1010,
+          "1": 2181
+        },
+        {
+          "0": 986,
+          "1": 2113
+        }
+      ],
+      "labelModifiedBy": "Operator/priyadharshini.v@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    }
+  ],
+  "words": [],
+  "labelDoneBy": [
+    {
+      "roleId": 4,
+      "role": "Operator",
+      "name": "Priyadharshini"
+    }
+  ],
+  "original_words": [],
+  "lineColor": [],
+  "fillColor": [],
+  "jobid": [
+    "8290776e-5b26-46f0-b939-c6b63ade48e5"
+  ],
+  "imagePath": "https://blklabelingeus2sad01.blob.core.windows.net/laptoolabelling/HD/Singleline/Golden_Dataset_overhead_eval/1770339358311_0244_1112_10-006.jpg?sv=2023-01-03&si=bkus2sad01&sr=c&sig=PcZsFBQa8M2Zme38gJVuJ4fr8setZr37ICZquBUHGpw%3D",
+  "fileName": "HD-Singleline/Golden_Dataset_overhead_eval/1770339358311_0244_1112_10-006.jpg",
+  "imageData": null,
+  "imageHeight": 4648,
+  "imageWidth": 5312,
+  "rejectionerror": []
+}

@@ -1,0 +1,201 @@
+{
+  "version": null,
+  "flags": {},
+  "shapes": [
+    {
+      "points": [
+        {
+          "0": 1384,
+          "1": 1469
+        },
+        {
+          "0": 1393,
+          "1": 1419
+        },
+        {
+          "0": 1692,
+          "1": 1401
+        },
+        {
+          "0": 1692,
+          "1": 1446
+        }
+      ],
+      "labelModifiedBy": "Operator/vaishnavi.d@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 1355,
+          "1": 1482
+        },
+        {
+          "0": 1383,
+          "1": 1387
+        },
+        {
+          "0": 1382,
+          "1": 1241
+        },
+        {
+          "0": 1726,
+          "1": 1198
+        },
+        {
+          "0": 1737,
+          "1": 1449
+        },
+        {
+          "0": 1394,
+          "1": 1489
+        }
+      ],
+      "labelModifiedBy": "Operator/vaishnavi.d@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 1381,
+          "1": 1280
+        },
+        {
+          "0": 1367,
+          "1": 1276
+        },
+        {
+          "0": 1373,
+          "1": 1178
+        },
+        {
+          "0": 1546,
+          "1": 1157
+        },
+        {
+          "0": 1541,
+          "1": 1218
+        },
+        {
+          "0": 1380,
+          "1": 1238
+        }
+      ],
+      "labelModifiedBy": "Operator/vaishnavi.d@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Other",
+      "line_color": "#45fdff",
+      "fill_color": "#45fdff"
+    },
+    {
+      "points": [
+        {
+          "0": 1389,
+          "1": 1206
+        },
+        {
+          "0": 1389,
+          "1": 1179
+        },
+        {
+          "0": 1542,
+          "1": 1163
+        },
+        {
+          "0": 1541,
+          "1": 1188
+        }
+      ],
+      "labelModifiedBy": "Operator/vaishnavi.d@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Other_SKU",
+      "line_color": "#e09607",
+      "fill_color": "#e09607",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 3073,
+          "1": 1186
+        },
+        {
+          "0": 3063,
+          "1": 1117
+        },
+        {
+          "0": 3422,
+          "1": 1079
+        },
+        {
+          "0": 3428,
+          "1": 1135
+        }
+      ],
+      "labelModifiedBy": "Operator/vaishnavi.d@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 3057,
+          "1": 1197
+        },
+        {
+          "0": 3020,
+          "1": 948
+        },
+        {
+          "0": 3408,
+          "1": 888
+        },
+        {
+          "0": 3451,
+          "1": 1149
+        }
+      ],
+      "labelModifiedBy": "Operator/vaishnavi.d@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    }
+  ],
+  "words": [],
+  "labelDoneBy": [
+    {
+      "roleId": 4,
+      "role": "Operator",
+      "name": "Vaishnavi"
+    }
+  ],
+  "original_words": [],
+  "lineColor": [],
+  "fillColor": [],
+  "jobid": [
+    "b020574a-65de-46b2-8bc2-dfc427b754f2"
+  ],
+  "imagePath": "https://blklabelingeus2sad01.blob.core.windows.net/laptoolabelling/HD/Singleline/Golden_Dataset_overhead_eval/1770339221260_0244_1215_09-003.jpg?sv=2023-01-03&si=bkus2sad01&sr=c&sig=PcZsFBQa8M2Zme38gJVuJ4fr8setZr37ICZquBUHGpw%3D",
+  "fileName": "HD-Singleline/Golden_Dataset_overhead_eval/1770339221260_0244_1215_09-003.jpg",
+  "imageData": null,
+  "imageHeight": 4648,
+  "imageWidth": 5312,
+  "rejectionerror": []
+}

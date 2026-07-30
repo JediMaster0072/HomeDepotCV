@@ -1,0 +1,230 @@
+{
+  "version": null,
+  "flags": {},
+  "shapes": [
+    {
+      "points": [
+        {
+          "0": 2455,
+          "1": 2
+        },
+        {
+          "0": 2438,
+          "1": 51
+        },
+        {
+          "0": 2562,
+          "1": 62
+        },
+        {
+          "0": 2576,
+          "1": 13
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2930,
+          "1": 20
+        },
+        {
+          "0": 2931,
+          "1": 78
+        },
+        {
+          "0": 3064,
+          "1": 71
+        },
+        {
+          "0": 3051,
+          "1": 13
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4240,
+          "1": 2
+        },
+        {
+          "0": 4247,
+          "1": 59
+        },
+        {
+          "0": 4368,
+          "1": 63
+        },
+        {
+          "0": 4359,
+          "1": 3
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4258,
+          "1": 78
+        },
+        {
+          "0": 4257,
+          "1": 129
+        },
+        {
+          "0": 4376,
+          "1": 144
+        },
+        {
+          "0": 4366,
+          "1": 95
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4266,
+          "1": 141
+        },
+        {
+          "0": 4274,
+          "1": 193
+        },
+        {
+          "0": 4390,
+          "1": 207
+        },
+        {
+          "0": 4378,
+          "1": 151
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1804,
+          "1": 615
+        },
+        {
+          "0": 1808,
+          "1": 682
+        },
+        {
+          "0": 1899,
+          "1": 664
+        },
+        {
+          "0": 1938,
+          "1": 649
+        },
+        {
+          "0": 1931,
+          "1": 595
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2276,
+          "1": 583
+        },
+        {
+          "0": 2272,
+          "1": 647
+        },
+        {
+          "0": 2410,
+          "1": 646
+        },
+        {
+          "0": 2410,
+          "1": 573
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4394,
+          "1": 771
+        },
+        {
+          "0": 4408,
+          "1": 845
+        },
+        {
+          "0": 4537,
+          "1": 853
+        },
+        {
+          "0": 4524,
+          "1": 777
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    }
+  ],
+  "words": [],
+  "labelDoneBy": [
+    {
+      "roleId": 4,
+      "role": "Operator",
+      "name": "Sandhiya"
+    }
+  ],
+  "original_words": [],
+  "lineColor": [],
+  "fillColor": [],
+  "jobid": [
+    "181a6fe5-a4f5-4f78-9aab-318eb56b2bf4"
+  ],
+  "imagePath": "https://blklabelingeus2sad01.blob.core.windows.net/laptoolabelling/HD/Singleline/Golden_Dataset_overhead_eval/1770339221260_0244_1098_09-010.jpg?sv=2023-01-03&si=bkus2sad01&sr=c&sig=PcZsFBQa8M2Zme38gJVuJ4fr8setZr37ICZquBUHGpw%3D",
+  "fileName": "HD-Singleline/Golden_Dataset_overhead_eval/1770339221260_0244_1098_09-010.jpg",
+  "imageData": null,
+  "imageHeight": 4648,
+  "imageWidth": 5312,
+  "rejectionerror": []
+}

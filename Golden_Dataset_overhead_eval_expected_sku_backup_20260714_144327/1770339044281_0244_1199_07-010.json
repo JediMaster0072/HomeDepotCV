@@ -1,0 +1,207 @@
+{
+  "version": null,
+  "flags": {},
+  "shapes": [
+    {
+      "points": [
+        {
+          "0": 4309,
+          "1": 401
+        },
+        {
+          "0": 4314,
+          "1": 475
+        },
+        {
+          "0": 4777,
+          "1": 506
+        },
+        {
+          "0": 4758,
+          "1": 432
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 4255,
+          "1": 185
+        },
+        {
+          "0": 4298,
+          "1": 489
+        },
+        {
+          "0": 4794,
+          "1": 522
+        },
+        {
+          "0": 4729,
+          "1": 232
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 1632,
+          "1": 20
+        },
+        {
+          "0": 1620,
+          "1": 74
+        },
+        {
+          "0": 2067,
+          "1": 103
+        },
+        {
+          "0": 2081,
+          "1": 41
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 1612,
+          "1": 2
+        },
+        {
+          "0": 1583,
+          "1": 91
+        },
+        {
+          "0": 2086,
+          "1": 126
+        },
+        {
+          "0": 2118,
+          "1": 3
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 418,
+          "1": 1670
+        },
+        {
+          "0": 401,
+          "1": 1761
+        },
+        {
+          "0": 533,
+          "1": 1767
+        },
+        {
+          "0": 549,
+          "1": 1675
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 387,
+          "1": 1846
+        },
+        {
+          "0": 356,
+          "1": 1937
+        },
+        {
+          "0": 496,
+          "1": 1949
+        },
+        {
+          "0": 516,
+          "1": 1857
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 328,
+          "1": 2032
+        },
+        {
+          "0": 303,
+          "1": 2126
+        },
+        {
+          "0": 429,
+          "1": 2139
+        },
+        {
+          "0": 463,
+          "1": 2044
+        }
+      ],
+      "labelModifiedBy": "Operator/gowri.shankari@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    }
+  ],
+  "words": [],
+  "labelDoneBy": [
+    {
+      "roleId": 4,
+      "role": "Operator",
+      "name": "Gowri"
+    }
+  ],
+  "original_words": [],
+  "lineColor": [],
+  "fillColor": [],
+  "jobid": [
+    "1dd75273-a52a-445b-bae4-f7f2706f4987"
+  ],
+  "imagePath": "https://blklabelingeus2sad01.blob.core.windows.net/laptoolabelling/HD/Singleline/Golden_Dataset_overhead_eval/1770339044281_0244_1199_07-010.jpg?sv=2023-01-03&si=bkus2sad01&sr=c&sig=PcZsFBQa8M2Zme38gJVuJ4fr8setZr37ICZquBUHGpw%3D",
+  "fileName": "HD-Singleline/Golden_Dataset_overhead_eval/1770339044281_0244_1199_07-010.jpg",
+  "imageData": null,
+  "imageHeight": 4648,
+  "imageWidth": 5312,
+  "rejectionerror": []
+}

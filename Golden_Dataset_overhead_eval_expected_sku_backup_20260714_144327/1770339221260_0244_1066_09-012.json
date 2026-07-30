@@ -1,0 +1,1524 @@
+{
+  "version": null,
+  "flags": {},
+  "shapes": [
+    {
+      "points": [
+        {
+          "0": 1309,
+          "1": 49
+        },
+        {
+          "0": 1288,
+          "1": 102
+        },
+        {
+          "0": 1395,
+          "1": 107
+        },
+        {
+          "0": 1411,
+          "1": 55
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1257,
+          "1": 153
+        },
+        {
+          "0": 1246,
+          "1": 206
+        },
+        {
+          "0": 1356,
+          "1": 201
+        },
+        {
+          "0": 1367,
+          "1": 152
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1457,
+          "1": 125
+        },
+        {
+          "0": 1439,
+          "1": 190
+        },
+        {
+          "0": 1552,
+          "1": 186
+        },
+        {
+          "0": 1571,
+          "1": 121
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1627,
+          "1": 119
+        },
+        {
+          "0": 1608,
+          "1": 178
+        },
+        {
+          "0": 1732,
+          "1": 171
+        },
+        {
+          "0": 1744,
+          "1": 118
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2189,
+          "1": 164
+        },
+        {
+          "0": 2186,
+          "1": 185
+        },
+        {
+          "0": 2313,
+          "1": 189
+        },
+        {
+          "0": 2317,
+          "1": 168
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC_SKU",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 2187,
+          "1": 133
+        },
+        {
+          "0": 2176,
+          "1": 187
+        },
+        {
+          "0": 2317,
+          "1": 193
+        },
+        {
+          "0": 2318,
+          "1": 166
+        },
+        {
+          "0": 2317,
+          "1": 140
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC",
+      "line_color": "#D45F48",
+      "fill_color": "#D45F48"
+    },
+    {
+      "points": [
+        {
+          "0": 2237,
+          "1": 81
+        },
+        {
+          "0": 2231,
+          "1": 95
+        },
+        {
+          "0": 2354,
+          "1": 107
+        },
+        {
+          "0": 2356,
+          "1": 91
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC_SKU",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 2242,
+          "1": 46
+        },
+        {
+          "0": 2219,
+          "1": 96
+        },
+        {
+          "0": 2356,
+          "1": 110
+        },
+        {
+          "0": 2365,
+          "1": 66
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC",
+      "line_color": "#D45F48",
+      "fill_color": "#D45F48"
+    },
+    {
+      "points": [
+        {
+          "0": 2468,
+          "1": 49
+        },
+        {
+          "0": 2465,
+          "1": 113
+        },
+        {
+          "0": 2587,
+          "1": 116
+        },
+        {
+          "0": 2587,
+          "1": 58
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2465,
+          "1": 139
+        },
+        {
+          "0": 2463,
+          "1": 195
+        },
+        {
+          "0": 2583,
+          "1": 194
+        },
+        {
+          "0": 2587,
+          "1": 142
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3204,
+          "1": 117
+        },
+        {
+          "0": 3203,
+          "1": 172
+        },
+        {
+          "0": 3327,
+          "1": 178
+        },
+        {
+          "0": 3327,
+          "1": 123
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3876,
+          "1": 191
+        },
+        {
+          "0": 3885,
+          "1": 246
+        },
+        {
+          "0": 4001,
+          "1": 251
+        },
+        {
+          "0": 3991,
+          "1": 191
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4460,
+          "1": 29
+        },
+        {
+          "0": 4479,
+          "1": 84
+        },
+        {
+          "0": 4575,
+          "1": 95
+        },
+        {
+          "0": 4566,
+          "1": 43
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4536,
+          "1": 263
+        },
+        {
+          "0": 4551,
+          "1": 318
+        },
+        {
+          "0": 4659,
+          "1": 323
+        },
+        {
+          "0": 4646,
+          "1": 267
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1210,
+          "1": 735
+        },
+        {
+          "0": 1215,
+          "1": 758
+        },
+        {
+          "0": 1351,
+          "1": 729
+        },
+        {
+          "0": 1343,
+          "1": 706
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC_SKU",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 1195,
+          "1": 703
+        },
+        {
+          "0": 1202,
+          "1": 762
+        },
+        {
+          "0": 1355,
+          "1": 731
+        },
+        {
+          "0": 1338,
+          "1": 676
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC",
+      "line_color": "#D45F48",
+      "fill_color": "#D45F48"
+    },
+    {
+      "points": [
+        {
+          "0": 1309,
+          "1": 747
+        },
+        {
+          "0": 1295,
+          "1": 819
+        },
+        {
+          "0": 1424,
+          "1": 820
+        },
+        {
+          "0": 1440,
+          "1": 750
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2067,
+          "1": 734
+        },
+        {
+          "0": 2061,
+          "1": 801
+        },
+        {
+          "0": 2197,
+          "1": 798
+        },
+        {
+          "0": 2202,
+          "1": 730
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2787,
+          "1": 734
+        },
+        {
+          "0": 2780,
+          "1": 796
+        },
+        {
+          "0": 2917,
+          "1": 804
+        },
+        {
+          "0": 2925,
+          "1": 732
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3431,
+          "1": 521
+        },
+        {
+          "0": 3425,
+          "1": 584
+        },
+        {
+          "0": 3559,
+          "1": 599
+        },
+        {
+          "0": 3562,
+          "1": 529
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3452,
+          "1": 752
+        },
+        {
+          "0": 3452,
+          "1": 816
+        },
+        {
+          "0": 3589,
+          "1": 825
+        },
+        {
+          "0": 3587,
+          "1": 762
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4022,
+          "1": 592
+        },
+        {
+          "0": 4031,
+          "1": 660
+        },
+        {
+          "0": 4153,
+          "1": 669
+        },
+        {
+          "0": 4144,
+          "1": 607
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4072,
+          "1": 831
+        },
+        {
+          "0": 4079,
+          "1": 901
+        },
+        {
+          "0": 4209,
+          "1": 907
+        },
+        {
+          "0": 4199,
+          "1": 837
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4652,
+          "1": 630
+        },
+        {
+          "0": 4658,
+          "1": 692
+        },
+        {
+          "0": 4776,
+          "1": 701
+        },
+        {
+          "0": 4764,
+          "1": 637
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4697,
+          "1": 876
+        },
+        {
+          "0": 4700,
+          "1": 953
+        },
+        {
+          "0": 4821,
+          "1": 957
+        },
+        {
+          "0": 4808,
+          "1": 887
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 969,
+          "1": 1459
+        },
+        {
+          "0": 960,
+          "1": 1544
+        },
+        {
+          "0": 1087,
+          "1": 1545
+        },
+        {
+          "0": 1098,
+          "1": 1465
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 975,
+          "1": 1827
+        },
+        {
+          "0": 962,
+          "1": 1916
+        },
+        {
+          "0": 1090,
+          "1": 1924
+        },
+        {
+          "0": 1102,
+          "1": 1836
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1815,
+          "1": 1430
+        },
+        {
+          "0": 1803,
+          "1": 1513
+        },
+        {
+          "0": 1945,
+          "1": 1518
+        },
+        {
+          "0": 1955,
+          "1": 1437
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1795,
+          "1": 1828
+        },
+        {
+          "0": 1783,
+          "1": 1918
+        },
+        {
+          "0": 1930,
+          "1": 1926
+        },
+        {
+          "0": 1937,
+          "1": 1833
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2699,
+          "1": 1463
+        },
+        {
+          "0": 2703,
+          "1": 1554
+        },
+        {
+          "0": 2854,
+          "1": 1549
+        },
+        {
+          "0": 2850,
+          "1": 1468
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2665,
+          "1": 1855
+        },
+        {
+          "0": 2655,
+          "1": 1956
+        },
+        {
+          "0": 2815,
+          "1": 1967
+        },
+        {
+          "0": 2821,
+          "1": 1875
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3989,
+          "1": 1902
+        },
+        {
+          "0": 3992,
+          "1": 1995
+        },
+        {
+          "0": 4148,
+          "1": 1991
+        },
+        {
+          "0": 4144,
+          "1": 1899
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 5012,
+          "1": 1919
+        },
+        {
+          "0": 5013,
+          "1": 2017
+        },
+        {
+          "0": 5161,
+          "1": 2022
+        },
+        {
+          "0": 5150,
+          "1": 1924
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1322,
+          "1": 2754
+        },
+        {
+          "0": 1319,
+          "1": 2774
+        },
+        {
+          "0": 1413,
+          "1": 2782
+        },
+        {
+          "0": 1415,
+          "1": 2759
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC_SKU",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 1321,
+          "1": 2723
+        },
+        {
+          "0": 1315,
+          "1": 2774
+        },
+        {
+          "0": 1415,
+          "1": 2785
+        },
+        {
+          "0": 1418,
+          "1": 2760
+        },
+        {
+          "0": 1422,
+          "1": 2730
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC",
+      "line_color": "#D45F48",
+      "fill_color": "#D45F48"
+    },
+    {
+      "points": [
+        {
+          "0": 1819,
+          "1": 3333
+        },
+        {
+          "0": 1819,
+          "1": 3358
+        },
+        {
+          "0": 1919,
+          "1": 3360
+        },
+        {
+          "0": 1921,
+          "1": 3339
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC_SKU",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 1817,
+          "1": 3306
+        },
+        {
+          "0": 1815,
+          "1": 3361
+        },
+        {
+          "0": 1922,
+          "1": 3363
+        },
+        {
+          "0": 1923,
+          "1": 3310
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC",
+      "line_color": "#D45F48",
+      "fill_color": "#D45F48"
+    },
+    {
+      "points": [
+        {
+          "0": 926,
+          "1": 3745
+        },
+        {
+          "0": 920,
+          "1": 3840
+        },
+        {
+          "0": 1067,
+          "1": 3850
+        },
+        {
+          "0": 1068,
+          "1": 3768
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 891,
+          "1": 3900
+        },
+        {
+          "0": 878,
+          "1": 3992
+        },
+        {
+          "0": 1016,
+          "1": 4008
+        },
+        {
+          "0": 1024,
+          "1": 3925
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 902,
+          "1": 4045
+        },
+        {
+          "0": 896,
+          "1": 4139
+        },
+        {
+          "0": 1036,
+          "1": 4150
+        },
+        {
+          "0": 1043,
+          "1": 4065
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 815,
+          "1": 4242
+        },
+        {
+          "0": 800,
+          "1": 4345
+        },
+        {
+          "0": 946,
+          "1": 4355
+        },
+        {
+          "0": 952,
+          "1": 4261
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1880,
+          "1": 3738
+        },
+        {
+          "0": 1875,
+          "1": 3826
+        },
+        {
+          "0": 2006,
+          "1": 3831
+        },
+        {
+          "0": 2012,
+          "1": 3749
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1841,
+          "1": 3931
+        },
+        {
+          "0": 1841,
+          "1": 4023
+        },
+        {
+          "0": 1984,
+          "1": 4032
+        },
+        {
+          "0": 1985,
+          "1": 3943
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1826,
+          "1": 4128
+        },
+        {
+          "0": 1822,
+          "1": 4228
+        },
+        {
+          "0": 1973,
+          "1": 4236
+        },
+        {
+          "0": 1972,
+          "1": 4145
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1787,
+          "1": 4334
+        },
+        {
+          "0": 1786,
+          "1": 4435
+        },
+        {
+          "0": 1941,
+          "1": 4452
+        },
+        {
+          "0": 1943,
+          "1": 4356
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2781,
+          "1": 3609
+        },
+        {
+          "0": 2783,
+          "1": 3715
+        },
+        {
+          "0": 2943,
+          "1": 3717
+        },
+        {
+          "0": 2944,
+          "1": 3610
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2784,
+          "1": 3801
+        },
+        {
+          "0": 2788,
+          "1": 3908
+        },
+        {
+          "0": 2950,
+          "1": 3901
+        },
+        {
+          "0": 2944,
+          "1": 3797
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2794,
+          "1": 3992
+        },
+        {
+          "0": 2792,
+          "1": 4086
+        },
+        {
+          "0": 2951,
+          "1": 4087
+        },
+        {
+          "0": 2955,
+          "1": 3989
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2808,
+          "1": 4171
+        },
+        {
+          "0": 2804,
+          "1": 4285
+        },
+        {
+          "0": 2966,
+          "1": 4287
+        },
+        {
+          "0": 2969,
+          "1": 4183
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2806,
+          "1": 4365
+        },
+        {
+          "0": 2809,
+          "1": 4470
+        },
+        {
+          "0": 2973,
+          "1": 4478
+        },
+        {
+          "0": 2970,
+          "1": 4370
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4193,
+          "1": 3278
+        },
+        {
+          "0": 4199,
+          "1": 3375
+        },
+        {
+          "0": 4362,
+          "1": 3375
+        },
+        {
+          "0": 4352,
+          "1": 3270
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4198,
+          "1": 3643
+        },
+        {
+          "0": 4207,
+          "1": 3755
+        },
+        {
+          "0": 4357,
+          "1": 3744
+        },
+        {
+          "0": 4353,
+          "1": 3642
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4219,
+          "1": 4008
+        },
+        {
+          "0": 4226,
+          "1": 4111
+        },
+        {
+          "0": 4376,
+          "1": 4105
+        },
+        {
+          "0": 4374,
+          "1": 3998
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4231,
+          "1": 4375
+        },
+        {
+          "0": 4230,
+          "1": 4465
+        },
+        {
+          "0": 4390,
+          "1": 4456
+        },
+        {
+          "0": 4387,
+          "1": 4364
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4941,
+          "1": 2931
+        },
+        {
+          "0": 4952,
+          "1": 3032
+        },
+        {
+          "0": 5095,
+          "1": 3026
+        },
+        {
+          "0": 5079,
+          "1": 2927
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4984,
+          "1": 3302
+        },
+        {
+          "0": 4992,
+          "1": 3408
+        },
+        {
+          "0": 5130,
+          "1": 3400
+        },
+        {
+          "0": 5131,
+          "1": 3297
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 5047,
+          "1": 3681
+        },
+        {
+          "0": 5051,
+          "1": 3782
+        },
+        {
+          "0": 5195,
+          "1": 3765
+        },
+        {
+          "0": 5182,
+          "1": 3672
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 5021,
+          "1": 4035
+        },
+        {
+          "0": 5024,
+          "1": 4140
+        },
+        {
+          "0": 5180,
+          "1": 4130
+        },
+        {
+          "0": 5172,
+          "1": 4023
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4959,
+          "1": 4361
+        },
+        {
+          "0": 4957,
+          "1": 4465
+        },
+        {
+          "0": 5101,
+          "1": 4460
+        },
+        {
+          "0": 5093,
+          "1": 4348
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    }
+  ],
+  "words": [],
+  "labelDoneBy": [
+    {
+      "roleId": 4,
+      "role": "Operator",
+      "name": "Sandhiya"
+    }
+  ],
+  "original_words": [],
+  "lineColor": [],
+  "fillColor": [],
+  "jobid": [
+    "46bce0ec-25f4-43dc-b101-431461d9883a"
+  ],
+  "imagePath": "https://blklabelingeus2sad01.blob.core.windows.net/laptoolabelling/HD/Singleline/Golden_Dataset_overhead_eval/1770339221260_0244_1066_09-012.jpg?sv=2023-01-03&si=bkus2sad01&sr=c&sig=PcZsFBQa8M2Zme38gJVuJ4fr8setZr37ICZquBUHGpw%3D",
+  "fileName": "HD-Singleline/Golden_Dataset_overhead_eval/1770339221260_0244_1066_09-012.jpg",
+  "imageData": null,
+  "imageHeight": 4648,
+  "imageWidth": 5312,
+  "rejectionerror": []
+}

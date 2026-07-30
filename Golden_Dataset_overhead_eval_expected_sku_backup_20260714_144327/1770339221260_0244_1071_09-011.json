@@ -1,0 +1,193 @@
+{
+  "version": null,
+  "flags": {},
+  "shapes": [
+    {
+      "points": [
+        {
+          "0": 1119,
+          "1": 153
+        },
+        {
+          "0": 1121,
+          "1": 191
+        },
+        {
+          "0": 1357,
+          "1": 137
+        },
+        {
+          "0": 1356,
+          "1": 98
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 1126,
+          "1": 53
+        },
+        {
+          "0": 1105,
+          "1": 207
+        },
+        {
+          "0": 1358,
+          "1": 143
+        },
+        {
+          "0": 1370,
+          "1": 3
+        },
+        {
+          "0": 1335,
+          "1": 2
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 2022,
+          "1": 1160
+        },
+        {
+          "0": 2021,
+          "1": 1202
+        },
+        {
+          "0": 2285,
+          "1": 1162
+        },
+        {
+          "0": 2283,
+          "1": 1114
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 2001,
+          "1": 1021
+        },
+        {
+          "0": 1987,
+          "1": 1221
+        },
+        {
+          "0": 2307,
+          "1": 1176
+        },
+        {
+          "0": 2305,
+          "1": 959
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 3446,
+          "1": 967
+        },
+        {
+          "0": 3467,
+          "1": 1025
+        },
+        {
+          "0": 3792,
+          "1": 979
+        },
+        {
+          "0": 3783,
+          "1": 928
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 3397,
+          "1": 818
+        },
+        {
+          "0": 3415,
+          "1": 898
+        },
+        {
+          "0": 3444,
+          "1": 1036
+        },
+        {
+          "0": 3811,
+          "1": 993
+        },
+        {
+          "0": 3755,
+          "1": 766
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    }
+  ],
+  "words": [],
+  "labelDoneBy": [
+    {
+      "roleId": 4,
+      "role": "Operator",
+      "name": "Sandhiya"
+    }
+  ],
+  "original_words": [],
+  "lineColor": [],
+  "fillColor": [],
+  "jobid": [
+    "836c1596-a7ae-4d1a-9625-78ebfc53e11a"
+  ],
+  "imagePath": "https://blklabelingeus2sad01.blob.core.windows.net/laptoolabelling/HD/Singleline/Golden_Dataset_overhead_eval/1770339221260_0244_1071_09-011.jpg?sv=2023-01-03&si=bkus2sad01&sr=c&sig=PcZsFBQa8M2Zme38gJVuJ4fr8setZr37ICZquBUHGpw%3D",
+  "fileName": "HD-Singleline/Golden_Dataset_overhead_eval/1770339221260_0244_1071_09-011.jpg",
+  "imageData": null,
+  "imageHeight": 4648,
+  "imageWidth": 5312,
+  "rejectionerror": []
+}

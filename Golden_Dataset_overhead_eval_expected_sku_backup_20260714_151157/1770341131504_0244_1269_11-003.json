@@ -1,0 +1,698 @@
+{
+  "version": null,
+  "flags": {},
+  "shapes": [
+    {
+      "points": [
+        {
+          "0": 3605,
+          "1": 684
+        },
+        {
+          "0": 3610,
+          "1": 724
+        },
+        {
+          "0": 3876,
+          "1": 688
+        },
+        {
+          "0": 3865,
+          "1": 642
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "drona_jsons"
+    },
+    {
+      "points": [
+        {
+          "0": 3612,
+          "1": 621
+        },
+        {
+          "0": 3623,
+          "1": 660
+        },
+        {
+          "0": 3859,
+          "1": 623
+        },
+        {
+          "0": 3854,
+          "1": 578
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "drona_jsons"
+    },
+    {
+      "points": [
+        {
+          "0": 3957,
+          "1": 406
+        },
+        {
+          "0": 4017,
+          "1": 686
+        },
+        {
+          "0": 3589,
+          "1": 760
+        },
+        {
+          "0": 3533,
+          "1": 477
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 3564,
+          "1": 1768
+        },
+        {
+          "0": 3571,
+          "1": 1855
+        },
+        {
+          "0": 3710,
+          "1": 1850
+        },
+        {
+          "0": 3698,
+          "1": 1757
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4005,
+          "1": 1850
+        },
+        {
+          "0": 4016,
+          "1": 1937
+        },
+        {
+          "0": 4157,
+          "1": 1931
+        },
+        {
+          "0": 4145,
+          "1": 1844
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4335,
+          "1": 1832
+        },
+        {
+          "0": 4352,
+          "1": 1916
+        },
+        {
+          "0": 4489,
+          "1": 1894
+        },
+        {
+          "0": 4467,
+          "1": 1811
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 4357,
+          "1": 1608
+        },
+        {
+          "0": 4356,
+          "1": 1635
+        },
+        {
+          "0": 4510,
+          "1": 1656
+        },
+        {
+          "0": 4521,
+          "1": 1650
+        },
+        {
+          "0": 4521,
+          "1": 1621
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC_SKU",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "drona_jsons"
+    },
+    {
+      "points": [
+        {
+          "0": 4362,
+          "1": 1572
+        },
+        {
+          "0": 4355,
+          "1": 1637
+        },
+        {
+          "0": 4512,
+          "1": 1658
+        },
+        {
+          "0": 4523,
+          "1": 1652
+        },
+        {
+          "0": 4524,
+          "1": 1625
+        },
+        {
+          "0": 4528,
+          "1": 1599
+        },
+        {
+          "0": 4515,
+          "1": 1581
+        },
+        {
+          "0": 4366,
+          "1": 1566
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC",
+      "line_color": "#D45F48",
+      "fill_color": "#D45F48"
+    },
+    {
+      "points": [
+        {
+          "0": 4248,
+          "1": 1473
+        },
+        {
+          "0": 4258,
+          "1": 1503
+        },
+        {
+          "0": 4401,
+          "1": 1492
+        },
+        {
+          "0": 4399,
+          "1": 1458
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC_SKU",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "drona_jsons"
+    },
+    {
+      "points": [
+        {
+          "0": 4392,
+          "1": 1420
+        },
+        {
+          "0": 4408,
+          "1": 1490
+        },
+        {
+          "0": 4253,
+          "1": 1508
+        },
+        {
+          "0": 4239,
+          "1": 1434
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "RDC",
+      "line_color": "#D45F48",
+      "fill_color": "#D45F48"
+    },
+    {
+      "points": [
+        {
+          "0": 4370,
+          "1": 1348
+        },
+        {
+          "0": 4384,
+          "1": 1419
+        },
+        {
+          "0": 4254,
+          "1": 1430
+        },
+        {
+          "0": 4246,
+          "1": 1352
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1493,
+          "1": 270
+        },
+        {
+          "0": 1488,
+          "1": 310
+        },
+        {
+          "0": 1767,
+          "1": 271
+        },
+        {
+          "0": 1766,
+          "1": 225
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "drona_jsons"
+    },
+    {
+      "points": [
+        {
+          "0": 1800,
+          "1": 111
+        },
+        {
+          "0": 1779,
+          "1": 275
+        },
+        {
+          "0": 1684,
+          "1": 291
+        },
+        {
+          "0": 1606,
+          "1": 307
+        },
+        {
+          "0": 1474,
+          "1": 326
+        },
+        {
+          "0": 1470,
+          "1": 312
+        },
+        {
+          "0": 1500,
+          "1": 156
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 4285,
+          "1": 1359
+        },
+        {
+          "0": 4289,
+          "1": 1384
+        },
+        {
+          "0": 4375,
+          "1": 1379
+        },
+        {
+          "0": 4370,
+          "1": 1353
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 4316,
+          "1": 1385
+        },
+        {
+          "0": 4320,
+          "1": 1409
+        },
+        {
+          "0": 4375,
+          "1": 1405
+        },
+        {
+          "0": 4372,
+          "1": 1381
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 4253,
+          "1": 1394
+        },
+        {
+          "0": 4258,
+          "1": 1427
+        },
+        {
+          "0": 4280,
+          "1": 1423
+        },
+        {
+          "0": 4275,
+          "1": 1391
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 3610,
+          "1": 1780
+        },
+        {
+          "0": 3614,
+          "1": 1807
+        },
+        {
+          "0": 3701,
+          "1": 1800
+        },
+        {
+          "0": 3697,
+          "1": 1771
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 3642,
+          "1": 1807
+        },
+        {
+          "0": 3645,
+          "1": 1835
+        },
+        {
+          "0": 3702,
+          "1": 1829
+        },
+        {
+          "0": 3699,
+          "1": 1802
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 3572,
+          "1": 1814
+        },
+        {
+          "0": 3574,
+          "1": 1852
+        },
+        {
+          "0": 3608,
+          "1": 1848
+        },
+        {
+          "0": 3604,
+          "1": 1805
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 4054,
+          "1": 1862
+        },
+        {
+          "0": 4059,
+          "1": 1885
+        },
+        {
+          "0": 4149,
+          "1": 1882
+        },
+        {
+          "0": 4144,
+          "1": 1857
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 4085,
+          "1": 1887
+        },
+        {
+          "0": 4089,
+          "1": 1916
+        },
+        {
+          "0": 4150,
+          "1": 1911
+        },
+        {
+          "0": 4145,
+          "1": 1884
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 4014,
+          "1": 1891
+        },
+        {
+          "0": 4019,
+          "1": 1931
+        },
+        {
+          "0": 4044,
+          "1": 1928
+        },
+        {
+          "0": 4041,
+          "1": 1892
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    },
+    {
+      "points": [
+        {
+          "0": 4376,
+          "1": 1834
+        },
+        {
+          "0": 4385,
+          "1": 1863
+        },
+        {
+          "0": 4475,
+          "1": 1845
+        },
+        {
+          "0": 4468,
+          "1": 1819
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_first_line",
+      "line_color": "#A39D80",
+      "fill_color": "#A39D80"
+    },
+    {
+      "points": [
+        {
+          "0": 4422,
+          "1": 1861
+        },
+        {
+          "0": 4429,
+          "1": 1883
+        },
+        {
+          "0": 4483,
+          "1": 1873
+        },
+        {
+          "0": 4476,
+          "1": 1846
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_second_line",
+      "line_color": "#5BC418",
+      "fill_color": "#5BC418"
+    },
+    {
+      "points": [
+        {
+          "0": 4347,
+          "1": 1868
+        },
+        {
+          "0": 4357,
+          "1": 1907
+        },
+        {
+          "0": 4379,
+          "1": 1903
+        },
+        {
+          "0": 4367,
+          "1": 1860
+        }
+      ],
+      "labelModifiedBy": "Operator/sandhiya.t@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_sku_quantity",
+      "line_color": "#347af8",
+      "fill_color": "#347af8"
+    }
+  ],
+  "words": [],
+  "labelDoneBy": [
+    {
+      "roleId": 4,
+      "role": "Operator",
+      "name": "Sandhiya"
+    }
+  ],
+  "original_words": [],
+  "lineColor": [],
+  "fillColor": [],
+  "jobid": [
+    "feba5e48-2e55-4128-a461-0278edd3be8f"
+  ],
+  "imagePath": "https://blklabelingeus2sad01.blob.core.windows.net/laptoolabelling/HD/Singleline/Golden_Dataset_overhead_eval/1770341131504_0244_1269_11-003.jpg?sv=2023-01-03&si=bkus2sad01&sr=c&sig=PcZsFBQa8M2Zme38gJVuJ4fr8setZr37ICZquBUHGpw%3D",
+  "fileName": "HD-Singleline/Golden_Dataset_overhead_eval/1770341131504_0244_1269_11-003.jpg",
+  "imageData": null,
+  "imageHeight": 4648,
+  "imageWidth": 5312,
+  "rejectionerror": []
+}

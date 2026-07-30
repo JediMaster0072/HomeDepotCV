@@ -1,0 +1,184 @@
+{
+  "version": null,
+  "flags": {},
+  "shapes": [
+    {
+      "points": [
+        {
+          "0": 2814,
+          "1": 688
+        },
+        {
+          "0": 2815,
+          "1": 655
+        },
+        {
+          "0": 2934,
+          "1": 654
+        },
+        {
+          "0": 3028,
+          "1": 657
+        },
+        {
+          "0": 3122,
+          "1": 637
+        },
+        {
+          "0": 3196,
+          "1": 624
+        },
+        {
+          "0": 3232,
+          "1": 620
+        },
+        {
+          "0": 3232,
+          "1": 673
+        },
+        {
+          "0": 3059,
+          "1": 705
+        },
+        {
+          "0": 2972,
+          "1": 702
+        }
+      ],
+      "labelModifiedBy": "Operator/vaishnavi.d@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 3055,
+          "1": 727
+        },
+        {
+          "0": 3133,
+          "1": 706
+        },
+        {
+          "0": 3252,
+          "1": 703
+        },
+        {
+          "0": 3243,
+          "1": 536
+        },
+        {
+          "0": 3231,
+          "1": 470
+        },
+        {
+          "0": 3057,
+          "1": 476
+        },
+        {
+          "0": 2894,
+          "1": 469
+        },
+        {
+          "0": 2802,
+          "1": 460
+        },
+        {
+          "0": 2794,
+          "1": 702
+        },
+        {
+          "0": 2931,
+          "1": 702
+        },
+        {
+          "0": 3018,
+          "1": 715
+        }
+      ],
+      "labelModifiedBy": "Operator/vaishnavi.d@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 4190,
+          "1": 727
+        },
+        {
+          "0": 4175,
+          "1": 679
+        },
+        {
+          "0": 4516,
+          "1": 735
+        },
+        {
+          "0": 4528,
+          "1": 776
+        }
+      ],
+      "labelModifiedBy": "Operator/vaishnavi.d@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 4165,
+          "1": 737
+        },
+        {
+          "0": 4118,
+          "1": 501
+        },
+        {
+          "0": 4493,
+          "1": 561
+        },
+        {
+          "0": 4553,
+          "1": 797
+        }
+      ],
+      "labelModifiedBy": "Operator/vaishnavi.d@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    }
+  ],
+  "words": [],
+  "labelDoneBy": [
+    {
+      "roleId": 4,
+      "role": "Operator",
+      "name": "Vaishnavi"
+    }
+  ],
+  "original_words": [],
+  "lineColor": [],
+  "fillColor": [],
+  "jobid": [
+    "5a4d2d44-bf2a-4f4c-9f8a-e41d361e8d13"
+  ],
+  "imagePath": "https://blklabelingeus2sad01.blob.core.windows.net/laptoolabelling/HD/Singleline/Golden_Dataset_overhead_eval/1770339221260_0244_1211_09-004.jpg?sv=2023-01-03&si=bkus2sad01&sr=c&sig=PcZsFBQa8M2Zme38gJVuJ4fr8setZr37ICZquBUHGpw%3D",
+  "fileName": "HD-Singleline/Golden_Dataset_overhead_eval/1770339221260_0244_1211_09-004.jpg",
+  "imageData": null,
+  "imageHeight": 4648,
+  "imageWidth": 5312,
+  "rejectionerror": []
+}

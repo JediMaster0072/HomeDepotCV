@@ -1,0 +1,898 @@
+{
+  "version": null,
+  "flags": {},
+  "shapes": [
+    {
+      "points": [
+        {
+          "0": 1406,
+          "1": 264
+        },
+        {
+          "0": 1251,
+          "1": 282
+        },
+        {
+          "0": 1147,
+          "1": 294
+        },
+        {
+          "0": 1145,
+          "1": 338
+        },
+        {
+          "0": 1401,
+          "1": 298
+        },
+        {
+          "0": 1412,
+          "1": 264
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 1425,
+          "1": 48
+        },
+        {
+          "0": 1241,
+          "1": 88
+        },
+        {
+          "0": 1052,
+          "1": 111
+        },
+        {
+          "0": 991,
+          "1": 116
+        },
+        {
+          "0": 993,
+          "1": 187
+        },
+        {
+          "0": 982,
+          "1": 245
+        },
+        {
+          "0": 984,
+          "1": 284
+        },
+        {
+          "0": 977,
+          "1": 327
+        },
+        {
+          "0": 962,
+          "1": 368
+        },
+        {
+          "0": 1023,
+          "1": 365
+        },
+        {
+          "0": 1435,
+          "1": 314
+        },
+        {
+          "0": 1443,
+          "1": 275
+        },
+        {
+          "0": 1443,
+          "1": 239
+        },
+        {
+          "0": 1443,
+          "1": 161
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 2865,
+          "1": 308
+        },
+        {
+          "0": 2601,
+          "1": 299
+        },
+        {
+          "0": 2605,
+          "1": 356
+        },
+        {
+          "0": 2871,
+          "1": 363
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 2869,
+          "1": 113
+        },
+        {
+          "0": 2601,
+          "1": 108
+        },
+        {
+          "0": 2402,
+          "1": 100
+        },
+        {
+          "0": 2401,
+          "1": 199
+        },
+        {
+          "0": 2414,
+          "1": 357
+        },
+        {
+          "0": 2416,
+          "1": 383
+        },
+        {
+          "0": 2911,
+          "1": 391
+        },
+        {
+          "0": 2874,
+          "1": 214
+        },
+        {
+          "0": 2873,
+          "1": 128
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 4167,
+          "1": 281
+        },
+        {
+          "0": 3774,
+          "1": 266
+        },
+        {
+          "0": 3783,
+          "1": 353
+        },
+        {
+          "0": 4173,
+          "1": 364
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 4125,
+          "1": 90
+        },
+        {
+          "0": 3898,
+          "1": 86
+        },
+        {
+          "0": 3691,
+          "1": 86
+        },
+        {
+          "0": 3701,
+          "1": 148
+        },
+        {
+          "0": 3741,
+          "1": 187
+        },
+        {
+          "0": 3755,
+          "1": 260
+        },
+        {
+          "0": 3753,
+          "1": 377
+        },
+        {
+          "0": 4196,
+          "1": 394
+        },
+        {
+          "0": 4195,
+          "1": 317
+        },
+        {
+          "0": 4185,
+          "1": 260
+        },
+        {
+          "0": 4144,
+          "1": 213
+        },
+        {
+          "0": 4129,
+          "1": 99
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 446,
+          "1": 1322
+        },
+        {
+          "0": 392,
+          "1": 1330
+        },
+        {
+          "0": 333,
+          "1": 1331
+        },
+        {
+          "0": 306,
+          "1": 1333
+        },
+        {
+          "0": 291,
+          "1": 1346
+        },
+        {
+          "0": 283,
+          "1": 1365
+        },
+        {
+          "0": 279,
+          "1": 1399
+        },
+        {
+          "0": 404,
+          "1": 1377
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 437,
+          "1": 1481
+        },
+        {
+          "0": 306,
+          "1": 1494
+        },
+        {
+          "0": 289,
+          "1": 1573
+        },
+        {
+          "0": 420,
+          "1": 1553
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 447,
+          "1": 1638
+        },
+        {
+          "0": 319,
+          "1": 1656
+        },
+        {
+          "0": 307,
+          "1": 1730
+        },
+        {
+          "0": 427,
+          "1": 1706
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 423,
+          "1": 1785
+        },
+        {
+          "0": 294,
+          "1": 1799
+        },
+        {
+          "0": 282,
+          "1": 1854
+        },
+        {
+          "0": 286,
+          "1": 1879
+        },
+        {
+          "0": 405,
+          "1": 1863
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 373,
+          "1": 1933
+        },
+        {
+          "0": 262,
+          "1": 1936
+        },
+        {
+          "0": 245,
+          "1": 1967
+        },
+        {
+          "0": 231,
+          "1": 2023
+        },
+        {
+          "0": 350,
+          "1": 2019
+        },
+        {
+          "0": 368,
+          "1": 1949
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 796,
+          "1": 1852
+        },
+        {
+          "0": 666,
+          "1": 1869
+        },
+        {
+          "0": 647,
+          "1": 1913
+        },
+        {
+          "0": 651,
+          "1": 1965
+        },
+        {
+          "0": 782,
+          "1": 1946
+        },
+        {
+          "0": 789,
+          "1": 1887
+        },
+        {
+          "0": 800,
+          "1": 1851
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 784,
+          "1": 1674
+        },
+        {
+          "0": 656,
+          "1": 1680
+        },
+        {
+          "0": 640,
+          "1": 1711
+        },
+        {
+          "0": 629,
+          "1": 1778
+        },
+        {
+          "0": 764,
+          "1": 1769
+        },
+        {
+          "0": 759,
+          "1": 1713
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 831,
+          "1": 1490
+        },
+        {
+          "0": 691,
+          "1": 1504
+        },
+        {
+          "0": 682,
+          "1": 1586
+        },
+        {
+          "0": 691,
+          "1": 1596
+        },
+        {
+          "0": 824,
+          "1": 1577
+        },
+        {
+          "0": 829,
+          "1": 1501
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3891,
+          "1": 2544
+        },
+        {
+          "0": 3747,
+          "1": 2538
+        },
+        {
+          "0": 3749,
+          "1": 2578
+        },
+        {
+          "0": 3751,
+          "1": 2656
+        },
+        {
+          "0": 3898,
+          "1": 2646
+        },
+        {
+          "0": 3898,
+          "1": 2564
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3383,
+          "1": 2581
+        },
+        {
+          "0": 3223,
+          "1": 2572
+        },
+        {
+          "0": 3220,
+          "1": 2686
+        },
+        {
+          "0": 3376,
+          "1": 2694
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3373,
+          "1": 2356
+        },
+        {
+          "0": 3219,
+          "1": 2370
+        },
+        {
+          "0": 3225,
+          "1": 2480
+        },
+        {
+          "0": 3392,
+          "1": 2460
+        },
+        {
+          "0": 3386,
+          "1": 2371
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2280,
+          "1": 2397
+        },
+        {
+          "0": 2112,
+          "1": 2410
+        },
+        {
+          "0": 2115,
+          "1": 2510
+        },
+        {
+          "0": 2282,
+          "1": 2499
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 2297,
+          "1": 2653
+        },
+        {
+          "0": 2128,
+          "1": 2661
+        },
+        {
+          "0": 2124,
+          "1": 2781
+        },
+        {
+          "0": 2306,
+          "1": 2770
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1841,
+          "1": 2695
+        },
+        {
+          "0": 1678,
+          "1": 2698
+        },
+        {
+          "0": 1666,
+          "1": 2813
+        },
+        {
+          "0": 1839,
+          "1": 2811
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1772,
+          "1": 2478
+        },
+        {
+          "0": 1599,
+          "1": 2493
+        },
+        {
+          "0": 1597,
+          "1": 2601
+        },
+        {
+          "0": 1768,
+          "1": 2592
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1203,
+          "1": 2468
+        },
+        {
+          "0": 1051,
+          "1": 2477
+        },
+        {
+          "0": 1029,
+          "1": 2559
+        },
+        {
+          "0": 1036,
+          "1": 2583
+        },
+        {
+          "0": 1188,
+          "1": 2576
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 1220,
+          "1": 2710
+        },
+        {
+          "0": 1058,
+          "1": 2722
+        },
+        {
+          "0": 1052,
+          "1": 2834
+        },
+        {
+          "0": 1223,
+          "1": 2828
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 698,
+          "1": 2518
+        },
+        {
+          "0": 539,
+          "1": 2531
+        },
+        {
+          "0": 531,
+          "1": 2643
+        },
+        {
+          "0": 696,
+          "1": 2626
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 699,
+          "1": 2769
+        },
+        {
+          "0": 538,
+          "1": 2769
+        },
+        {
+          "0": 539,
+          "1": 2853
+        },
+        {
+          "0": 549,
+          "1": 2885
+        },
+        {
+          "0": 693,
+          "1": 2885
+        },
+        {
+          "0": 695,
+          "1": 2781
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 316,
+          "1": 2763
+        },
+        {
+          "0": 173,
+          "1": 2766
+        },
+        {
+          "0": 158,
+          "1": 2805
+        },
+        {
+          "0": 141,
+          "1": 2877
+        },
+        {
+          "0": 306,
+          "1": 2872
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 251,
+          "1": 2540
+        },
+        {
+          "0": 112,
+          "1": 2584
+        },
+        {
+          "0": 115,
+          "1": 2625
+        },
+        {
+          "0": 126,
+          "1": 2684
+        },
+        {
+          "0": 275,
+          "1": 2641
+        }
+      ],
+      "labelModifiedBy": "Operator/angelin.pabitha@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    }
+  ],
+  "words": [],
+  "labelDoneBy": [
+    {
+      "roleId": 4,
+      "role": "Operator",
+      "name": "Pavithra"
+    }
+  ],
+  "original_words": [],
+  "lineColor": [],
+  "fillColor": [],
+  "jobid": [
+    "301c6597-b6cf-414e-b28f-179b2e1553fb"
+  ],
+  "imagePath": "https://blklabelingeus2sad01.blob.core.windows.net/laptoolabelling/HD/Singleline/Golden_Dataset_overhead_eval/1770339128729_0244_1129_08-008.jpg?sv=2023-01-03&si=bkus2sad01&sr=c&sig=PcZsFBQa8M2Zme38gJVuJ4fr8setZr37ICZquBUHGpw%3D",
+  "fileName": "HD-Singleline/Golden_Dataset_overhead_eval/1770339128729_0244_1129_08-008.jpg",
+  "imageData": null,
+  "imageHeight": 4648,
+  "imageWidth": 5312,
+  "rejectionerror": []
+}

@@ -1,0 +1,663 @@
+{
+  "version": null,
+  "flags": {},
+  "shapes": [
+    {
+      "points": [
+        {
+          "0": 293,
+          "1": 633
+        },
+        {
+          "0": 288,
+          "1": 671
+        },
+        {
+          "0": 141,
+          "1": 716
+        },
+        {
+          "0": 147,
+          "1": 680
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 329,
+          "1": 524
+        },
+        {
+          "0": 297,
+          "1": 680
+        },
+        {
+          "0": 130,
+          "1": 732
+        },
+        {
+          "0": 143,
+          "1": 647
+        },
+        {
+          "0": 152,
+          "1": 616
+        },
+        {
+          "0": 159,
+          "1": 577
+        },
+        {
+          "0": 245,
+          "1": 540
+        },
+        {
+          "0": 324,
+          "1": 517
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 1271,
+          "1": 130
+        },
+        {
+          "0": 1275,
+          "1": 194
+        },
+        {
+          "0": 1278,
+          "1": 280
+        },
+        {
+          "0": 1239,
+          "1": 298
+        },
+        {
+          "0": 1197,
+          "1": 313
+        },
+        {
+          "0": 1167,
+          "1": 322
+        },
+        {
+          "0": 1138,
+          "1": 328
+        },
+        {
+          "0": 1073,
+          "1": 353
+        },
+        {
+          "0": 1035,
+          "1": 367
+        },
+        {
+          "0": 1041,
+          "1": 310
+        },
+        {
+          "0": 1045,
+          "1": 232
+        },
+        {
+          "0": 1192,
+          "1": 168
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 1263,
+          "1": 243
+        },
+        {
+          "0": 1262,
+          "1": 277
+        },
+        {
+          "0": 1052,
+          "1": 351
+        },
+        {
+          "0": 1058,
+          "1": 321
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 89,
+          "1": 1332
+        },
+        {
+          "0": 84,
+          "1": 1372
+        },
+        {
+          "0": 2,
+          "1": 1389
+        },
+        {
+          "0": 1,
+          "1": 1353
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 131,
+          "1": 1202
+        },
+        {
+          "0": 127,
+          "1": 1233
+        },
+        {
+          "0": 116,
+          "1": 1266
+        },
+        {
+          "0": 112,
+          "1": 1287
+        },
+        {
+          "0": 111,
+          "1": 1306
+        },
+        {
+          "0": 101,
+          "1": 1332
+        },
+        {
+          "0": 95,
+          "1": 1353
+        },
+        {
+          "0": 94,
+          "1": 1387
+        },
+        {
+          "0": 2,
+          "1": 1406
+        },
+        {
+          "0": 1,
+          "1": 1228
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 391,
+          "1": 1266
+        },
+        {
+          "0": 385,
+          "1": 1310
+        },
+        {
+          "0": 205,
+          "1": 1331
+        },
+        {
+          "0": 216,
+          "1": 1292
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 441,
+          "1": 1115
+        },
+        {
+          "0": 434,
+          "1": 1138
+        },
+        {
+          "0": 425,
+          "1": 1166
+        },
+        {
+          "0": 409,
+          "1": 1244
+        },
+        {
+          "0": 394,
+          "1": 1325
+        },
+        {
+          "0": 195,
+          "1": 1343
+        },
+        {
+          "0": 197,
+          "1": 1311
+        },
+        {
+          "0": 208,
+          "1": 1280
+        },
+        {
+          "0": 237,
+          "1": 1148
+        },
+        {
+          "0": 271,
+          "1": 1145
+        },
+        {
+          "0": 385,
+          "1": 1120
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 2642,
+          "1": 646
+        },
+        {
+          "0": 2639,
+          "1": 703
+        },
+        {
+          "0": 2324,
+          "1": 744
+        },
+        {
+          "0": 2328,
+          "1": 692
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 2651,
+          "1": 708
+        },
+        {
+          "0": 2412,
+          "1": 744
+        },
+        {
+          "0": 2310,
+          "1": 760
+        },
+        {
+          "0": 2311,
+          "1": 687
+        },
+        {
+          "0": 2322,
+          "1": 535
+        },
+        {
+          "0": 2379,
+          "1": 526
+        },
+        {
+          "0": 2568,
+          "1": 493
+        },
+        {
+          "0": 2653,
+          "1": 477
+        },
+        {
+          "0": 2654,
+          "1": 607
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 3505,
+          "1": 477
+        },
+        {
+          "0": 3510,
+          "1": 514
+        },
+        {
+          "0": 3210,
+          "1": 571
+        },
+        {
+          "0": 3202,
+          "1": 532
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 3498,
+          "1": 336
+        },
+        {
+          "0": 3513,
+          "1": 417
+        },
+        {
+          "0": 3544,
+          "1": 524
+        },
+        {
+          "0": 3497,
+          "1": 531
+        },
+        {
+          "0": 3217,
+          "1": 585
+        },
+        {
+          "0": 3183,
+          "1": 584
+        },
+        {
+          "0": 3154,
+          "1": 377
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 5184,
+          "1": 266
+        },
+        {
+          "0": 5193,
+          "1": 330
+        },
+        {
+          "0": 5310,
+          "1": 332
+        },
+        {
+          "0": 5307,
+          "1": 262
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 5107,
+          "1": 98
+        },
+        {
+          "0": 5118,
+          "1": 125
+        },
+        {
+          "0": 5125,
+          "1": 153
+        },
+        {
+          "0": 5148,
+          "1": 185
+        },
+        {
+          "0": 5156,
+          "1": 210
+        },
+        {
+          "0": 5165,
+          "1": 274
+        },
+        {
+          "0": 5194,
+          "1": 344
+        },
+        {
+          "0": 5308,
+          "1": 350
+        },
+        {
+          "0": 5309,
+          "1": 67
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 2587,
+          "1": 1686
+        },
+        {
+          "0": 2590,
+          "1": 1761
+        },
+        {
+          "0": 2239,
+          "1": 1789
+        },
+        {
+          "0": 2241,
+          "1": 1718
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 2607,
+          "1": 1764
+        },
+        {
+          "0": 2224,
+          "1": 1801
+        },
+        {
+          "0": 2221,
+          "1": 1530
+        },
+        {
+          "0": 2595,
+          "1": 1486
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    },
+    {
+      "points": [
+        {
+          "0": 971,
+          "1": 2007
+        },
+        {
+          "0": 973,
+          "1": 2062
+        },
+        {
+          "0": 750,
+          "1": 2114
+        },
+        {
+          "0": 754,
+          "1": 2054
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet_SKU",
+      "line_color": "#A6D4F7",
+      "fill_color": "#A6D4F7",
+      "expected_sku": "",
+      "expected_sku_review_status": "needs_review",
+      "expected_sku_source": "human_review"
+    },
+    {
+      "points": [
+        {
+          "0": 989,
+          "1": 2067
+        },
+        {
+          "0": 733,
+          "1": 2125
+        },
+        {
+          "0": 737,
+          "1": 2033
+        },
+        {
+          "0": 735,
+          "1": 1876
+        },
+        {
+          "0": 987,
+          "1": 1819
+        },
+        {
+          "0": 985,
+          "1": 1828
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Pallet",
+      "line_color": "#41282D",
+      "fill_color": "#41282D"
+    }
+  ],
+  "words": [],
+  "labelDoneBy": [
+    {
+      "roleId": 4,
+      "role": "Operator",
+      "name": "Karunya"
+    }
+  ],
+  "original_words": [],
+  "lineColor": [],
+  "fillColor": [],
+  "jobid": [
+    "d0c97066-cee6-4683-80cc-47a761cec6d7"
+  ],
+  "imagePath": "https://blklabelingeus2sad01.blob.core.windows.net/laptoolabelling/HD/Singleline/Golden_Dataset_overhead_eval/1770339044281_0244_1101_07-015.jpg?sv=2023-01-03&si=bkus2sad01&sr=c&sig=PcZsFBQa8M2Zme38gJVuJ4fr8setZr37ICZquBUHGpw%3D",
+  "fileName": "HD-Singleline/Golden_Dataset_overhead_eval/1770339044281_0244_1101_07-015.jpg",
+  "imageData": null,
+  "imageHeight": 4648,
+  "imageWidth": 5312,
+  "rejectionerror": []
+}

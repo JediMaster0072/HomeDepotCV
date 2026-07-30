@@ -1,0 +1,109 @@
+{
+  "version": null,
+  "flags": {},
+  "shapes": [
+    {
+      "points": [
+        {
+          "0": 1765,
+          "1": 148
+        },
+        {
+          "0": 1757,
+          "1": 212
+        },
+        {
+          "0": 1630,
+          "1": 225
+        },
+        {
+          "0": 1623,
+          "1": 220
+        },
+        {
+          "0": 1640,
+          "1": 161
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3135,
+          "1": 193
+        },
+        {
+          "0": 3143,
+          "1": 261
+        },
+        {
+          "0": 3006,
+          "1": 246
+        },
+        {
+          "0": 3002,
+          "1": 179
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    },
+    {
+      "points": [
+        {
+          "0": 3828,
+          "1": 108
+        },
+        {
+          "0": 3839,
+          "1": 173
+        },
+        {
+          "0": 3791,
+          "1": 173
+        },
+        {
+          "0": 3694,
+          "1": 169
+        },
+        {
+          "0": 3691,
+          "1": 100
+        }
+      ],
+      "labelModifiedBy": "Operator/karunya.s@blackstraw.ai",
+      "shape_type": "polygon",
+      "label": "Multiline_Label",
+      "line_color": "#53493C",
+      "fill_color": "#53493C"
+    }
+  ],
+  "words": [],
+  "labelDoneBy": [
+    {
+      "roleId": 4,
+      "role": "Operator",
+      "name": "Karunya"
+    }
+  ],
+  "original_words": [],
+  "lineColor": [],
+  "fillColor": [],
+  "jobid": [
+    "7a544d3a-e981-4bcd-8b5f-498e8d8fb35b"
+  ],
+  "imagePath": "https://blklabelingeus2sad01.blob.core.windows.net/laptoolabelling/HD/Singleline/Golden_Dataset_overhead_eval/1770339044281_0244_1131_07-014.jpg?sv=2023-01-03&si=bkus2sad01&sr=c&sig=PcZsFBQa8M2Zme38gJVuJ4fr8setZr37ICZquBUHGpw%3D",
+  "fileName": "HD-Singleline/Golden_Dataset_overhead_eval/1770339044281_0244_1131_07-014.jpg",
+  "imageData": null,
+  "imageHeight": 4648,
+  "imageWidth": 5312,
+  "rejectionerror": []
+}
