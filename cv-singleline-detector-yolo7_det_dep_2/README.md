@@ -1,1 +1,0 @@
-# cv-singleline-detector

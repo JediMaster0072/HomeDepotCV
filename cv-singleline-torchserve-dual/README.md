@@ -1,148 +1,96 @@
-# Detection and segmentation in one TorchServe container
+# Single-line detection and segmentation deployment
 
-This folder is the deployment layer that runs the existing detection and
-segmentation models together on one GPU server. It does not contain a third
-model or replace either YOLO codebase.
+This folder is the complete TorchServe deployment for the two single-line
+computer-vision models. Detection and segmentation live together here for
+deployment, but each model keeps its own source, weights, handler, and worker.
 
 For copy-and-paste commands, see [RUN.md](RUN.md).
 
-## The problem this solves
+## Why the repository is organized this way
 
-The original deployment ran two Docker containers:
+The original repository had two top-level model folders, and each folder
+contained copies of both YOLO projects. That made it difficult to tell which
+files belonged to detection or segmentation and increased the risk of Python
+import collisions.
 
-- detection on port `9000`
-- segmentation on port `10000`
+The consolidated layout has one clear boundary:
 
-That worked, but it meant building, starting, monitoring, and connecting to two
-separate services.
-
-Putting both YOLO projects directly into one Python environment was not safe.
-The projects use some of the same import names, such as `models` and `utils`,
-but those names refer to different code. If both source trees share one Python
-path, one model can import files from the other project and fail at startup or
-run the wrong code.
-
-## The solution
-
-One container now runs one TorchServe service with two model packages:
-
-- `detector.mar` contains the detection weights and only the `yolov7/` code.
-- `segmenter.mar` contains the segmentation weights and only the
-  `yolov7-seg/` code.
-
-TorchServe unpacks each package into its own model directory and starts each
-model in a separate worker process. This keeps their Python imports isolated
-while still allowing both workers to use the same GPU.
-
-The two API endpoints are:
-
-- `POST /predictions/detector` for a full shelf image
-- `POST /predictions/segmenter` for one or more shelf-strip crops
-
-Both endpoints use port `9000`. They are separate requests; the container does
-not automatically pass detector output to the segmenter.
-
-## Request flow
-
-1. Send a full shelf image to the detector.
-2. The detector returns product/shelf bounding boxes.
-3. The calling application creates the required shelf-strip crops.
-4. Send those strips to the segmenter.
-5. The segmenter returns the segmentation results.
-
-The application remains responsible for steps 3 and 4.
-
-## What improves
-
-- There is one image and one container to deploy instead of two.
-- Clients use one base URL and select the model by endpoint.
-- Each model still uses its own source tree, configuration, weights, and worker.
-- Import-name collisions between the two YOLO projects are avoided.
-- A failure or code change in one handler is less likely to affect the other
-  model's imports.
-
-This changes how the models are packaged and served. It does not change model
-accuracy, combine the two responses, or remove the GPU memory needed to load
-both models.
-
-## Memory footprint
-
-There is no checked-in measured VRAM/RAM number for this dual container. Both
-models load onto the **same GPU** with **one TorchServe worker each**
-(`min_workers=1` / `max_workers=1` in `config.properties`), which is the
-intended layout for an RTX 2080-class card.
-
-Expect several GB of GPU memory for idle load (two YOLOv7 weights + CUDA /
-TorchServe overhead). Usage rises during inference. Host RAM for the Java /
-TorchServe process is separate from GPU VRAM.
-
-Measure on the GPU while `hd-dual-gpu` is running:
-
-```bash
-docker stats hd-dual-gpu --no-stream
-nvidia-smi
-
-# After detect + segment calls, check again
-nvidia-smi --query-compute-apps=pid,process_name,used_gpu_memory --format=csv
+```text
+cv-singleline-torchserve-dual/
+├── detection/       # best.pt, yolov7/, detection-only pipeline
+├── segmentation/    # segmentation.pt, yolov7-seg/, segmentation-only pipeline
+├── handlers/        # handlers used by the dual MAR packages
+├── packaging/       # per-worker MAR configuration
+├── scripts/         # build and run helpers
+└── test-fixtures/   # committed smoke-test images and comparison masks
 ```
 
-Capture `nvidia-smi` once both workers are `READY`, then again mid-request, if
-you need numbers for capacity planning. If both models OOM on the 2080, keep
-one worker per model, reduce concurrent requests, and re-check `nvidia-smi`.
+`detection/` contains no segmentation model source. `segmentation/` contains
+no detection model source.
 
-## What happens during build and startup
+## Runtime flow
 
-The build uses files from all three project folders:
+One Docker container runs one TorchServe service with two isolated workers:
 
-1. `best.pt` and `yolov7/` are copied from
-   `cv-singleline-detector-yolo7_det_dep_2`.
-2. `segmentation.pt` and `yolov7-seg/` are copied from
-   `cv-singleline-detector-yolov7-seg`.
-3. This folder adds separate handlers and configuration for each model.
-4. The files are archived as `detector.mar` and `segmenter.mar`.
-5. TorchServe starts one worker for each archive.
+- `POST /predictions/detector` accepts a full shelf image.
+- `POST /predictions/segmenter` accepts one or more shelf-strip crops.
 
-The helper script checks that both weight files exist, builds the Docker image,
-removes old detection/segmentation containers, starts the new container, and
-waits for TorchServe to become healthy.
+Both endpoints use inference port `9000`. TorchServe unpacks `detector.mar` and
+`segmenter.mar` into separate model directories, preventing their generic
+`models` and `utils` package names from colliding.
 
-## Build and start
+The calling application remains responsible for creating strip crops and
+combining the two responses.
 
-Run this from the repository root on `GPU1-A2080`:
+## Model packages
 
-```bash
-cd /data/$USER/HomeDepotCV
+### Detection
 
-ls cv-singleline-detector-yolo7_det_dep_2/best.pt
-ls cv-singleline-detector-yolov7-seg/segmentation.pt
+[`detection/`](detection/) contains:
 
-./cv-singleline-torchserve-dual/scripts/build_and_run.sh
-```
+- `best.pt` (gitignored model weight)
+- `yolov7/`
+- `service_pipeline_gpu/stage1_detection.py`
+- a detection-only standalone Dockerfile and handler
 
-The server ports are:
+### Segmentation
 
-- `9000`: inference requests
-- `9001`: model management and worker status
-- `9002`: metrics
+[`segmentation/`](segmentation/) contains:
 
-## Check the service
+- `segmentation.pt` (gitignored model weight)
+- `yolov7-seg/`
+- `service_pipeline_gpu/stage2_segmentation.py`
+- a segmentation-only standalone Dockerfile and handler
 
-```bash
-curl -s http://127.0.0.1:9000/ping
-curl -s http://127.0.0.1:9001/models/detector
-curl -s http://127.0.0.1:9001/models/segmenter
-```
+## Build inputs
 
-`/ping` should return `{"status":"Healthy"}`. Each model status should show a
-worker with status `READY`.
+The dual Docker build packages:
 
-To test the full service:
+1. `detection/best.pt`, `detection/yolov7/`, and the detection pipeline into
+   `detector.mar`
+2. `segmentation/segmentation.pt`, `segmentation/yolov7-seg/`, and the
+   segmentation pipeline into `segmenter.mar`
 
-```bash
-cd /data/$USER/HomeDepotCV
-python3 scripts/smoke_test_gpu_detectors_updated.py \
-  --base-url http://127.0.0.1:9000
-```
+The Docker build context is this directory, not the repository root.
 
-For first-time server setup, weight downloads, SSH instructions, and
-troubleshooting, see `TORCHSERVE_SSH_DEPLOY_172.16.20.100.md`.
+## Requirements
+
+The shared deployment uses:
+
+- Python 3.10
+- PyTorch 2.7.0 with CUDA 12.8
+- torchvision 0.22.0
+- NumPy 1.26.4
+- OpenCV 4.10.0.82
+- SciPy 1.11 through 1.15
+
+These versions were tested with both models on the RTX 2080 Ti host.
+
+## Tests
+
+Test inputs and previously generated masks are under
+[`test-fixtures/`](test-fixtures/). The segmentation comparison set is kept in
+Git so reorganizations can be checked for pixel-level output changes.
+
+First-time SSH setup, weight transfer, and host troubleshooting are documented
+in `../TORCHSERVE_SSH_DEPLOY_172.16.20.100.md`.

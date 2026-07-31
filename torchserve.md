@@ -354,7 +354,7 @@ Metrics can be used for:
 The repository contains the complete inference stack:
 
 ```
-cv-singleline-detector-yolo7_det_dep_2/
+cv-singleline-torchserve-dual/detection/
 
 ├── best.pt
 ├── model_handler.py

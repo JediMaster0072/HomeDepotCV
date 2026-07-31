@@ -1,20 +1,19 @@
 #!/usr/bin/env bash
-# Build hd-dual-gpu from HomeDepotCV repo root.
+# Build hd-dual-gpu from the consolidated dual package.
 # Usage:
 #   ./cv-singleline-torchserve-dual/scripts/build_and_run.sh [--build-only]
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DUAL_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
-REPO_ROOT="$(cd "${DUAL_DIR}/.." && pwd)"
 IMAGE="${IMAGE:-hd-dual-gpu}"
 CONTAINER="${CONTAINER:-hd-dual-gpu}"
 HTTP_PORT="${HTTP_PORT:-9000}"
 MGMT_PORT="${MGMT_PORT:-9001}"
 METRICS_PORT="${METRICS_PORT:-9002}"
 
-DET_DIR="${REPO_ROOT}/cv-singleline-detector-yolo7_det_dep_2"
-SEG_DIR="${REPO_ROOT}/cv-singleline-detector-yolov7-seg"
+DET_DIR="${DUAL_DIR}/detection"
+SEG_DIR="${DUAL_DIR}/segmentation"
 
 log() { printf '[hd-dual] %s\n' "$*"; }
 
@@ -27,11 +26,11 @@ if [[ ! -f "${SEG_DIR}/segmentation.pt" ]]; then
   exit 1
 fi
 
-log "Building ${IMAGE} (context=${REPO_ROOT})"
+log "Building ${IMAGE} (context=${DUAL_DIR})"
 docker build \
   -f "${DUAL_DIR}/Dockerfile" \
   -t "${IMAGE}" \
-  "${REPO_ROOT}"
+  "${DUAL_DIR}"
 
 if [[ "${1:-}" == "--build-only" ]]; then
   log "Build complete (--build-only)"

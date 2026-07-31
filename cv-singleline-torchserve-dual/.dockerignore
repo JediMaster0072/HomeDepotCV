@@ -1,0 +1,9 @@
+test-fixtures
+detection/dev
+segmentation/dev
+**/.venv
+**/__pycache__
+**/*.pyc
+**/._*
+**/wandb
+*.md

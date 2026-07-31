@@ -13,6 +13,7 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .DS_Store
+._*
 
 # Images (restore via scripts/download_images.py)
 *.jpg
@@ -24,9 +25,9 @@ __pycache__/
 *.tiff
 *.webp
 *.heic
-# Dual TorchServe smoke-test shelf images (small; keep in git)
-!cv-singleline-detector-yolo7_det_dep_2/test_image.jpg
-!cv-singleline-detector-yolo7_det_dep_2/test_img_new.jpg
+# TorchServe smoke-test inputs and visual comparisons (small; keep in git)
+!cv-singleline-torchserve-dual/test-fixtures/**/*.jpg
+!cv-singleline-torchserve-dual/test-fixtures/**/*.png
 
 # Model weights (restore via scripts/extract_models_from_zip.py)
 *.pt

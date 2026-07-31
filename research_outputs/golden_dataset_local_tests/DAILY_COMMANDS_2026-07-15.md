@@ -389,7 +389,7 @@ ssh -i ~/Downloads/HomeDepotCV/avinash_patel_lf.pem avinash.patel@172.16.20.108
 
 nvidia-smi
 
-cd ~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2
+cd ~/HomeDepotCV/cv-singleline-torchserve-dual/detection
 sudo docker build -t hd-singleline-det-current:local .
 ```
 

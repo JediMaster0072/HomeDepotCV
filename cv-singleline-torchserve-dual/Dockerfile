@@ -1,7 +1,7 @@
 # Dual TorchServe image — one process, two MAR workers (detector + segmenter).
 #
-# Build from HomeDepotCV repo root:
-#   docker build -f cv-singleline-torchserve-dual/Dockerfile -t hd-dual-gpu .
+# Build from this directory:
+#   docker build -t hd-dual-gpu .
 #
 # Or:
 #   ./cv-singleline-torchserve-dual/scripts/build_and_run.sh
@@ -46,7 +46,7 @@ RUN pip3 install \
 
 RUN pip3 install torchserve torch-model-archiver
 
-COPY cv-singleline-torchserve-dual/requirements.txt /tmp/requirements.txt
+COPY requirements.txt /tmp/requirements.txt
 RUN pip3 install --no-cache-dir -r /tmp/requirements.txt
 
 RUN pip3 install \
@@ -64,21 +64,21 @@ WORKDIR /mar_build
 
 # Detection staging
 RUN mkdir -p /mar_build/detection
-COPY cv-singleline-detector-yolo7_det_dep_2/best.pt /mar_build/detection/best.pt
-COPY cv-singleline-detector-yolo7_det_dep_2/yolov7 /mar_build/detection/yolov7
-COPY cv-singleline-detector-yolo7_det_dep_2/service_pipeline_gpu /mar_build/detection/service_pipeline_gpu
-COPY cv-singleline-detector-yolo7_det_dep_2/codec_gpu.py /mar_build/detection/codec_gpu.py
-COPY cv-singleline-torchserve-dual/packaging/detection/common_config_gpu.py /mar_build/detection/common_config_gpu.py
-COPY cv-singleline-torchserve-dual/handlers/detection_handler.py /mar_build/detection/model_handler.py
+COPY detection/best.pt /mar_build/detection/best.pt
+COPY detection/yolov7 /mar_build/detection/yolov7
+COPY detection/service_pipeline_gpu /mar_build/detection/service_pipeline_gpu
+COPY detection/codec_gpu.py /mar_build/detection/codec_gpu.py
+COPY packaging/detection/common_config_gpu.py /mar_build/detection/common_config_gpu.py
+COPY handlers/detection_handler.py /mar_build/detection/model_handler.py
 
 # Segmentation staging
 RUN mkdir -p /mar_build/segmentation
-COPY cv-singleline-detector-yolov7-seg/segmentation.pt /mar_build/segmentation/segmentation.pt
-COPY cv-singleline-detector-yolov7-seg/yolov7-seg /mar_build/segmentation/yolov7-seg
-COPY cv-singleline-detector-yolov7-seg/service_pipeline_gpu /mar_build/segmentation/service_pipeline_gpu
-COPY cv-singleline-detector-yolov7-seg/codec_gpu.py /mar_build/segmentation/codec_gpu.py
-COPY cv-singleline-torchserve-dual/packaging/segmentation/common_config_gpu.py /mar_build/segmentation/common_config_gpu.py
-COPY cv-singleline-torchserve-dual/handlers/segmentation_handler.py /mar_build/segmentation/model_handler.py
+COPY segmentation/segmentation.pt /mar_build/segmentation/segmentation.pt
+COPY segmentation/yolov7-seg /mar_build/segmentation/yolov7-seg
+COPY segmentation/service_pipeline_gpu /mar_build/segmentation/service_pipeline_gpu
+COPY segmentation/codec_gpu.py /mar_build/segmentation/codec_gpu.py
+COPY packaging/segmentation/common_config_gpu.py /mar_build/segmentation/common_config_gpu.py
+COPY handlers/segmentation_handler.py /mar_build/segmentation/model_handler.py
 
 # Drop wandb / caches from staged trees (shrink image, avoid noise)
 RUN find /mar_build -type d \( -name wandb -o -name __pycache__ -o -name .git \) -prune -exec rm -rf {} + 2>/dev/null || true
@@ -87,7 +87,7 @@ RUN find /mar_build -type d \( -name wandb -o -name __pycache__ -o -name .git \)
 # Zip code extras so directory layout is preserved; mar_bootstrap extracts at runtime.
 # Keep mar_bootstrap.py as a loose extra so the handler can import it before unzip.
 WORKDIR /mar_build/detection
-COPY cv-singleline-torchserve-dual/handlers/mar_bootstrap.py /mar_build/detection/mar_bootstrap.py
+COPY handlers/mar_bootstrap.py /mar_build/detection/mar_bootstrap.py
 RUN zip -r code_extra.zip yolov7 service_pipeline_gpu codec_gpu.py common_config_gpu.py \
     && torch-model-archiver \
     --model-name detector \
@@ -100,7 +100,7 @@ RUN zip -r code_extra.zip yolov7 service_pipeline_gpu codec_gpu.py common_config
 
 # Build segmenter.mar (yolov7-seg only)
 WORKDIR /mar_build/segmentation
-COPY cv-singleline-torchserve-dual/handlers/mar_bootstrap.py /mar_build/segmentation/mar_bootstrap.py
+COPY handlers/mar_bootstrap.py /mar_build/segmentation/mar_bootstrap.py
 RUN zip -r code_extra.zip yolov7-seg service_pipeline_gpu codec_gpu.py common_config_gpu.py \
     && torch-model-archiver \
     --model-name segmenter \
@@ -120,7 +120,7 @@ RUN mkdir -p ${APP_HOME}/model_store \
     && mv /mar_build/segmenter.mar ${APP_HOME}/model_store/ \
     && rm -rf /mar_build
 
-COPY cv-singleline-torchserve-dual/config.properties ${APP_HOME}/config.properties
+COPY config.properties ${APP_HOME}/config.properties
 
 RUN python3 - <<'EOF'
 import torch

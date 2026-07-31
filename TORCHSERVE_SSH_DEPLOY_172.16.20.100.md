@@ -47,8 +47,8 @@ cd /data/avinash.patel/HomeDepotCV
 git pull origin main
 
 # Confirm weights still present after a move
-ls -lh cv-singleline-detector-yolo7_det_dep_2/best.pt
-ls -lh cv-singleline-detector-yolov7-seg/segmentation.pt
+ls -lh cv-singleline-torchserve-dual/detection/best.pt
+ls -lh cv-singleline-torchserve-dual/segmentation/segmentation.pt
 ```
 
 From then on, **always**:
@@ -239,8 +239,8 @@ Not required for `git pull` / `git clone` only.
 #### Step 5 — Confirm TorchServe directories exist
 
 ```bash
-ls /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2
-ls /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg
+ls /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/detection
+ls /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/segmentation
 ls /data/avinash.patel/HomeDepotCV/scripts/deploy_gpu_5090_updated.sh
 ```
 
@@ -321,13 +321,15 @@ git pull origin main
 These are the files that must be present on the host before rebuild:
 
 ```
-cv-singleline-detector-yolo7_det_dep_2/common_config_gpu.py
-cv-singleline-detector-yolo7_det_dep_2/model_handler.py
-cv-singleline-detector-yolo7_det_dep_2/service_pipeline_gpu/stage1_detection.py
-cv-singleline-detector-yolo7_det_dep_2/service_pipeline_gpu/stage2_segmentation.py
+cv-singleline-torchserve-dual/detection/common_config_gpu.py
+cv-singleline-torchserve-dual/detection/model_handler.py
+cv-singleline-torchserve-dual/detection/service_pipeline_gpu/stage1_detection.py
+cv-singleline-torchserve-dual/segmentation/common_config_gpu.py
+cv-singleline-torchserve-dual/segmentation/model_handler.py
+cv-singleline-torchserve-dual/segmentation/service_pipeline_gpu/stage2_segmentation.py
 ```
 
-If you use **separate** seg-only deploy tree, mirror the same pattern under `cv-singleline-detector-yolov7-seg/`.
+The model sources are intentionally isolated under the shared dual deployment directory.
 
 ---
 
@@ -374,10 +376,10 @@ gsutil version
 Then download weights:
 
 ```bash
-cd /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2
+cd /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/detection
 bash model.sh
 
-cd /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg
+cd /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/segmentation
 bash model.sh
 ```
 
@@ -395,11 +397,11 @@ Manual `gsutil` paths (same as `model.sh`):
 ```bash
 # Detection (~136 MB)
 gsutil cp gs://selling-pipeline-ml-models/singleline-pipeline-det-models-1.2/best.pt \
-  /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+  /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/detection/best.pt
 
 # Segmentation (~454 MB)
 gsutil cp gs://selling-pipeline-ml-models/singleline-pipeline-seg-models-1.1/segmentation.pt \
-  /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+  /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/segmentation/segmentation.pt
 ```
 
 ---
@@ -418,19 +420,19 @@ find ~/Downloads -name 'best.pt' -o -name 'segmentation.pt' 2>/dev/null | head
 Example when files exist under `~/Downloads/HomeDepotCV/`:
 
 ```bash
-scp ~/Downloads/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt \
-  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+scp ~/Downloads/HomeDepotCV/cv-singleline-torchserve-dual/detection/best.pt \
+  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/detection/best.pt
 
-scp ~/Downloads/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt \
-  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+scp ~/Downloads/HomeDepotCV/cv-singleline-torchserve-dual/segmentation/segmentation.pt \
+  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/segmentation/segmentation.pt
 ```
 
 Verify on the GPU:
 
 ```bash
 ssh Ant-PC-2080
-ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
-ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/detection/best.pt
+ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/segmentation/segmentation.pt
 ```
 
 ---
@@ -466,10 +468,10 @@ Copy to the 2080:
 
 ```bash
 scp /tmp/hd-weights/best.pt \
-  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/detection/best.pt
 
 scp /tmp/hd-weights/segmentation.pt \
-  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/segmentation/segmentation.pt
 ```
 
 **Common mistake:** pasting the doc placeholder literally:
@@ -491,8 +493,8 @@ If TorchServe was already deployed on `GPU5-A5090` (`172.16.20.108`), the `.pt` 
 
 ```bash
 ssh -i ~/.ssh/avinash_patel_lf.pem avinash.patel@172.16.20.108 \
-  'ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt \
-         /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt 2>&1'
+  'ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/detection/best.pt \
+         /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/segmentation/segmentation.pt 2>&1'
 ```
 
 (Adjust key/user if your `.108` access differs.)
@@ -502,35 +504,35 @@ ssh -i ~/.ssh/avinash_patel_lf.pem avinash.patel@172.16.20.108 \
 ```bash
 # Detection
 scp -i ~/.ssh/avinash_patel_lf.pem \
-  avinash.patel@172.16.20.108:~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt \
+  avinash.patel@172.16.20.108:~/HomeDepotCV/cv-singleline-torchserve-dual/detection/best.pt \
   /tmp/best.pt
 
 scp /tmp/best.pt \
-  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/detection/best.pt
 
 # Segmentation
 scp -i ~/.ssh/avinash_patel_lf.pem \
-  avinash.patel@172.16.20.108:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt \
+  avinash.patel@172.16.20.108:~/HomeDepotCV/cv-singleline-torchserve-dual/segmentation/segmentation.pt \
   /tmp/segmentation.pt
 
 scp /tmp/segmentation.pt \
-  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+  Ant-PC-2080:/data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/segmentation/segmentation.pt
 ```
 
 Alternative: one-hop via `scp -3` (Mac as relay, files never need a local zip):
 
 ```bash
 ssh Ant-PC-2080 \
-  'mkdir -p /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2 \
-            /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg'
+  'mkdir -p /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/detection \
+            /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/segmentation'
 
 scp -3 -i ~/.ssh/avinash_patel_lf.pem \
-  avinash.patel@172.16.20.108:~/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt \
-  avinash.patel@172.16.20.100:/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
+  avinash.patel@172.16.20.108:~/HomeDepotCV/cv-singleline-torchserve-dual/detection/best.pt \
+  avinash.patel@172.16.20.100:/data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/detection/best.pt
 
 scp -3 -i ~/.ssh/avinash_patel_lf.pem \
-  avinash.patel@172.16.20.108:~/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt \
-  avinash.patel@172.16.20.100:/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+  avinash.patel@172.16.20.108:~/HomeDepotCV/cv-singleline-torchserve-dual/segmentation/segmentation.pt \
+  avinash.patel@172.16.20.100:/data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/segmentation/segmentation.pt
 ```
 
 If `.108` also does not have the weights, re-obtain `HomeDepotCV 2.zip` from whoever shared it, or get GCP bucket access and use Option A with `gcloud auth login`.
@@ -541,8 +543,8 @@ If `.108` also does not have the weights, re-obtain `HomeDepotCV 2.zip` from who
 
 ```bash
 ssh Ant-PC-2080
-ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
-ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/detection/best.pt
+ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/segmentation/segmentation.pt
 ```
 
 Rough expected sizes:
@@ -556,8 +558,8 @@ Destination paths on `GPU1-A2080`:
 
 | File | Remote path |
 |------|-------------|
-| `best.pt` | `/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt` |
-| `segmentation.pt` | `/data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt` |
+| `best.pt` | `/data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/detection/best.pt` |
+| `segmentation.pt` | `/data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/segmentation/segmentation.pt` |
 
 If either file is missing or tiny, do not run `docker build` yet.
 
@@ -576,8 +578,8 @@ This is the **preferred** path: one container on this single GPU server serves b
 Confirm weights:
 
 ```bash
-ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2/best.pt
-ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg/segmentation.pt
+ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/detection/best.pt
+ls -lh /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/segmentation/segmentation.pt
 ```
 
 Build from **repo root** (Dockerfile copies both trees into separate MAR staging dirs):
@@ -603,8 +605,8 @@ See also `cv-singleline-torchserve-dual/README.md`.
 ### Fallback — separate det/seg images (legacy)
 
 ```bash
-cd /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolo7_det_dep_2 && sudo docker build -t hd-det-gpu .
-cd /data/avinash.patel/HomeDepotCV/cv-singleline-detector-yolov7-seg && sudo docker build -t hd-seg-gpu .
+cd /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/detection && sudo docker build -t hd-det-gpu .
+cd /data/avinash.patel/HomeDepotCV/cv-singleline-torchserve-dual/segmentation && sudo docker build -t hd-seg-gpu .
 ```
 
 ---
@@ -768,8 +770,8 @@ ssh Ant-PC-2080 'cd /data/avinash.patel/HomeDepotCV && git pull origin main'
 ssh Ant-PC-2080 'bash -s' <<'REMOTE'
 set -euo pipefail
 cd /data/avinash.patel/HomeDepotCV
-ls -lh cv-singleline-detector-yolo7_det_dep_2/best.pt
-ls -lh cv-singleline-detector-yolov7-seg/segmentation.pt
+ls -lh cv-singleline-torchserve-dual/detection/best.pt
+ls -lh cv-singleline-torchserve-dual/segmentation/segmentation.pt
 chmod +x cv-singleline-torchserve-dual/scripts/build_and_run.sh
 ./cv-singleline-torchserve-dual/scripts/build_and_run.sh
 REMOTE

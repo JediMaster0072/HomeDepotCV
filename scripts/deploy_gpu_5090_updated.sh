@@ -4,7 +4,7 @@
 # Prerequisites on the host:
 #   - NVIDIA driver + Docker (--gpus all works; see gpu-docker-cdi-fix.md)
 #   - gsutil (or gcloud) for model.sh weight downloads
-#   - Repo checked out with both detector directories present
+#   - Repo checked out with the consolidated TorchServe directory present
 #
 # Usage:
 #   ./scripts/deploy_gpu_5090.sh              # build + run + smoke test
@@ -15,9 +15,10 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="${SCRIPT_DIR}"
-DET_DIR="${REPO_ROOT}/cv-singleline-detector-yolo7_det_dep_2"
-SEG_DIR="${REPO_ROOT}/cv-singleline-detector-yolov7-seg"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+DUAL_DIR="${REPO_ROOT}/cv-singleline-torchserve-dual"
+DET_DIR="${DUAL_DIR}/detection"
+SEG_DIR="${DUAL_DIR}/segmentation"
 
 DET_IMAGE="${DET_IMAGE:-hd-det-gpu}"
 SEG_IMAGE="${SEG_IMAGE:-hd-seg-gpu}"
