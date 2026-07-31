@@ -106,12 +106,13 @@ class DetectionHandler(BaseHandler):
             instances = body["instances"]
             instance = instances[0]
             t0 = time.time()
-            image_rgb = self._base64_png_to_numpy_image(instance["file"])
+            # codec returns OpenCV BGR (Stage1 converts BGR→RGB internally)
+            image_bgr = self._base64_png_to_numpy_image(instance["file"])
             print(
                 f"[DetectionHandler] preprocess {int((time.time() - t0) * 1000)} ms "
-                f"shape={image_rgb.shape}"
+                f"shape={image_bgr.shape}"
             )
-            return {"image_rgb": image_rgb}
+            return {"image_bgr": image_bgr}
         except Exception as e:
             print(f"[DetectionHandler] preprocess error: {e}")
             traceback.print_exc()
@@ -119,7 +120,7 @@ class DetectionHandler(BaseHandler):
 
     def inference(self, model_input: dict) -> dict:
         t0 = time.time()
-        raw_dets = self.stage1.run_inference(model_input["image_rgb"])
+        raw_dets = self.stage1.run_inference(model_input["image_bgr"])
         print(f"[DetectionHandler] inference {int((time.time() - t0) * 1000)} ms")
         return {"raw_dets": raw_dets}
 

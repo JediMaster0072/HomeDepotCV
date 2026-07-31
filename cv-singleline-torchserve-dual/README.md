@@ -86,11 +86,47 @@ The shared deployment uses:
 
 These versions were tested with both models on the RTX 2080 Ti host.
 
-## Tests
+## Color space (OpenCV BGR)
+
+Stage1 and Stage2 expect OpenCV **BGR** and convert to RGB internally
+(`img[:, :, ::-1]`). Request decode in `detection/codec_gpu.py` and
+`segmentation/codec_gpu.py` therefore converts PIL RGB → BGR so TorchServe
+matches `cv2.imread` / the local pipeline.
+
+## Tests and exactness
 
 Test inputs and previously generated masks are under
 [`test-fixtures/`](test-fixtures/). The segmentation comparison set is kept in
 Git so reorganizations can be checked for pixel-level output changes.
 
+### Historical golden masks vs TorchServe (~0.63 IoU)
+
+Comparing Dockerfile TorchServe to saved local `*_pred_mask.jpg` files gave
+mean mask IoU ~0.63. That gap is mostly **different prediction sources** (old
+pipeline outputs from another host/stack), not bad golden JPEGs and not mainly
+JPEG or OCR enlarge. Detection precision also looks low because TorchServe
+returns raw boxes while local outputs are pipeline-filtered. Full breakdown:
+[LOCAL_VS_TORCHSERVE.md](LOCAL_VS_TORCHSERVE.md).
+
+### Raw-vs-raw serving exactness (right test)
+
+Script: `scripts/raw_vs_torchserve_segmentation.py` — same `segmentation.pt`
+and config (`imgsz=608`, conf `0.25`, iou `0.70`) for in-process Stage2 vs
+`/predictions/segmenter`.
+
+| When | Local input | Exact masks (40 strips) | Mean IoU |
+|------|-------------|-------------------------|----------|
+| Before BGR fix | `cv2.imread` BGR | not exact | ~0.90 |
+| Before BGR fix | handler PIL RGB (what TorchServe fed) | 40/40 | 1.0 |
+| **After BGR fix** | `cv2.imread` BGR | **40/40** | **1.0** |
+| **After BGR fix** | handler (codec BGR) | **40/40** | **1.0** |
+| After BGR fix | `legacy_rgb` (old path) | 1/40 | ~0.87 |
+
+Serving is pixel-exact against OpenCV after the fix. Old RGB PNG baselines need
+refresh when promoting the BGR-fixed image over the live `:9000` container.
+
 First-time SSH setup, weight transfer, and host troubleshooting are documented
 in `../TORCHSERVE_SSH_DEPLOY_172.16.20.100.md`.
+
+GPU deployment checkout:
+`/data/vaibhav.singh/SingleLine_deployment/cv-singleline-torchserve-dual`.
