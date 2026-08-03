@@ -35,6 +35,15 @@ Fair IoU script: `scripts/benchmark_local_vs_torchserve.py`
 | Local “ground truth” | `local_deployed_instance_outputs` masks / detections from an older overhead pipeline run |
 | TorchServe | Current Dockerfile dual image, same strip / shelf inputs from `Golden_Dataset_overhead_eval_orig` |
 
+Important field choices in that golden script:
+
+- Detection uses `orig_bbox` from `predictions.json`, **not** `buffered_bbox`.
+  Local pipeline expands boxes by ~15% per side (`bbox_buffer_pct=0.15`) for
+  crops; that buffered box is saved too, but was not the detection compare target.
+- Segmentation inputs are the saved `strips/strip_*.jpg` crops (from buffered
+  boxes). Mask targets are `strips_viz_orig_mask/*_pred_mask.jpg` (historical
+  raw masks), not OCR-enlarged masks.
+
 Results (order of magnitude):
 
 - Detection: matched-box IoU ~0.93, but precision looked low because TorchServe
