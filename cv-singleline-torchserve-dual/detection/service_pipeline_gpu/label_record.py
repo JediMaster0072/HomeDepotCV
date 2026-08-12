@@ -1,4 +1,4 @@
-"""Detection result records used by Stage 1."""
+"""Optional detection result records (not required by TorchServe handlers)."""
 
 from __future__ import annotations
 
@@ -19,10 +19,3 @@ class LabelRecord:
     excluded: bool = False
     exclusion_reason: Optional[str] = None
     status: str = "detected"
-
-    def __repr__(self) -> str:
-        return (
-            f"Label#{self.label_id}[{self.status}] "
-            f"bbox={[round(value, 1) for value in self.original_bbox]} "
-            f"score={self.detection_score:.3f}"
-        )
