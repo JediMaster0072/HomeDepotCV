@@ -6,6 +6,11 @@ Use these commands on the GPU host from:
 /data/vaibhav.singh/SingleLine_deployment
 ```
 
+**Current live dual container:** `hd-dual-gpu` on ports **`12000` / `12001` /
+`12002`** (not `9000` — that port range was already in use). Examples below
+show the default `9000` ports from `build_and_run.sh`; for today’s running
+service, substitute `12000`/`12001`/`12002`.
+
 ## 1. Check the model weights
 
 ```bash

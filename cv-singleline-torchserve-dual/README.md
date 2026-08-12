@@ -43,9 +43,12 @@ separate workers:
 - `POST /predictions/detector` — send a full shelf image
 - `POST /predictions/segmenter` — send one or more shelf-strip crop images
 
-Both use inference port `9000`. TorchServe unpacks two model packages
-(`detector.mar` and `segmenter.mar`) into separate folders so their shared
-library names (`models` / `utils`) do not collide.
+Default docs/scripts use inference port `9000`. On the RTX 2080 Ti host the
+current dual container (`hd-dual-gpu`) is on **`12000`** (management `12001`,
+metrics `12002`) because `9000` was already in use by another process.
+TorchServe unpacks two model packages (`detector.mar` and `segmenter.mar`)
+into separate folders so their shared library names (`models` / `utils`) do
+not collide.
 
 The calling application still creates the strip crops and combines the two
 responses. This service only runs the two models.
@@ -231,15 +234,15 @@ Script: `scripts/raw_vs_torchserve_segmentation.py`
 
 **Git / GPU host**
 
-- earlier: commit `29274a9e` (codec BGR path) and promote on `:9000` as
-  `hd-dual-gpu`
+- codec-BGR era: commit `29274a9e`
+- RGB Stage / no-flip: commit `1efd030d`
 - synced under
   `/data/vaibhav.singh/SingleLine_deployment/cv-singleline-torchserve-dual`
+- running container: `hd-dual-gpu` on ports **`12000/12001/12002`**
 
-### After: retest stats (codec-BGR era)
+### After: retest stats
 
-Same 40-strip fair test after the first color-order fix (stages still had
-`::-1`, codecs returned BGR):
+**Codec-BGR era** (stages still had `::-1`, codecs returned BGR), 40 strips:
 
 | Mode | Exact masks | Mean IoU | Meaning |
 |------|-------------|----------|---------|
@@ -247,8 +250,12 @@ Same 40-strip fair test after the first color-order fix (stages still had
 | `handler` (codec BGR) | 40/40 | 1.0 | Serving path stable |
 | `legacy_rgb` (old path) | 1/40 | ~0.87 | Pre-fix mismatch |
 
-Live `:9000` was promoted on that build. After removing Stage channel flips,
-rebuild/promote again so the running MARs match the RGB Stage contract.
+**Current RGB Stage / no-flip** (rebuilt `hd-dual-gpu` on `:12000`), 40 strips:
+
+| Mode | Exact masks | Mean IoU | Meaning |
+|------|-------------|----------|---------|
+| `bgr` (OpenCV→RGB) | 40/40 | 1.0 | Fair OpenCV path matches serving |
+| `handler` (codec RGB) | 40/40 | 1.0 | Serving path stable |
 
 ### Side-by-side
 
@@ -263,6 +270,11 @@ rebuild/promote again so the running MARs match the RGB Stage contract.
 **Channel contract now:** Stage1 and Stage2 expect **RGB** and do **not** flip
 channels. TorchServe codecs return PIL RGB. Callers that load with OpenCV
 (`cv2.imread`, BGR) must convert BGR→RGB before calling Stage locally.
+
+**Deployed now:** local git, GitHub `main`, and the GPU trees match. Live dual
+TorchServe is `hd-dual-gpu` on **`http://127.0.0.1:12000`** (detector +
+segmenter READY; verified 40/40 exact). Leave other users’ `:9000` processes
+alone.
 
 The old golden mask JPGs remain a historical baseline, not proof of serving
 drift.

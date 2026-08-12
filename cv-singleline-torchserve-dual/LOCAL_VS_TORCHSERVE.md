@@ -171,15 +171,15 @@ Fair-test modes: `handler` (codec RGB), `bgr` (cv2 → RGB), `legacy_bgr`
 ## Re-verify after the color fix
 
 ```bash
-# Inside the dual container (or a GPU host with the package + live segmenter):
+# On the GPU host against the live dual container (ports 12000/12001/12002):
 python3 scripts/raw_vs_torchserve_segmentation.py \
-  --seg-package /app/segmentation \
+  --seg-package /path/to/cv-singleline-torchserve-dual/segmentation \
   --strips-root /path/to/strips \
-  --segmenter-url http://127.0.0.1:9000/predictions/segmenter \
+  --segmenter-url http://127.0.0.1:12000/predictions/segmenter \
   --output-dir /tmp/raw_vs_bgr \
   --color-mode bgr \
   --limit 40
 ```
 
-Expect `serving_is_exact: true` for `bgr` (OpenCV→RGB) and `handler` after
-rebuilding MARs with the RGB Stage contract (no channel flip).
+Expect `serving_is_exact: true` for `bgr` (OpenCV→RGB) and `handler` with the
+RGB Stage contract (no channel flip). Verified 40/40 on `:12000` after rebuild.
