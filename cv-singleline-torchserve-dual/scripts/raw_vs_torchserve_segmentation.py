@@ -96,22 +96,13 @@ def encode_png_base64(image_bgr: np.ndarray) -> str:
     return base64.b64encode(buf.getvalue()).decode("ascii")
 
 
-def decode_pil_rgb(image_base64: str) -> np.ndarray:
-    """Raw PIL RGB array (pre-fix handler behavior)."""
+def decode_handler_image(image_base64: str) -> np.ndarray:
+    """Current codec path: PIL RGB for Stage1/Stage2 (no channel flip)."""
     image_bytes = base64.b64decode(image_base64.encode("ascii"))
     with io.BytesIO(image_bytes) as buffer:
         image = Image.open(buffer)
         image.load()
     return np.array(image)
-
-
-def decode_handler_image(image_base64: str) -> np.ndarray:
-    """Current codec path: PIL RGB → OpenCV BGR for Stage1/Stage2."""
-    arr = decode_pil_rgb(image_base64)
-    if arr.ndim == 3 and arr.shape[2] >= 3:
-        arr = arr.copy()
-        arr[..., :3] = arr[..., :3][..., ::-1]
-    return arr
 
 
 def query_torchserve(endpoint: str, image_base64: str, strip_id: int) -> dict[str, Any]:
@@ -146,13 +137,14 @@ def compare_one(
     image_base64 = encode_png_base64(image_bgr)
 
     if color_mode == "bgr":
-        local_image = image_bgr
+        # OpenCV load converted to RGB — Stage expects RGB (no internal flip).
+        local_image = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
     elif color_mode == "handler":
-        # Exact array current TorchServe preprocess feeds into Stage2 (BGR).
+        # Exact array current TorchServe preprocess feeds into Stage2 (RGB).
         local_image = decode_handler_image(image_base64)
-    elif color_mode == "legacy_rgb":
-        # Pre-fix handler: PIL RGB fed into Stage2 that assumed BGR.
-        local_image = decode_pil_rgb(image_base64)
+    elif color_mode == "legacy_bgr":
+        # Raw OpenCV BGR into Stage that expects RGB (wrong channel order).
+        local_image = image_bgr
     else:
         raise ValueError(f"unknown color_mode={color_mode}")
 
@@ -223,13 +215,13 @@ def main() -> int:
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument(
         "--color-mode",
-        choices=("bgr", "handler", "legacy_rgb"),
+        choices=("bgr", "handler", "legacy_bgr"),
         default="handler",
         help=(
             "Local Stage2 input color handling. "
-            "'handler' feeds the current codec BGR array TorchServe uses; "
-            "'bgr' uses cv2.imread; "
-            "'legacy_rgb' feeds raw PIL RGB (pre-fix buggy path)."
+            "'handler' feeds the current codec RGB array TorchServe uses; "
+            "'bgr' uses cv2.imread converted BGR→RGB; "
+            "'legacy_bgr' feeds raw OpenCV BGR into Stage that expects RGB."
         ),
     )
     parser.add_argument("--limit", type=int)

@@ -72,12 +72,12 @@ class Stage2Segmentation:
             )
         return results
 
-    def _preprocess(self, image_bgr):
+    def _preprocess(self, image_rgb):
+        """Letterbox + CHW tensor. Expects RGB (no BGR↔RGB channel flip)."""
         self._ensure_seg_path()
         from utils.augmentations import letterbox
 
-        img = letterbox(image_bgr, self.imgsz, stride=self.stride, auto=self.pt)[0]
-        img = img[:, :, ::-1]
+        img = letterbox(image_rgb, self.imgsz, stride=self.stride, auto=self.pt)[0]
         img = img.transpose((2, 0, 1))
         img = np.ascontiguousarray(img)
 
@@ -118,12 +118,12 @@ class Stage2Segmentation:
         resized = [cv2.resize(m, (orig_w, orig_h), interpolation=cv2.INTER_NEAREST) for m in masks_np]
         return np.stack(resized, axis=0)
 
-    def _run_single(self, image_bgr):
+    def _run_single(self, image_rgb):
         self._ensure_seg_path()
         from utils.general import non_max_suppression, scale_coords
 
-        orig_h, orig_w = image_bgr.shape[:2]
-        img_tensor = self._preprocess(image_bgr)
+        orig_h, orig_w = image_rgb.shape[:2]
+        img_tensor = self._preprocess(image_rgb)
         input_hw = (img_tensor.shape[2], img_tensor.shape[3])
 
         with torch.no_grad():

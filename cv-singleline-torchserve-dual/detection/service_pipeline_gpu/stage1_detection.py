@@ -4,7 +4,7 @@ SKU Reading Pipeline — Stage 1: Label Detection
 Runs YOLOv7 inference on a base (shelf) image to detect labels.
 Produces LabelRecords sorted left-to-right for downstream stages.
 
-Input:  BGR ndarray (full shelf image)
+Input:  RGB ndarray (full shelf image)
 Output: list[LabelRecord], list[dict] raw detections
 """
 
@@ -99,9 +99,10 @@ class Stage1Detection:
             f"| imgsz={self._imgsz} | half={self._half} | classes={self.names}"
         )
 
-    def run_inference(self, image_bgr: np.ndarray) -> List[Dict]:
+    def run_inference(self, image_rgb: np.ndarray) -> List[Dict]:
         """
         GPU phase: letterbox → tensor → YOLOv7 → NMS.
+        Expects an RGB image (no BGR↔RGB channel flip in this stage).
         Returns a flat list of raw detection dicts.
         """
         if self._letterbox is None:
@@ -112,10 +113,9 @@ class Stage1Detection:
         scale_coords = self._scale_coords
         time_synchronized = self._time_synchronized
 
-        h0, w0 = image_bgr.shape[:2]
+        h0, w0 = image_rgb.shape[:2]
 
-        img, ratio, (dw, dh) = letterbox(image_bgr, self._imgsz, stride=self.stride)
-        img = img[:, :, ::-1].copy()
+        img, ratio, (dw, dh) = letterbox(image_rgb, self._imgsz, stride=self.stride)
         img = np.ascontiguousarray(img)
 
         img = torch.from_numpy(img)

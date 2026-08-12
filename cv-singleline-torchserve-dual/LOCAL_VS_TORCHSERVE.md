@@ -125,39 +125,33 @@ were written for.
 
 ## RGB / BGR bug and fix
 
-### Contract
+### Original bug
 
-Both stages assume OpenCV BGR and convert to RGB inside preprocess:
+Stages assumed OpenCV BGR and flipped once inside preprocess:
 
 ```text
 letterbox(image_bgr) → img[:, :, ::-1]  # BGR → RGB for the network
 ```
 
-### Bug
+Handlers decoded with PIL as **RGB** and passed that in unchanged, so the
+internal flip treated RGB as BGR. Serving matched itself but not OpenCV.
 
-Handlers decoded request images with PIL (`Image.open` → `np.array`), which
-yields **RGB**, then passed that array into Stage2/Stage1 unchanged. The
-internal `::-1` then treated RGB as if it were BGR and swapped channels again
-the wrong way for OpenCV callers.
+### First fix (codecs → BGR)
 
-### Fix
+Codecs converted PIL RGB → BGR so Stage’s `::-1` matched OpenCV. Verified
+40/40 exact (`bgr` / `handler`) on the dual test image.
 
-`detection/codec_gpu.py` and `segmentation/codec_gpu.py` now convert PIL RGB →
-BGR after decode so TorchServe matches `cv2.imread` / local pipeline
-convention. Detection handler variable names use `image_bgr` accordingly.
+### Current contract (stages take RGB, no flip)
 
-Verified on the rebuilt dual test image (`hd-dual-gpu-restructured-test`,
-ports `12000–12002`), 40 strips, same `segmentation.pt` / config:
+Channel flipping was removed from Stage1 and Stage2. Stages now expect **RGB**:
 
-| `--color-mode` | Exact masks | Mean IoU | Meaning |
-|----------------|-------------|----------|---------|
-| `bgr` (`cv2.imread`) | **40/40** | **1.0** | TorchServe matches OpenCV convention |
-| `handler` (current codec BGR) | **40/40** | **1.0** | Serving preprocess is deterministic |
-| `legacy_rgb` (old PIL RGB path) | 1/40 | ~0.87 | Pre-fix mismatch reproduced |
+```text
+letterbox(image_rgb) → CHW tensor  # no ::-1
+```
 
-Note: older PNG regression baselines captured under the buggy RGB preprocess
-will **not** match this fixed image bit-for-bit. Refresh baselines after
-promoting the BGR-fixed build.
+Codecs pass PIL RGB through. OpenCV callers must convert BGR→RGB before Stage.
+Fair-test modes: `handler` (codec RGB), `bgr` (cv2 → RGB), `legacy_bgr`
+(raw OpenCV BGR into RGB Stage — wrong on purpose).
 
 ## How to improve comparisons going forward
 
@@ -187,5 +181,5 @@ python3 scripts/raw_vs_torchserve_segmentation.py \
   --limit 40
 ```
 
-Expect `serving_is_exact: true` for `bgr` and `handler` after rebuilding MARs
-with the updated codecs.
+Expect `serving_is_exact: true` for `bgr` (OpenCV→RGB) and `handler` after
+rebuilding MARs with the RGB Stage contract (no channel flip).

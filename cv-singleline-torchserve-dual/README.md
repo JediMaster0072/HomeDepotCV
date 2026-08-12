@@ -208,65 +208,64 @@ Script: `scripts/raw_vs_torchserve_segmentation.py`
 
 ### What we changed / added
 
-**Code**
+**Code (first color fix — codecs to BGR)**
 
-- `detection/codec_gpu.py` — after reading the image with PIL, convert RGB → BGR
-- `segmentation/codec_gpu.py` — same conversion
-- `handlers/detection_handler.py` — rename `image_rgb` → `image_bgr` to match reality
+- `detection/codec_gpu.py` / `segmentation/codec_gpu.py` — temporarily convert
+  PIL RGB → BGR so Stage’s internal `::-1` flip matched OpenCV
+- verified 40/40 exact vs OpenCV on that path
 
-**Docs**
+**Code (current contract — stages take RGB, no flip)**
 
-- this README — color-order contract + before/after results
-- `LOCAL_VS_TORCHSERVE.md` — longer exactness writeup
+- `detection/service_pipeline_gpu/stage1_detection.py` — removed
+  `img[:, :, ::-1]` channel flip; Stage1 expects **RGB**
+- `segmentation/service_pipeline_gpu/stage2_segmentation.py` — same
+- codecs again pass PIL **RGB** through (no BGR convert)
+- `handlers/detection_handler.py` — `image_rgb`
 
-**Scripts**
+**Docs / scripts**
 
-- `scripts/raw_vs_torchserve_segmentation.py` — fair local-vs-server mask check
-  (modes: `bgr` / `handler` / `legacy_rgb`)
-- `scripts/diagnose_segmentation_gaps.py` — helper to investigate disagreements
-- `scripts/benchmark_local_vs_torchserve.py` — older golden IoU benchmark
+- this README and `LOCAL_VS_TORCHSERVE.md`
+- `scripts/raw_vs_torchserve_segmentation.py` — modes `bgr` (OpenCV→RGB) /
+  `handler` / `legacy_bgr`
+- `scripts/diagnose_segmentation_gaps.py`, `scripts/benchmark_local_vs_torchserve.py`
 
 **Git / GPU host**
 
-- pushed as commit `29274a9e` — Fix TorchServe RGB/BGR decode so serving matches OpenCV
-- synced to
+- earlier: commit `29274a9e` (codec BGR path) and promote on `:9000` as
+  `hd-dual-gpu`
+- synced under
   `/data/vaibhav.singh/SingleLine_deployment/cv-singleline-torchserve-dual`
-- promoted the verified image to the live service on port `:9000` as container
-  `hd-dual-gpu` (replaced the older container `nice_wozniak`)
 
-### After: retest stats
+### After: retest stats (codec-BGR era)
 
-Same 40-strip fair test, after the color-order fix:
+Same 40-strip fair test after the first color-order fix (stages still had
+`::-1`, codecs returned BGR):
 
 | Mode | Exact masks | Mean IoU | Meaning |
 |------|-------------|----------|---------|
-| `bgr` (`cv2.imread`, normal OpenCV) | 40/40 | 1.0 | Server matches OpenCV / local convention |
-| `handler` (fixed codec, BGR) | 40/40 | 1.0 | Server path is stable and repeatable |
-| `legacy_rgb` (old buggy path) | 1/40 | ~0.87 | Recreates the pre-fix mismatch on purpose |
+| `bgr` (`cv2.imread`) | 40/40 | 1.0 | Matched OpenCV when Stage expected BGR |
+| `handler` (codec BGR) | 40/40 | 1.0 | Serving path stable |
+| `legacy_rgb` (old path) | 1/40 | ~0.87 | Pre-fix mismatch |
 
-Live port `:9000` after promote (OpenCV BGR mode): **40/40 exact**, IoU
-**1.0**, and detection counts match.
+Live `:9000` was promoted on that build. After removing Stage channel flips,
+rebuild/promote again so the running MARs match the RGB Stage contract.
 
 ### Side-by-side
 
-| Comparison | Before | After |
-|------------|--------|-------|
-| TorchServe vs OpenCV BGR | ~0.90 IoU, not exact | 1.0 IoU, pixel-exact |
-| TorchServe vs its own preprocess | exact, but wrong color order | exact, with correct BGR |
+| Comparison | Before any color fix | After codec→BGR fix |
+|------------|----------------------|---------------------|
+| TorchServe vs OpenCV (fair channel order) | ~0.90 IoU, not exact | 1.0 IoU, pixel-exact |
+| TorchServe vs its own preprocess | exact, wrong order for OpenCV | exact |
 | TorchServe vs historical golden masks | ~0.63 IoU | still not a fair exactness target |
-| Active service on `:9000` | old RGB model packages | BGR-fixed `hd-dual-gpu` |
 
 ### Current state
 
-Local OpenCV color handling, the GPU source tree, and the live TorchServe
-service on `:9000` now agree for segmentation serving exactness.
+**Channel contract now:** Stage1 and Stage2 expect **RGB** and do **not** flip
+channels. TorchServe codecs return PIL RGB. Callers that load with OpenCV
+(`cv2.imread`, BGR) must convert BGR→RGB before calling Stage locally.
 
-The old golden mask JPGs are still useful as a historical baseline, but they
-are not proof that today’s service is drifting.
-
-Under the hood: Stage1 (detection) and Stage2 (segmentation) still expect
-OpenCV BGR and convert to RGB internally. The codecs now return BGR after PIL
-decode so that agreement holds from request → model.
+The old golden mask JPGs remain a historical baseline, not proof of serving
+drift.
 
 First-time SSH setup, weight transfer, and host troubleshooting are documented
 in `../TORCHSERVE_SSH_DEPLOY_172.16.20.100.md`.
